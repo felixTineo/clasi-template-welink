@@ -6,11 +6,15 @@ import { Container } from 'react-grid-system';
 import Contact from '../home/contact';
 
 const MainSection = styled.section`
+  position: relative;
   min-height: 25vh;
-  padding: 4rem 0; 
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 2rem; 
+  @media(min-width: 768px){
+    padding: 4rem 0; 
+  }
 `
 const TitleQuoteCont = styled.div`
   //padding-top: 4rem;
@@ -21,6 +25,7 @@ const SvgCont = styled.svg`
 `
 const QuoteCarouselCont = styled.div`
   padding-top: 0rem;
+  position: relative;
   @media(min-width: 768px){
     padding-top: 2rem;
   }
@@ -40,21 +45,13 @@ export default ()=> {
   const reviews = useContext(OfficeContext).home.reviews.items;
   return(
     <Fragment>
-    <Container>
-      <MainSection>
-        <CarouselCont>
-          <TitleQuoteCont>
-            <SvgCont width="84" height="101" viewBox="0 0 84 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M56 48.3737L56 0H84L84 48.3737L72.6923 101H58.1538L66.2308 48.3737H56ZM0 48.3737L0 0L28 0L28 48.3737L16.6923 101H2.15385L10.2308 48.3737H0Z"/>
-            </SvgCont>
-          </TitleQuoteCont>
+      <Container>
+        <MainSection>
           <QuoteCarouselCont>
             <ReviewCarousel />
           </QuoteCarouselCont>
-        </CarouselCont>
-      </MainSection>
-    </Container>
-    <Divider />
+        </MainSection>
+      </Container>
     <Contact />
     </Fragment>
   )

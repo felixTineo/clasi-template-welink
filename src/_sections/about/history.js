@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 
 const MainCont = styled.section`
-  background-color:  #F2F2F2;
   padding: 6rem 0;
   //min-height: 100vh;
 `
@@ -27,6 +26,7 @@ const Image = styled.img`
   width: 100%;
 `
 
+
 export default ()=> {
   const state = useContext(Context).about;
   return(
@@ -34,15 +34,15 @@ export default ()=> {
       <Container>
         <Row>
           <Col xs={12} md={6} push={{ md: 6 }}>
-            <Image src="/history-image.jpg" alt="historia" />
-          </Col>                    
-          <Col xs={12} md={6} pull={{ md: 6 }}>
             <HistoryCont>
               <Title>
                 {state.history.title}
               </Title>
               <Description dangerouslySetInnerHTML={{__html: state.history.description}} />
             </HistoryCont>
+          </Col>                    
+          <Col xs={12} md={6} pull={{ md: 6 }}>
+            <Image src="/history-image.jpg" alt="historia" />
           </Col>
         </Row>
       </Container>

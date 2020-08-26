@@ -65,11 +65,10 @@ export default ()=> {
           */}
         </CarouselProvider>
       </Hidden>
-{/*      <Visible xs>
+      <Visible xs>
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={75}
-          //isIntrinsicHeight={true}
+          isIntrinsicHeight={true}
           totalSlides={items.length}
           visibleSlides={1}
           orientation="horizontal"
@@ -83,11 +82,14 @@ export default ()=> {
               ))
             }
           </Slider>
-          {
-            Array(items.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)
-          }
+          <ButtonBack className="carousel-back-button carousel-desc-back-button" style={{ backgroundColor: color }}>
+            <img src="/icons/chevron-left.svg" alt="chevron" />
+          </ButtonBack>
+          <ButtonNext className="carousel-next-button carousel-desc-next-button" style={{ backgroundColor: color }}>
+            <img src="/icons/chevron-right.svg" alt="chevron"/>
+          </ButtonNext>          
         </CarouselProvider>
-        </Visible>*/}
+        </Visible>
     </Fragment>
   )
 }

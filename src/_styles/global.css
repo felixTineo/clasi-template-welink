@@ -165,3 +165,8 @@ h2{
   left: 5rem;
   right: auto;
 }
+
+.clasi-icon path{
+  fill: #fff;
+  stroke: #fff;
+}

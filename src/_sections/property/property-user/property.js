@@ -5,9 +5,11 @@ import InteractionButtons from '../interaction-buttons';
 import Icons from '../../../_icons';
 
 const MainCont = styled.div`
-  padding: 2rem 1rem;
-  border: 1px solid #EBEBEB;
+  padding: 2rem;
+  //border: 1px solid #EBEBEB;
+  height: 100%;
   border-right: none;
+  background-color: ${props => props.theme.main.primaryColor};
 `
 const PublicObs = styled.p`
   font-weight: bold;
@@ -25,7 +27,7 @@ const CharItemLi = styled.li`
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 1rem;
-  color: #002438;
+  color: #fff;
 `
 
 const CharItem = ({ icon, name }) => {
@@ -46,16 +48,8 @@ export default ({ description })=> {
   return(
     <MainCont>
       <Row>
-        <Hidden xs>
-         <InteractionButtons />
-        </Hidden>
         <Col xs={12}>
-          <PublicObs>
-            {description.publicObservation}              
-          </PublicObs>
-        </Col>
-        <Col xs={12}>
-          <h2 style={{ color: "#002438" }}>Caracteristicas</h2>
+          <h2 style={{ color: "#fff" }}>Caracteristicas</h2>
           <Row>
             <Col xs={12} md={6}>
               <CharsCont>
@@ -74,7 +68,7 @@ export default ({ description })=> {
           </Row>
         </Col>
         <Col xs={12}>
-          <h2 style={{ color: "#002438" }}>Otros servicios</h2>
+          <h2 style={{ color: "#fff" }}>Otros servicios</h2>
           <Row>
             <Col xs={12} md={6}>
               <CharsCont>

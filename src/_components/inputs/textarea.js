@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export default styled.textarea`
   background-color: #fff;
-  box-shadow: 0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12);
   border-radius: 6px;
   padding: 5px;
   width: 100%;

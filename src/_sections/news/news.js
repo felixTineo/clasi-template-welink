@@ -32,7 +32,7 @@ const query = (officeId)=> `
   }
 `
 const MainCont = styled.section`
-  margin-top: -45vh;
+  //margin-top: -45vh;
 `
 const NavPaginate = styled.nav`
   display: flex;
@@ -65,13 +65,12 @@ const SvgCont = styled.svg`
   }
 `
 const NavCont = styled.nav`
-  color: #919191;
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
 `
 const NavTitle = styled.span`
-  color: #fff;
+  
 `
 const NavList = styled.ul`
   list-style: none;
@@ -80,8 +79,10 @@ const NavList = styled.ul`
   display: flex;
 `
 const NavOption = styled.button`
-  background-color: ${props => props.active ? "#fff" : "transparent"};
-  color: ${props => props.active ? "#000" : "#fff"};
+  background-color: transparent;
+  transition: 250ms ease;
+  box-shadow: ${props => props.active ? "0px 1px 1px rgba(0, 0, 0, .12), 0px 2px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px -1px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)" : "none"};
+  color: ${props => props.theme.main.primaryColor};
   border: none;
   cursor: pointer;
   width: 58px;
@@ -132,7 +133,7 @@ export default ()=> {
   return(
     <MainCont>
     <Container>
-      <div style={{ paddingTop: '5rem' }}>
+      <div style={{ paddingTop: '2rem' }}>
         <Row>
           <Col xs={12}>
             <NavCont>

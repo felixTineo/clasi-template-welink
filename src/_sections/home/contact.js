@@ -5,7 +5,7 @@ import Context from '../../_context';
 import { Button } from '../../_components/buttons';
 
 const SectionCont = styled.div`
-  margin-top: 4rem;
+  margin-top: ${props => props.noMargin ? 0 : "4rem"};
   padding: 2rem 0;
   background-color: ${props => props.theme.main.primaryColor};
   color: #fff;
@@ -29,11 +29,11 @@ const ButtonCont = styled.div`
   width: 100%;
 `
 
-export default ()=> {
+export default ({ noMargin })=> {
   const sectionText = useContext(Context).home.contact.title;
   return(
     <Fragment>
-        <SectionCont>
+        <SectionCont noMargin={noMargin}>
             <Row align="center" justify="center">
               <Col xs={12} md={12}>
                 <ButtonCont>

@@ -26,7 +26,7 @@ const CardDescription = styled.div`
   padding: 1rem;
 `
 const CardTitle = styled.p`
-  font-weight: bold;
+  
 `
 const CardDate = styled.span`
   color: #919191;

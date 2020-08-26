@@ -4,6 +4,8 @@ import { Row, Col } from 'react-grid-system';
 import { Select, Input } from '../inputs';
 import { Button, IconButton } from '../buttons';
 import { Visible, Hidden } from 'react-grid-system';
+import { LinkButton } from '../../_components/buttons';
+import { hexToHsl } from '../../_util';
 
 const Form = styled.form`
   height: 85%;
@@ -48,13 +50,30 @@ const FormTypeButton = styled.button`
 const FormInputsCont = styled.div`
   padding: 4rem;
 `
+const FooterFilter = styled.footer`
+  margin-top: 2rem;
+`
+const FooterButtonContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+`
+const SvgCont = styled.svg`
+  stroke: ${props => props.theme.main.primaryColor};
+  margin-left: 1rem;
+  ${LinkButton}:hover & {
+    stroke: ${props => hexToHsl(props.theme.main.primaryColor, 55)};
+  }
+`
 
-export default ({ block, shadow })=> {
+export default ({ block, shadow, horizontal })=> {
   const [searchBy, setSearchBy] = useState("PROPERTY");
+  const [filter, setFilter] = useState(false);
   return(
     <Form onSubmit={(e) => e.preventDefault()} block={block} shadow={shadow}>
       <Row gutterWidth={32} align="center">
-        <Col xs={12}>
+        <Col xs={12} md={horizontal ? 6 : 12}>
           <FormType>
             <FormTypeButton onClick={()=> setSearchBy("PROPERTY")} active={searchBy === "PROPERTY"}>
               Buscar por propiedad
@@ -67,35 +86,105 @@ export default ({ block, shadow })=> {
       </Row>
       <FormInputsCont>
         <Row>
-          <Col xs={12} md={12}>
+          <Col xs={12} md={horizontal  ? 3 : 12}>
             <Select
               default="Propiedad"
               options={["opcion 1", "opcion 2", "opcion 3"]}
               gray
-              vertical
+              vertical={horizontal ? false : true}
             />
           </Col>
-          <Col xs={12} md={12}>
+          <Col xs={12} md={horizontal  ? 3 : 12}>
             <Select
               default="Operación"
               options={["opcion 1", "opcion 2", "opcion 3"]}
               gray
-              vertical
+              vertical={horizontal ? false : true}
             />
           </Col>    
-          <Col xs={12} md={12}>
+          <Col xs={12} md={horizontal  ? 3 : 12}>
             <Input
               placeholder="Comuna"
               gray
-              vertical
+              vertical={horizontal ? false : true}
             />
           </Col>        
-          <Col xs={12} md={12}>
+          <Col xs={12} md={horizontal  ? 3 : 12}>
             <Button primary block>
               Buscar
               <img src="/icons/search.svg" alt="buscar" style={{ marginLeft: "1rem" }} />
             </Button>
           </Col>
+          {
+            horizontal && (
+              <Col xs={12}>
+                {
+                  filter && (
+                    <FooterFilter>
+                      <Row>
+                        <Col md={2}>
+                          <Input
+                            placeholder="Desde"
+                            gray
+                            vertical={false}
+                          />                          
+                        </Col>
+                        <p style={{ margin: 0, display: "flex", justifyContent: "center", alignItems: "center" }}>-</p>
+                        <Col md={2}>
+                          <Input
+                            placeholder="Hasta"
+                            gray
+                            vertical={false}
+                          />                          
+                        </Col>
+                        <Col md={2}>
+                          <Select
+                            default="Dormitorios"
+                            options={["opcion 1", "opcion 2", "opcion 3"]}
+                            gray
+                            vertical={false}
+                          />                          
+                        </Col>
+                        <Col md={2}>
+                          <Select
+                            default="Baños"
+                            options={["opcion 1", "opcion 2", "opcion 3"]}
+                            gray
+                            vertical={false}
+                          />                          
+                        </Col>
+                        <Col md={2}>
+                          <Select
+                            default="Divisas"
+                            options={["opcion 1", "opcion 2", "opcion 3"]}
+                            gray
+                            vertical={false}
+                          />                          
+                        </Col>                                                
+                      </Row>
+                    </FooterFilter>
+                  )
+                }
+                <FooterButtonContainer>
+                  <LinkButton onClick={()=> setFilter(!filter)}>
+                    Mas filtros
+                    <SvgCont width="9.485" height="5.243" fill="none" version="1.1" viewBox="0 0 9.485 5.243" xmlns="http://www.w3.org/2000/svg">
+                      {
+                        filter
+                        ?(
+                          <path d="m8.9851 4.7428-4.2426-4.2426-4.2426 4.2426" strokeLinecap="round" stroke-linejoin="round"/>
+                          
+                        )
+                        :(
+                          <path d="m8.9851 0.50019-4.2426 4.2426-4.2426-4.2426" strokeLinecap="round" strokeLinejoin="round"/>
+                        )
+                      }
+                    </SvgCont>
+                  </LinkButton>                  
+                </FooterButtonContainer>                
+              </Col>
+            )
+          }
         </Row>
       </FormInputsCont>
     </Form>

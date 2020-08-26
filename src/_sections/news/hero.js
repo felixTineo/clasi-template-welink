@@ -4,26 +4,27 @@ import styled from 'styled-components';
 import { Container } from 'react-grid-system';
 
 const HeroCont = styled.div`
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(${props => props.theme.news.hero.background });
+  /*background-image: linear-gradient(to bottom, rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url(${props => props.theme.news.hero.background });
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat;*/
 `
 const InnerCont = styled.div`
-  height: 85vh;
+  //height: 50vh;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   margin: 0;
+  padding-top: 6rem;
   @media(min-width: 768px){
   }
 `
 const HeroTitle = styled.h1`
-  color: #fff;
+  color: ${props => props.theme.main.primaryColor};
   font-weight: 300;
   font-size: 36px;
   width: 100%;
-  text-align: center;
+  text-align: left;
   @media(min-width: 768px){
     text-align: left;
     font-size: 50px;

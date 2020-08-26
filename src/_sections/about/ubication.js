@@ -1,19 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 import Context from '../../_context';
 import styled from 'styled-components';
-import { Container, Row, Col } from 'react-grid-system';
+import { Container, Row, Col, Hidden, Visible } from 'react-grid-system';
 import Contact from '../home/contact';
+import ContactLight from './contact';
 
 const MainCont = styled.section`
   padding: 4rem 0;
 `
 const Title = styled.p`
+  height: 100%;
   background-color: ${props => props.theme.main.primaryColor};
   color: #fff;
   padding: 2rem;
-  text-align: center;
-  font-weight: bold;
+  //font-weight: bold;
   margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
 `
 const Map = styled.img`
   width: 100%;
@@ -22,19 +27,36 @@ const Map = styled.img`
   object-fit: cover;
 `
 
-export default ()=> {
+export default ({ noContact })=> {
   const state = useContext(Context).about.ubication;
   return(
     <MainCont>
-      <Title>
-        {state.title}
-      </Title>
-      <Map src="/map.png" />
-        <Row>
-          <Col xs={12}>
-            <Contact />
-          </Col>
-        </Row>
+      <Row nogutter>
+        <Col xs={12} md={6}>
+          <Title>
+            {state.title}
+          </Title>
+        </Col>
+        <Col xs={12} md={6}>
+          <Map src="/map.png" />          
+        </Col>        
+      </Row>
+      {
+        !noContact &&(
+          <Fragment>
+          <Visible xs>
+            <Row>
+              <Col light xs={12}>
+                <Contact noMargin />
+              </Col>
+            </Row>
+          </Visible>       
+          <Hidden xs>
+            <ContactLight />
+          </Hidden>
+          </Fragment>
+        )
+      }
     </MainCont>
   )
 }

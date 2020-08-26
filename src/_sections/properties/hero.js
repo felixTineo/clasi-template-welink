@@ -61,10 +61,10 @@ export default ()=> {
       <Container>
         <h1>Propiedades</h1>
         <Row align="center">
-          <Col xs={12} md={10}>
-            <FormProperty block shadow/>
+          <Col xs={12}>
+            <FormProperty horizontal block shadow/>
           </Col>
-          <Col xs={12} md={2}>
+{/*          <Col xs={12} md={2}>
             <ButtonFilter onClick={()=> setFilter(!filter)}>
               Más filtros
               <SvgCont width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -73,10 +73,10 @@ export default ()=> {
                 <path fillRule="evenodd" clipRule="evenodd" d="M0.761905 14.2629H7.69524C7.96074 15.2653 8.86779 15.9634 9.90476 15.9634C10.9417 15.9634 11.8488 15.2653 12.1143 14.2629H14.4762C14.897 14.2629 15.2381 13.9218 15.2381 13.501C15.2381 13.0802 14.897 12.7391 14.4762 12.7391H11.9619C11.58 11.9506 10.7809 11.4497 9.90476 11.4497C9.0286 11.4497 8.22953 11.9506 7.84762 12.7391H0.761905C0.341116 12.7391 0 13.0802 0 13.501C0 13.9218 0.341116 14.2629 0.761905 14.2629ZM9.90476 12.9524C10.3256 12.9524 10.6667 13.2936 10.6667 13.7143C10.6667 14.1351 10.3256 14.4762 9.90476 14.4762C9.48397 14.4762 9.14286 14.1351 9.14286 13.7143C9.14286 13.2936 9.48397 12.9524 9.90476 12.9524Z"/>                
               </SvgCont>
             </ButtonFilter>
-          </Col>
+  </Col>*/}
         </Row>
       </Container>
-        {
+        {/*
           filter && (
             <FilterForm>
               <Container>
@@ -103,7 +103,7 @@ export default ()=> {
               </Container>
             </FilterForm>            
           )
-        }
+        */}
     </SectionCont>
   )
 }

@@ -8,11 +8,10 @@ const MainCont = styled.article`
 
 `
 const Header = styled.header`
-  background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props => props.theme.singleNew.hero.background});
+  //background-image: linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props => props.theme.singleNew.hero.background});
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  color: #fff;
 `
 const InnerHeader = styled.div`
     min-height: 60vh;
@@ -23,7 +22,7 @@ const InnerHeader = styled.div`
 `
 const HeaderTitle = styled.h1`
   margin-top: 0;
-  max-width: 50%;
+  color: ${props => props.theme.main.primaryColor};
 `
 const HeaderDateContainer = styled.div`
   display: flex;
@@ -37,19 +36,24 @@ const Tag = styled.p`
   padding: 5px 19px;
   border-radius: 20px;
   background: ${props => props.theme.main.primaryColor};
-  color: "#ffffff";
+  color: #fff;
   user-select: none;
+`
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 `
 const IntroCont = styled.div`
   padding: 4rem 0 0;
 `
 const IntroFooter = styled.div`
-  border-top: 1px solid #dadada;
-  border-bottom: 1px solid #dadada;
   margin: 4rem 0;
-  padding: 2rem 0;
-  color: ${props => props.theme.main.primaryColor};
-  font-weight: bold;
+  padding: 2rem;
+  color: #fff;
+  font-style: italic;
+  background-color: ${props => props.theme.main.primaryColor};
 `
 const SocialCont = styled.ul`
   list-style: none;
@@ -102,19 +106,26 @@ export default ()=> {
     <MainCont>
       <Header>
         <Container>
-          <InnerHeader>
-          <HeaderTitle>
-            {state.hero.title}
-          </HeaderTitle>
-          <HeaderDateContainer>
-            <HeaderDate>
-              {state.hero.date}
-            </HeaderDate>
-            <Tag>
-              {state.hero.tag}
-            </Tag>
-          </HeaderDateContainer>
-          </InnerHeader>
+          <Row>
+            <Col xs={12} md={6}>
+              <InnerHeader>
+              <HeaderTitle>
+                {state.hero.title}
+              </HeaderTitle>
+              <HeaderDateContainer>
+                <HeaderDate>
+                  {state.hero.date}
+                </HeaderDate>
+                <Tag>
+                  {state.hero.tag}
+                </Tag>
+              </HeaderDateContainer>
+              </InnerHeader>
+            </Col>
+            <Col xs={12} md={6}>
+              <Image src={state.hero.background} />
+            </Col>            
+          </Row>
         </Container>
       </Header>
       <IntroCont>

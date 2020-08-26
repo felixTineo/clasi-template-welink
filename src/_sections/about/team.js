@@ -4,24 +4,25 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 
 const MainCont = styled.section`
-  padding: 4rem 0 0;
   @media(min-width: 768px){
-    padding: 4rem 0;
   }
 `
 
 const Title = styled.h2`
-  font-size: 50px;
   color: ${props => props.theme.main.primaryColor};
   font-weight: 300;
-  margin-bottom: 7rem;
-  text-align: center;
+  margin-bottom: 4rem;
+  text-align: left;
+  @media(min-width: 768px){
+    padding: 4rem 0;
+    font-size: 50px;
+  }
 `
 const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  align-items: center;
+  align-items: flex-start;
   margin-bottom: 4rem;
   @media(min-width: 768px){
     margin: 0;
@@ -40,7 +41,7 @@ const Name = styled.p`
 const Description = styled.p`
   height: 184px;
   overflow: hidden;
-  text-align: center;
+  text-align: left;
 `
 const ContactCont = styled.ul`
   color: ${props => props.theme.main.primaryColor};
@@ -50,7 +51,7 @@ const ContactCont = styled.ul`
 `
 const ContactInfo = styled.li`
   font-weight: bold;
-  text-align: center;
+  text-align: left;
 `
 
 export default ()=> {

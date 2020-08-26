@@ -8,7 +8,7 @@ export default ()=> {
   return(
     <Layout>
       <Contact />
-      <Ubication />
+      <Ubication noContact />
     </Layout>
   )
 }

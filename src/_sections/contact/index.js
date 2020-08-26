@@ -10,6 +10,7 @@ const MainCont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 4rem;
 `
 
 const Title = styled.h1`
@@ -19,12 +20,21 @@ const SubTitle = styled.p`
 
 `
 const Form = styled.form`
+  padding: 2rem;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 2rem;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
+              0px 2px 2px rgba(0, 0, 0, .12),
+              0px 4px 4px rgba(0, 0, 0, .12),
+              0px 8px 8px rgba(0, 0, 0, .12);
   @media(min-width: 768px){
-    width: 50%;
+    padding: 4rem;
+    margin: 0;
   }
 `
 const ImgCaptcha = styled.img`
-  width: 100%;
+  
 `
 const MailSpan = styled.span`
   color: ${props => props.theme.main.primaryColor};
@@ -48,46 +58,44 @@ export default ()=> {
   return(
     <Container>
       <MainCont>
-        <Title>
-          ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
-        </Title>
-        <SubTitle>
-          Envienos un mensaje y uno de nuestros asesores se pondra en contacto a la brevedad
-        </SubTitle>
-        <Form onSubmit={e=> e.preventDefault()}>
-          <Row>
-            <Col xs={12} md={6} style={{ marginBottom: 32 }}>
+        <Row>
+          <Col xs={12} md={6}>
+            <Title>
+              ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
+            </Title>
+            <SubTitle>
+              Envienos un mensaje y uno de nuestros asesores se pondra en contacto a la brevedad
+            </SubTitle>
+            <SubTitleFooter>
+              También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+            </SubTitleFooter>                        
+          </Col>
+          <Col xs={12} md={6}>
+            <Form onSubmit={e=> e.preventDefault()}>
               <Row>
-                <Col xs={12} style={{ marginBottom: 32 }}>
+                <Col xs={12}>
                   <Input
-                  placeholder="Nombre"
-                  id="name"
-                  gray
-                  />
-                </Col>
-                <Col xs={12} style={{ marginBottom: 32 }}>
-                  <Input
-                    placeholder="Teléfono"
-                    id="phone"
+                    placeholder="Nombre"
+                    id="name"
                     gray
+                    vertical  
                   />
                 </Col>
-                <Col xs={12} style={{ marginBottom: 32 }}>
-                  <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
-                  <ButtonContainer>
-                    <Button primary block>Enviar</Button>
-                  </ButtonContainer>              
-                </Col>
-              </Row>
-            </Col>
-            <Col xs={12} md={6}>
-              <Row>
-                <Col xs={12} style={{ marginBottom: 32 }}>
+                <Col xs={12}>
                   <Input
                     placeholder="Email"
                     id="email"
                     gray
-                  />                  
+                    vertical  
+                  />                                            
+                </Col>
+                <Col xs={12}>
+                  <Input
+                    placeholder="Teléfono"
+                    id="phone"
+                    gray
+                    vertical  
+                  />                                    
                 </Col>
                 <Col xs={12}>
                   <Textarea
@@ -95,15 +103,19 @@ export default ()=> {
                     id="message"
                     gray
                     rows={7}
-                  />
+                    vertical  
+                  />                  
                 </Col>
+                <Col xs={12}>
+                  <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
+                  <ButtonContainer>
+                    <Button primary block>Enviar</Button>
+                  </ButtonContainer>                  
+                </Col>                                                                          
               </Row>
-            </Col>
-          </Row>
-        </Form>
-        <SubTitleFooter>
-          También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
-        </SubTitleFooter>
+            </Form >
+          </Col>
+        </Row>
       </MainCont>
     </Container>
   )

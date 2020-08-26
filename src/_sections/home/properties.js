@@ -7,19 +7,26 @@ import { Rectangular } from '../../_components/banners';
 
 const MainCont = styled.section`
   min-height: 100vh;
-  padding: 4rem 0;
+  margin-top: ${props => props.noMargin ? "4rem" : "13rem"};
+  @media(min-width:768px){
+    padding: 4rem 0;
+  }
 `
 const Title = styled.h2`
   color: ${props => props.theme.main.primaryColor};
   margin: 0;
   margin-bottom: 4rem;
-  width: 60%;
+  font-weight: 300;
+  width: 70%;
+  @media(min-width:768px){
+    width: 60%;
+  }
 `
 
-export default ()=> {
+export default ({ noMargin })=> {
   const state = useContext(Context).home.properties;
   return(
-    <MainCont id="properties">
+    <MainCont id="properties" noMargin={noMargin}>
       <Container>
         <Row>
           <Col xs={12}>

@@ -5,22 +5,22 @@ import { Container, Row, Col } from 'react-grid-system';
 
 const MainCont = styled.section`
   background-color: #fff;
-  padding: 6rem 0;
+  padding: 6rem 0 0;
 `
 
 const InfoGram = styled.div`
-  color: #fff;
-  background-color: ${props => props.theme.main.primaryColor};
+  color: ${props => props.theme.main.primaryColor};
+  //background-color: ${props => props.theme.main.primaryColor};
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
-  height: 281px;
+  height: 250px;
 `
 
 const SvgCont = styled.svg`
-  fill: #fff;
+  fill: ${props => props.theme.main.primaryColor};
 `
 const Value = styled.p`
   margin: 0;
