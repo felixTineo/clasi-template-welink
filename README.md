@@ -1,1 +1,0 @@
-# clasi-template-leasy
