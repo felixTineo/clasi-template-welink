@@ -23,7 +23,7 @@ export default {
     },      
   },
   main:{
-    primaryColor: "#9666FF",
+    primaryColor: "#FF0101",
     secondaryColor: "#ffffff",
     favicon: "",
     logo:{
@@ -34,7 +34,7 @@ export default {
   home:{
     hero:{
       visible: true,
-      title: "Tenemos propiedades esclusivas pensadas para ti",
+      title: "Tenemos propiedades esclusivas pensadas para ti.",
       background: "/hero.jpg",
     },
     properties:{
@@ -336,7 +336,7 @@ export default {
     about:{
       banner:{
         visible: true,
-        image: '/service.jpg',
+        image: '/about-description.jpg',
         title: "Somos una empresa con mas de 20 años en el rubro del corretaje inmobiliario",
         subTitle: "Esto nos permite entender mejor que nadie las necesidades de nuestros clientes, por eso ponemos el foco en que la experienca de compra o arriendo sea única",
         buttonText: "Conocénos",

@@ -10,9 +10,8 @@ const MainCont = styled.section`
   padding-bottom: 6rem;
 `
 const HeroInfoCont = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
+  background-color: transparent;
   min-height: calc(50vh - 4rem);
-  color: #ffffff;
 `
 const DescriptionCont = styled.div`
   display: flex;
@@ -24,6 +23,7 @@ const DescriptionCont = styled.div`
 `
 const Title = styled.h2`
   font-size: 40px;
+  color: ${props => props.theme.main.primaryColor};
 `
 const Description = styled.p`
   margin: 2rem 0 4rem;
@@ -76,6 +76,11 @@ export default ()=> {
       <HeroInfoCont>
           <Row>
             <Col xs={12} md={6}>
+              <HeroImageContainer>
+                <HeroImage src={state.about.banner.image} />
+              </HeroImageContainer>
+            </Col>            
+            <Col xs={12} md={6}>
               <DescriptionCont>
                 <Title>
                   {state.about.banner.title}
@@ -83,18 +88,11 @@ export default ()=> {
                 <Description>
                   {state.about.banner.subTitle}
                 </Description>
-                <Button block>
+                <Button block outlined>
                   {state.about.banner.buttonText}
                 </Button>
               </DescriptionCont>
             </Col>
-            <Hidden xs>
-              <Col md={6}>
-                <HeroImageContainer>
-                  <HeroImage src={state.about.banner.image} />
-                </HeroImageContainer>
-              </Col>
-            </Hidden>
           </Row>
       </HeroInfoCont>
         <Row gutterWidth={128}>

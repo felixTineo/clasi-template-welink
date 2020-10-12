@@ -7,7 +7,7 @@ import { Rectangular } from '../../_components/banners';
 
 const MainCont = styled.section`
   min-height: 100vh;
-  margin-top: ${props => props.noMargin ? "4rem" : "13rem"};
+  //margin-top: ${props => props.noMargin ? "4rem" : "13rem"};
   @media(min-width:768px){
     padding: 4rem 0;
   }

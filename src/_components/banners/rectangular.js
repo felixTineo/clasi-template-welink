@@ -6,18 +6,19 @@ import { Button } from '../buttons';
 const BannerCont = styled.div`
   margin-top: 2rem;
   padding: 4rem 2rem;
-  background-color: ${props => props.theme.main.primaryColor};
+  background-color: transparent;
   background-image: ${props => props.image ? `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props.image})` : ""};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  color: ${props => props.theme.main.primaryColor};
 `
 const Title = styled.p`
-  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  font-size: 28px;
   @media(min-width: 768px){
     text-align: left;
   }

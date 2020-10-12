@@ -116,7 +116,7 @@ const BackTop = styled.button`
   align-items: center;
   width: 30px;
   height: 30px;
-  border-radius: 6px;
+  border-radius: 50%;
   background: ${props => props.theme.main.primaryColor};
   margin-bottom: 1rem;
   transition: 250ms ease;
@@ -142,7 +142,7 @@ export default ()=> {
       <MainFooter>
         <Container>
           <Row>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={3}>
               <GatsbyLink to="/" style={{ textDecoration: 'none' }}>
                 <LogoCont>
                   {
@@ -152,19 +152,8 @@ export default ()=> {
                   }
                 </LogoCont>                        
               </GatsbyLink>         
-              <OfficeInfoCont>
-                <OfficeInfo>
-                  {office.address}
-                </OfficeInfo>
-                <OfficeInfo>
-                  {`(${office.phone.countryCode}-${office.phone.areaCode}) ${office.phone.phoneNumber} / (${office.mobile.countryCode}-${office.mobile.areaCode}) ${office.mobile.phoneNumber}`}
-                </OfficeInfo>
-                <OfficeInfo>
-                  {office.email}
-                </OfficeInfo>
-              </OfficeInfoCont>
             </Col>
-            <Col xs={12} md={4}>
+            <Col xs={12} md={3}>
               <NavCont>
                 <Row>
                   <Col xs={6} md={12}>
@@ -191,8 +180,21 @@ export default ()=> {
                   </Col>                                          
                 </Row>
               </NavCont>
-            </Col>                  
-            <Col xs={12} md={4}>
+            </Col>         
+            <Col xs={3}>
+              <OfficeInfoCont>
+                <OfficeInfo>
+                  {office.address}
+                </OfficeInfo>
+                <OfficeInfo>
+                  {`(${office.phone.countryCode}-${office.phone.areaCode}) ${office.phone.phoneNumber} / (${office.mobile.countryCode}-${office.mobile.areaCode}) ${office.mobile.phoneNumber}`}
+                </OfficeInfo>
+                <OfficeInfo>
+                  {office.email}
+                </OfficeInfo>
+              </OfficeInfoCont>              
+            </Col>
+            <Col xs={12} md={3}>
               <Row>
                 <Col xs={12}>
                 </Col>                            

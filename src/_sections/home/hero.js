@@ -3,6 +3,119 @@ import styled from 'styled-components';
 import Context from '../../_context';
 import { FormProperty } from '../../_components/forms'
 import { Container, Row, Col, Hidden } from 'react-grid-system';
+import { SearchForm } from '../../_components/forms';
+import { DownCircleFilled } from '@ant-design/icons';
+
+
+const MainCont = styled.div`
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  @media(min-width: 576px){
+    min-height: calc(100vh - 87px);
+  }
+  ::before{
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 70%;
+    height: 100%;
+    background-image: url(${props => props.theme.home.hero.background});
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    @media(min-width: 576px){
+      min-height: calc(100vh - 87px);
+      opacity: 1;
+    }
+  }
+`
+const FormContainer = styled.div`
+  position: relative;
+  min-height: 100vh;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  ::before{
+    background-color: ${props => props.theme.main.primaryColor};
+    content: " ";
+    position: absolute;
+    top: 0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    @media(min-width: 576px){
+      opacity: .7;
+    }    
+  }
+  @media(min-width: 576px){
+    display: block;
+    min-height: 427px;
+  }
+`
+const Title = styled.h1`
+  position: relative;
+  z-index: 5;
+  @media(min-width: 576px){
+    width: 70%;
+  }
+`
+const ButtonContainer = styled.div`
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  width: 100%;
+`
+const DownButton = styled.a`
+  text-decoration: none;
+  //position: absolute;
+  bottom: 0;
+  color: ${props => props.theme.main.primaryColor};
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  transition: 250ms ease;
+  &:hover{
+    color: ${props => props.theme.main.primaryColor};
+  }
+`
+
+export default ()=> {
+  const state = useContext(Context);
+
+  return(
+    <MainCont>
+      <Container style={{ width: "100%" }}>
+        <FormContainer>
+          <Title>
+            {state.home.hero.title}
+          </Title>
+          <SearchForm />
+        </FormContainer>
+      </Container>
+      <ButtonContainer>
+        <Container>
+          <DownButton href="#properties">
+            <DownCircleFilled style={{ marginRight: ".5rem" }} />
+            Mira lo que tenemos para ofrecerte
+          </DownButton>              
+        </Container>
+      </ButtonContainer>
+    </MainCont>
+  )
+}
+
+/*import React, { useContext } from 'react';
+import styled from 'styled-components';
+import Context from '../../_context';
+import { FormProperty } from '../../_components/forms'
+import { Container, Row, Col, Hidden } from 'react-grid-system';
 
 const MainCont = styled.section`
   position: relative;
@@ -127,4 +240,4 @@ export default ()=> {
       </Container>
     </MainCont>
   )
-}
+}*/

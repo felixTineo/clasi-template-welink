@@ -21,18 +21,18 @@ const NavContainer = styled.div`
   left: 100vw;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   height: 100vh;
   width: 100vw;
   background-color: #fff;
 `
 const NavBar = styled.ul`
-
+  text-align: center;
 `
 const NavItem = styled.li`
   margin-bottom: ${props => props.noMargin ? 0 : "1rem"};
-  text-align: left;
+  //text-align: left;
   font-size: 2rem;
   a{
     color: ${props => props.theme.main.primaryColor};
@@ -53,16 +53,17 @@ const NavLink = styled.span`
   }
 `
 const SvgCont = styled.svg`
-  fill: ${props => props.theme.main.primaryColor};;
+  fill: #fff;
   margin-right: .5rem;
   transition: 250ms ease;
   ${Button}:hover & {
-    fill: ${props => props.theme.main.primaryColor};
+    fill: #fff;
   }
 `
 const SocialCont = styled.ul`
   display: flex;
   align-items: center;
+  justify-content: center;
   color: ${props => props.theme.main.primaryColor};
 `
 const SocialItem = styled.li`
@@ -71,6 +72,10 @@ const SocialItem = styled.li`
 const SvgIcon = styled.svg`
   fill: ${props => props.social ? props.theme.main.primaryColor : "#fff"};
   margin-right: .5rem;
+`
+const LogoCont = styled.div`
+  position: relative;
+  z-index: 100;
 `
 
 export default ()=> {
@@ -86,7 +91,9 @@ export default ()=> {
 
   return(
     <MainCont>
-      <Logo dark/>
+      <LogoCont>
+        <Logo dark/>
+      </LogoCont>
       <ButtonResponsive
         visible={visibleNav}
         onClick={() => setVisibleNav(!visibleNav)}
@@ -126,7 +133,7 @@ export default ()=> {
           </Container>
         </NavBar>    
         <Container style={{ width: "100%" }}>
-          <Button outlined block>
+          <Button block primary>
             <SvgCont width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.8766 9.1894C12.0195 9.1894 11.1779 9.05534 10.3804 8.79178C9.98958 8.65849 9.50917 8.78077 9.27066 9.02573L7.6965 10.2141C5.87092 9.23956 4.7464 8.11541 3.78521 6.30354L4.93857 4.77039C5.23822 4.47114 5.3457 4.03401 5.21693 3.62385C4.95224 2.82213 4.81779 1.98093 4.81779 1.12343C4.81782 0.503963 4.31386 0 3.69443 0H1.12339C0.503964 0 0 0.503964 0 1.12339C0 8.22365 5.77639 14 12.8766 14C13.4961 14 14 13.496 14 12.8766V10.3127C14 9.69336 13.496 9.1894 12.8766 9.1894Z"/>
             </SvgCont>
@@ -135,9 +142,6 @@ export default ()=> {
         </Container>          
         <Container style={{ width: "100%" }}>
         <SocialCont>
-          <SocialItem noMargin>
-            Siguenos en
-          </SocialItem>
           <SocialItem>
             <NavLink href="https://facebook.com" target="_blank">
               <SvgIcon social={true} width="9" height="17" viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">

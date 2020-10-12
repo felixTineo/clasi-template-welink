@@ -8,7 +8,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 480px;
+  height: 420px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem; 
@@ -27,7 +27,7 @@ const CardCont = styled.div`
 `
 const CardImage = styled.div`
   position: relative;
-  background-image: linear-gradient(rgba(0, 0, 0, .8), transparent 35%), url(${props => props.src});
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, .8), transparent 35%), url(${props => props.src});
   background-position: center;
   background-size: cover;
   background-repeat: none;
@@ -40,8 +40,7 @@ const CardInfo = styled.div`
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  color: #212121;
+  color: #5A5A5A;
 `
 const CardTitleCont = styled.ul`
   list-style: none;
@@ -50,11 +49,12 @@ const CardTitleCont = styled.ul`
   font-size: 14px;
 `
 const CardTitle = styled.li`
+  font-weight: bold;
   font-size: 1.2rem;
   margin-bottom: .5rem;
 `
 const CardPrice = styled.li`
-  color: ${props => props.theme.main.primaryColor};
+  color: #5A5A5A;
   font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: .5rem;
@@ -64,8 +64,8 @@ const CardOperation = styled.span`
 `
 const CardCharacteristics = styled.ul`
   list-style: none;
-  padding: 1rem;
-  color: #919191;
+  color: #5A5A5A;
+  font-weight: 300;
 `
 
 const CharItem = styled.li`
@@ -78,7 +78,7 @@ const Divider = styled.span`
 `
 const OperationCont = styled.div`
   position: absolute;
-  top: 10px;
+  bottom: 10px;
   left: 5px;
   color: #fff;
 `
@@ -105,7 +105,6 @@ export default ({
           <CardTitle>{title}</CardTitle>
           <CardPrice>UF ${value}</CardPrice>
         </CardTitleCont>
-        <Divider />
         <CardCharacteristics>
           <CharItem>{ubication.address}</CharItem>
           {
