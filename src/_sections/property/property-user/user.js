@@ -4,12 +4,13 @@ import styled from 'styled-components';
 import { Row, Col } from 'react-grid-system';
 import { Input } from '../../../_components/inputs';
 import { Button } from '../../../_components/buttons';
+import { PlusCircleOutlined } from '@ant-design/icons';
 
 const MainCont = styled.div`
-  padding: 4rem;
-  //background-color: #dadada;
+  //padding: 4rem;
+  background-color: #F7F7F7;
   //border: 1px solid #EBEBEB;
-  height: 100%;
+  //height: 100%;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
               0px 2px 2px rgba(0, 0, 0, .12),
               0px 4px 4px rgba(0, 0, 0, .12),
@@ -21,6 +22,9 @@ const UserCont = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: ${props => props.theme.main.primaryColor};
+  padding: 4rem;
+  //height: 100%;
 `
 const Avatar = styled.img`
   object-fit: cover;
@@ -48,16 +52,34 @@ const UserInfoCont = styled.ul`
   margin: 0 1rem;
 `
 const UserInfoItem = styled.li`
-  font-weight: bold;
   text-align: center;
-  color: ${props => props.theme.main.primaryColor};
+  color: #fff;
+`
+const FullName = styled.p`
+  font-size: 2rem;        
+  margin: 0;
 `
 const ContactForm = styled.form`
   margin-top: 3rem;
   height: 100%;
+  padding: 4rem;
 `
 const ContactFormButtons = styled.div`
   margin-top: 1rem;
+`
+const IconButton = styled.button`
+  outline: none;
+  background-color: transparent;
+  border: none;
+  color: #5A5A5A;
+  transition: 250ms ease;
+  display: flex;
+  align-items: center;
+  text-align: left;
+  margin-top: 2rem;
+  &:hover{
+    color: ${props => props.theme.main.primaryColor};
+  }
 `
 
 export default ()=> {
@@ -70,13 +92,15 @@ export default ()=> {
         <Avatar src={user.avatar} alt={user.lastName} />
         <UserInfoCont>
           <UserInfoItem>
-            {`${user.firstName} ${user.lastName} - ${user.jobTitle}`}
+            <FullName>
+              {`${user.firstName} ${user.lastName}`}
+            </FullName>
           </UserInfoItem>
           <UserInfoItem>
-            {user.phone}
+            {user.jobTitle}
           </UserInfoItem>
           <UserInfoItem>
-            {user.email}
+          {user.phone}/{user.email}
           </UserInfoItem>
         </UserInfoCont>
       </UserCont>
@@ -87,7 +111,6 @@ export default ()=> {
           <Col xs={12}>
             <Input
               placeholder="Nombre"
-              gray
               id="name"
               vertical
             />
@@ -95,7 +118,6 @@ export default ()=> {
           <Col xs={12}>
             <Input
               placeholder="Teléfono"
-              gray
               id="phone"
               vertical
             />
@@ -103,7 +125,6 @@ export default ()=> {
           <Col xs={12}>
             <Input
               placeholder="Email"
-              gray
               id="email"
               vertical
             />
@@ -111,7 +132,6 @@ export default ()=> {
           <Col xs={12}>
             <Input
               placeholder="Mensaje"
-              gray
               id="message"
               vertical
             />
@@ -124,19 +144,11 @@ export default ()=> {
             </ContactFormButtons>
           </Col>          
           <Col xs={12} md={12}>
-            <ContactFormButtons>
-              <Button primary block>
-                LLamar por teléfono
-              </Button>
-            </ContactFormButtons>
+            <IconButton>
+              <span>¿Deseas contactarme por teléfono o enviarme un whatsapp?</span>
+              <PlusCircleOutlined style={{ marginRight: 8, fontSize: 26 }} />
+            </IconButton>
           </Col>
-          <Col xs={12} md={12}>
-            <ContactFormButtons>
-              <Button primary block>
-                Enviar whatsapp
-              </Button>
-            </ContactFormButtons>
-          </Col>          
         </Row>
       </ContactForm>
     </MainCont>

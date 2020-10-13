@@ -5,10 +5,10 @@ import styled from 'styled-components';
 import { DescCarousel } from '../../_components/carousels';
 
 const ImageContainer = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
+  /*background-color: ${props => props.theme.main.primaryColor};
   @media(min-width: 768px){
     padding: 3rem 0;
-  }
+  }*/
 `
 
 const Image = styled.img`
@@ -19,12 +19,12 @@ const Image = styled.img`
 `
 
 const Carousel = styled.div`
-  background-color: ${props => props.theme.main.primaryColor};
-  height: 100%;
-  padding-bottom: 2rem;
+  background-color: #F7F7F7;
+  min-height: 99%;
+  //padding-bottom: 2rem;
   @media(min-width: 768px){
-    padding: 4rem;
-    padding-top: 20%;
+    //padding: 4rem;
+    //padding-top: 20%;
   }
 `
 const CarouselInnerCont = styled.div`
@@ -36,12 +36,12 @@ export default ()=> {
   return(
     <Container>
       <Row nogutter>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={4}>
           <ImageContainer>
             <Image src={state.description.background} alt="nuestra empresa" />
           </ImageContainer>
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={12} md={8}>
           <Carousel>
             <CarouselInnerCont>
               <DescCarousel />

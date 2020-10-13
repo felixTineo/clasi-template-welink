@@ -15,12 +15,13 @@ const InnerCont = styled.div`
   justify-content: flex-start;
   align-items: center;
   margin: 0;
-  padding-top: 6rem;
+  padding: 2rem;
+  background-color: ${props => props.theme.main.primaryColor};
   @media(min-width: 768px){
   }
 `
 const HeroTitle = styled.h1`
-  color: ${props => props.theme.main.primaryColor};
+  color: #fff;
   font-weight: 300;
   font-size: 36px;
   width: 100%;

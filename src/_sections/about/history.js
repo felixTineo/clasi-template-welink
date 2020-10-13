@@ -33,17 +33,17 @@ export default ()=> {
     <MainCont>
       <Container>
         <Row>
-          <Col xs={12} md={6} push={{ md: 6 }}>
+          <Col xs={12} md={6}>
             <HistoryCont>
               <Title>
                 {state.history.title}
               </Title>
               <Description dangerouslySetInnerHTML={{__html: state.history.description}} />
             </HistoryCont>
-          </Col>                    
-          <Col xs={12} md={6} pull={{ md: 6 }}>
-            <Image src="/history-image.jpg" alt="historia" />
           </Col>
+          <Col xs={12} md={6}>
+            <Image src="/history-image.jpg" alt="historia" />
+          </Col>                    
         </Row>
       </Container>
     </MainCont>

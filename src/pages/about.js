@@ -12,8 +12,8 @@ export default ()=> (
     <Hero />
     <History />
     <Description />
-    <Stats />
     <Team />
+    <Stats />    
     <Ubication />
   </Layout>
 )

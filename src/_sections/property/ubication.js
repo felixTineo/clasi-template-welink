@@ -10,7 +10,7 @@ const MainCont = styled.div`
 `
 
 const Title = styled.h2`
-  color: #002438;
+  color: ${props => props.theme.main.primaryColor};
   margin-bottom: 4rem;
 `
 const Map = styled.img`

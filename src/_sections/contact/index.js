@@ -14,27 +14,38 @@ const MainCont = styled.div`
 `
 
 const Title = styled.h1`
-
+  background-color: ${props => props.theme.main.primaryColor};
+  color: #fff;
+  margin: 0;
+  font-size: 30px;
+  padding: 2rem;
+  margin: 0;
+  @media(min-width: 768px){
+    padding: 4rem;
+  }  
 `
 const SubTitle = styled.p`
 
 `
 const Form = styled.form`
   padding: 2rem;
-  border-radius: 8px;
+  //border-radius: 8px;
   width: 100%;
-  margin-top: 2rem;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
+  margin: 0;
+  background-color: ${props => props.theme.main.primaryColor};
+  /*box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
               0px 2px 2px rgba(0, 0, 0, .12),
               0px 4px 4px rgba(0, 0, 0, .12),
-              0px 8px 8px rgba(0, 0, 0, .12);
+              0px 8px 8px rgba(0, 0, 0, .12);*/
   @media(min-width: 768px){
     padding: 4rem;
+    padding-top: 0;
     margin: 0;
   }
 `
 const ImgCaptcha = styled.img`
-  
+  //width: 100%;
+  margin-bottom: 1rem;
 `
 const MailSpan = styled.span`
   color: ${props => props.theme.main.primaryColor};
@@ -44,7 +55,7 @@ const SubTitleFooter = styled(SubTitle)`
   margin-top: 4rem;
 `
 const ButtonContainer = styled.div`
-   margin-top: 32px;
+   //margin-top: 32px;
    display:flex;
    //justify-content: flex-start;
    align-items: center;
@@ -52,27 +63,23 @@ const ButtonContainer = styled.div`
     justify-content: flex-end;
   }   
 `
+const Map = styled.img`
+  width: 100%;
+  height: 794px;
+`
 
 export default ()=> {
 
   return(
     <Container>
       <MainCont>
-        <Row>
+        <Row nogutter>
           <Col xs={12} md={6}>
             <Title>
               ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
             </Title>
-            <SubTitle>
-              Envienos un mensaje y uno de nuestros asesores se pondra en contacto a la brevedad
-            </SubTitle>
-            <SubTitleFooter>
-              También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
-            </SubTitleFooter>                        
-          </Col>
-          <Col xs={12} md={6}>
             <Form onSubmit={e=> e.preventDefault()}>
-              <Row>
+              <Row align="center">
                 <Col xs={12}>
                   <Input
                     placeholder="Nombre"
@@ -108,12 +115,20 @@ export default ()=> {
                 </Col>
                 <Col xs={12}>
                   <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
+                </Col>
+                <Col xs={12}>
                   <ButtonContainer>
-                    <Button primary block>Enviar</Button>
+                    <Button block rounded>Enviar</Button>
                   </ButtonContainer>                  
                 </Col>                                                                          
               </Row>
-            </Form >
+            </Form >        
+            <SubTitleFooter>
+              También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+            </SubTitleFooter>                                        
+          </Col>
+          <Col xs={12} md={6}>
+            <Map src="/square-map.png" />
           </Col>
         </Row>
       </MainCont>

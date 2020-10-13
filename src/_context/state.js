@@ -404,7 +404,7 @@ export default {
     hero:{
       visible: true,
       title: "Un equipo de profesionales especializado en el sector inmobiliario.",
-      background: '/hero.jpg',
+      background: '/about-hero.jpg',
     },
     history:{
       visible: true,

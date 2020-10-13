@@ -8,7 +8,6 @@ export default ()=> {
   return(
     <Layout>
       <Contact />
-      <Ubication noContact />
     </Layout>
   )
 }

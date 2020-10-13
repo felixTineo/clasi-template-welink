@@ -7,7 +7,7 @@ import 'pure-react-carousel/dist/react-carousel.es.css';
 
 const DescriptioneCont = styled.div`
   padding: 2rem;
-  color: #fff;
+  //color: #fff;
 `
 const DescriptionTitle = styled.h2`
   
@@ -39,10 +39,10 @@ export default ()=> {
       <Hidden xs>
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={60}
+          naturalSlideHeight={50}
           //isIntrinsicHeight={true}
           totalSlides={items.length}
-          visibleSlides={1}
+          visibleSlides={2}
           orientation="horizontal"
         >
           <Slider>

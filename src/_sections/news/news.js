@@ -68,6 +68,9 @@ const NavCont = styled.nav`
   display: flex;
   align-items: center;
   margin-bottom: 2rem;
+  background-color: ${props => props.theme.main.primaryColor};
+  padding: 0 2rem 3rem;
+  color: #fff;
 `
 const NavTitle = styled.span`
   
@@ -79,10 +82,10 @@ const NavList = styled.ul`
   display: flex;
 `
 const NavOption = styled.button`
-  background-color: transparent;
+  background-color: ${props => props.active ? "#fff" : "transparent"};
   transition: 250ms ease;
-  box-shadow: ${props => props.active ? "0px 1px 1px rgba(0, 0, 0, .12), 0px 2px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px -1px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)" : "none"};
-  color: ${props => props.theme.main.primaryColor};
+  //box-shadow: ${props => props.active ? "0px 1px 1px rgba(0, 0, 0, .12), 0px 2px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px -1px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)" : "none"};
+  color: ${props => props.active ? props.theme.main.primaryColor : "#fff"};
   border: none;
   cursor: pointer;
   width: 58px;
@@ -133,7 +136,6 @@ export default ()=> {
   return(
     <MainCont>
     <Container>
-      <div style={{ paddingTop: '2rem' }}>
         <Row>
           <Col xs={12}>
             <NavCont>
@@ -194,7 +196,6 @@ export default ()=> {
             </NavPaginate>
           </Col>
         </Row>
-      </div>
     </Container>
     </MainCont>
   )

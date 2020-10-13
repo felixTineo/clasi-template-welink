@@ -18,7 +18,7 @@ const Title = styled.p`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 2rem;
+  //font-size: 2rem;
 `
 const Map = styled.img`
   width: 100%;
@@ -32,12 +32,12 @@ export default ({ noContact })=> {
   return(
     <MainCont>
       <Row nogutter>
-        <Col xs={12} md={6}>
+        <Col xs={12} >
           <Title>
             {state.title}
           </Title>
         </Col>
-        <Col xs={12} md={6}>
+        <Col xs={12} >
           <Map src="/map.png" />          
         </Col>        
       </Row>

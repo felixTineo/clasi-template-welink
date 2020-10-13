@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Fragment } from 'react';
 import styled from 'styled-components';
 import { Col, Row, } from 'react-grid-system';
 import { Select, Input } from '../../_components/inputs';
@@ -37,7 +37,7 @@ const SvgCont = styled.svg`
   }
 `
 
-export default ()=> {
+export default ({ filter })=> {
   const [byCode, setByCode] = useState(false);
   return(
     <Form onSubmit={(e)=> e.preventDefault()}>
@@ -56,12 +56,54 @@ export default ()=> {
             </Option>        
           </OptionsCont>        
         </Col>
+        {
+          filter && (
+            <Fragment>
+              <Col xs={12} md={2}>
+                <Input
+                  placeholder="Desde"
+                  gray
+                />
+              </Col>              
+              <Col xs={12} md={2}>
+                <Input
+                  placeholder="Hasta"
+                  gray
+                />                
+              </Col>              
+              <Col xs={12} md={2}>
+                <Select
+                  default="Habitaciones"
+                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  gray
+                  //vertical={horizontal ? false : true}
+                />                  
+              </Col>              
+              <Col xs={12} md={2}>
+                <Select
+                  default="Baños"
+                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  gray
+                  //vertical={horizontal ? false : true}
+                />                  
+              </Col>                                                        
+              <Col xs={12} md={4}>
+                <Select
+                  default="Divisa"
+                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  gray
+                  //vertical={horizontal ? false : true}
+                />                  
+              </Col>                                                                      
+            </Fragment>
+          )
+        }
         <Col xs={12} md={3}>
           <Select
             default="Propiedad"
             options={["opcion 1", "opcion 2", "opcion 3"]}
             gray
-            //vertical={horizontal ? false : true}
+            vertical
           />          
         </Col>
         <Col xs={12} md={3}>

@@ -25,6 +25,7 @@ const MainCont = styled.div`
     top: 0;
     right: 0;
     width: 70%;
+    max-width: 975px;
     height: 100%;
     background-image: url(${props => props.theme.home.hero.background});
     background-size: cover;

@@ -155,19 +155,17 @@ h2{
 
 .carousel-desc-back-button{
   top: auto;
-  bottom: 0 !important;
-  left: 2rem;
-  right: auto;
+  bottom: -4rem !important;
+  right: 5rem;
 }
 
 .carousel-desc-next-button{
   top: auto;
-  bottom: 0 !important;
-  left: 5rem;
-  right: auto;
+  bottom: -4rem !important;
+  right: 2rem;
 }
 
 .clasi-icon path{
-  fill: #fff;
-  stroke: #fff;
+  fill: #002438;
+  stroke: #002438;
 }

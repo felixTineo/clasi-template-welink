@@ -25,7 +25,7 @@ const Card = styled.div`
   align-items: flex-start;
   margin-bottom: 4rem;
   @media(min-width: 768px){
-    margin: 0;
+    //margin: 0;
   }
 `
 const Avatar = styled.img`
@@ -35,11 +35,12 @@ const Avatar = styled.img`
   object-position: cover;
 `
 const Name = styled.p`
+  color: ${props => props.theme.main.primaryColor};
   margin-top: 2rem;
   font-weight: bold;
 `
 const Description = styled.p`
-  height: 184px;
+  height: 100px;
   overflow: hidden;
   text-align: left;
 `
@@ -67,7 +68,7 @@ export default ()=> {
           </Col>
           {
             state.members.map(m => (
-              <Col xs={12} md={3} key={m.id}>
+              <Col xs={12} md={6} key={m.id}>
                 <Card>
                   <Avatar src={m.avatar} alt={m.lastName} />
                   <Name>{m.firstName + " " + m.lastName}</Name>
@@ -77,9 +78,8 @@ export default ()=> {
                   <ContactCont>
                     <ContactInfo>
                       {m.email}
-                    </ContactInfo>
-                    <ContactInfo>
-                      {m.phone}
+                      {" "}
+                      {m.phone}                      
                     </ContactInfo>
                   </ContactCont>
                 </Card>
