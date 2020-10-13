@@ -8,13 +8,16 @@ import { DownCircleFilled } from '@ant-design/icons';
 
 
 const MainCont = styled.div`
-  min-height: 100vh;
+  height: calc(100vh - 8rem);
+  margin-top: 1.5rem;
+  margin-bottom: 8rem;
   position: relative;
   display: flex;
   align-items: center;
   color: #fff;
   @media(min-width: 576px){
     min-height: calc(100vh - 87px);
+    margin-top: 0;
   }
   ::before{
     content: " ";
@@ -62,15 +65,20 @@ const FormContainer = styled.div`
 const Title = styled.h1`
   position: relative;
   z-index: 5;
+  margin-top: 8rem;
   @media(min-width: 576px){
     width: 70%;
   }
 `
 const ButtonContainer = styled.div`
   position: absolute;
-  bottom: 1rem;
+  bottom: -6rem;
   left: 0;
   width: 100%;
+  z-index: 1000;
+  @media(min-width: 576px){
+    bottom: 1rem;
+  }
 `
 const DownButton = styled.a`
   text-decoration: none;

@@ -124,9 +124,12 @@ export default ()=> {
               ))
             }
           </Slider>
-            {
-              Array(itemsMovil.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)
-            }          
+            <ButtonBack className="carousel-back-button carousel-text-back-button">
+              <LeftCircleOutlined style={{ color, fontSize: 26 }} />
+            </ButtonBack>
+            <ButtonNext className="carousel-next-button carousel-text-next-button">
+              <RightCircleOutlined style={{ color, fontSize: 26 }} />
+            </ButtonNext>
           </CarouselProvider>
       </Visible>
     </Fragment>

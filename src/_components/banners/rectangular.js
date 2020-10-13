@@ -5,7 +5,7 @@ import { Button } from '../buttons';
 
 const BannerCont = styled.div`
   margin-top: 2rem;
-  padding: 4rem 2rem;
+  padding: 2rem 0;
   background-color: transparent;
   background-image: ${props => props.image ? `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props.image})` : ""};
   background-position: center;
@@ -14,13 +14,13 @@ const BannerCont = styled.div`
   color: ${props => props.theme.main.primaryColor};
 `
 const Title = styled.p`
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
   font-size: 28px;
+  margin: 0;
+  margin-bottom: 2rem;
   @media(min-width: 768px){
     text-align: left;
+    margin-bottom: 0;
   }
 `
 const ImageCont = styled.div`
@@ -34,18 +34,8 @@ export default ({ title, image, onClick, buttonText, icon }) => {
   return(
     <BannerCont image={image}>
       <Row align="center">
-        <Visible xs>
-          <Col xs={12}>
-            <ImageCont>
-              <img src={icon} alt={title} style={{ marginRight: ".5rem" }} />
-            </ImageCont>
-          </Col>
-        </Visible>
         <Col xs={12} md={9}>
           <Title>
-            <Hidden xs>
-              <img src={icon} alt={title} style={{ marginRight: ".5rem" }} />
-            </Hidden>
             {title}
           </Title>
         </Col>

@@ -13,8 +13,8 @@ const RevieweCont = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-  min-height: 500px;
+  justify-content: flex-end;
+  min-height: 350px;
   @media(min-width: 768px){
     flex-direction: row;
     min-height: 50vh;
@@ -138,8 +138,8 @@ export default ()=> {
             }
           </Slider>
           {
-            Array(items.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)
-          }
+              Array(items.length).fill(0).map((_,i) => <StyledDot /*style={{ backgroundColor: color }} className="carousel-text-dot"*/ key={i} slide={i} />)
+          }         
         </CarouselProvider>
       </Visible>
     </Fragment>

@@ -181,7 +181,7 @@ export default ()=> {
                 </Row>
               </NavCont>
             </Col>         
-            <Col xs={3}>
+            <Col xs={12} md={3}>
               <OfficeInfoCont>
                 <OfficeInfo>
                   {office.address}

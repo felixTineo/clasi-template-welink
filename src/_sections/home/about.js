@@ -7,7 +7,7 @@ import { ServiceCarousel, ReviewCarousel } from '../../_components/carousels';
 
 const MainCont = styled.section`  
   position: relative;
-  padding-bottom: 6rem;
+  //padding-bottom: 6rem;
 `
 const HeroInfoCont = styled.div`
   background-color: transparent;
@@ -19,11 +19,14 @@ const DescriptionCont = styled.div`
   justify-content: center;
   align-items: center;  
   height: 100%;
-  padding: 4rem 3rem;
+  //padding: 4rem 3rem;
 `
 const Title = styled.h2`
-  font-size: 40px;
+  font-size: 26px;
   color: ${props => props.theme.main.primaryColor};
+  @media(min-width: 768px){
+    font-size: 36px;
+  }    
 `
 const Description = styled.p`
   margin: 2rem 0 4rem;
@@ -44,6 +47,9 @@ const HeroImage = styled.img`
 const TitleService = styled(Title)`
   color: ${props => props.theme.main.primaryColor};
   padding-top: 4rem;
+  @media(min-width: 768px){
+    font-size: 36px;
+  }  
 `
 const SubTitleService = styled(Description)`
   font-weight: bold;
@@ -57,14 +63,14 @@ const SvgCont = styled.svg`
   fill: ${props => props.theme.main.primaryColor};
 `
 const QuoteCarouselCont = styled.div`
-  padding-top: 0rem;
+  padding-top: 6rem;
   @media(min-width: 768px){
     padding-top: 2rem;
   }
 `
 const CarouselCont = styled.div`
   position: relative;
-  padding-top: 4rem;
+  //padding-top: 4rem;
 `
 
 
