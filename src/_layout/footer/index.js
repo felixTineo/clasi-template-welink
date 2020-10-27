@@ -4,6 +4,7 @@ import Context from '../../_context';
 import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
+import { Link } from 'gatsby';
 
 const Footer = styled.footer`
   
@@ -48,7 +49,7 @@ const NavCont = styled.div`
     margin: 0;
   }      
 `
-const NavLink = styled.a`
+const NavLink = styled(Link)`
   color: #212121;
   transition: 250ms ease;
   text-decoration: none;
@@ -157,24 +158,24 @@ export default ()=> {
               <NavCont>
                 <Row>
                   <Col xs={6} md={12}>
-                    <NavLink href="#about">
+                    <NavLink to="/about">
                       Nosotros
                     </NavLink>
                   </Col>
                   <Col xs={6} md={12}>
-                    <NavLink href="#properties">
+                    <NavLink to="/properties">
                       Propiedades
                     </NavLink>                  
                   </Col>
                   <Visible md xs xxl lg xl>
                     <Col xs={6} md={12}>
-                      <NavLink href="#news">
+                      <NavLink to="/news">
                         Noticias
                       </NavLink>                  
                     </Col>
                   </Visible>
                   <Col xs={6} md={12}>
-                    <NavLink href="#contact">
+                    <NavLink to="/contact">
                       Contacto
                     </NavLink>                  
                   </Col>                                          
@@ -235,7 +236,7 @@ export default ()=> {
         <Container>
           <FooterRights>
             <li>2020 © Todos los derechos reservados</li>
-            <li>Desarrollado por <DevelopBy href="https://www.clasihome.cl">Clasihome</DevelopBy></li>
+            <li>Desarrollado por <DevelopBy href="https://clasihome.com/" target="_blank">Clasihome</DevelopBy></li>
           </FooterRights>
         </Container>
       </FooterRightsCont>

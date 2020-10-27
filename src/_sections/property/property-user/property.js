@@ -52,7 +52,7 @@ export default ({ description })=> {
     <MainCont>
       <Row>
         <Col xs={12}>
-          <CharTitle>Caracteristicas</CharTitle>
+          <CharTitle>Características</CharTitle>
           <Row>
             <Col xs={12} md={6}>
               <CharsCont>
