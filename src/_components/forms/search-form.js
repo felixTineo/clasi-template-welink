@@ -98,29 +98,45 @@ export default ({ filter })=> {
             </Fragment>
           )
         }
-        <Col xs={12} md={3}>
-          <Select
-            default="Propiedad"
-            options={["opcion 1", "opcion 2", "opcion 3"]}
-            gray
-            vertical
-          />          
-        </Col>
-        <Col xs={12} md={3}>
-          <Select
-            default="Operación"
-            options={["opcion 1", "opcion 2", "opcion 3"]}
-            gray
-            //vertical={horizontal ? false : true}
-          />
-        </Col>
-        <Col xs={12} md={3}>
-          <Input
-            placeholder="Comuna"
-            gray
-            //vertical={horizontal ? false : true}
-          />
-        </Col>
+        {
+          byCode
+          ?(
+            <Col xs={12} md={9} style={{ paddingBottom: 16 }}>
+              <Input
+                placeholder="Ingrese el código de la propiedad"
+                gray
+                //vertical={horizontal ? false : true}
+              />
+            </Col>
+          )
+          :(
+            <Fragment>
+              <Col xs={12} md={3}>
+                <Select
+                  default="Propiedad"
+                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  gray
+                  vertical
+                />          
+              </Col>
+              <Col xs={12} md={3}>
+                <Select
+                  default="Operación"
+                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  gray
+                  //vertical={horizontal ? false : true}
+                />
+              </Col>
+              <Col xs={12} md={3}>
+                <Input
+                  placeholder="Comuna"
+                  gray
+                  //vertical={horizontal ? false : true}
+                />
+              </Col>
+            </Fragment>
+          )
+        }
         <Col xs={12} md={3}>
           <Button block>
             Buscar
