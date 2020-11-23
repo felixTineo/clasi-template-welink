@@ -6,9 +6,10 @@ import Description from '../_sections/about/description';
 import Stats from '../_sections/about/stats';
 import Team from '../_sections/about/team';
 import Ubication from '../_sections/about/ubication';
+import { graphql } from 'gatsby';
 
-export default ()=> (
-  <Layout>
+export default ({ data })=> (
+  <Layout data={JSON.parse(data.initial.data)}>
     <Hero />
     <History />
     <Description />
@@ -17,3 +18,11 @@ export default ()=> (
     <Ubication />
   </Layout>
 )
+
+export const query = graphql`
+query{
+  initial{
+    data
+  }
+}
+`

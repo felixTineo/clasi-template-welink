@@ -1,6 +1,6 @@
 import React from 'react';
 import Context from '../_context';
-import data from '../_context/state';
+import noData from '../_context/state';
 import styled, { ThemeProvider } from 'styled-components';
 import Header from './header';
 import Footer from './footer';
@@ -18,8 +18,7 @@ const Body = styled.div`
   }
 `
 
-export default ({ children })=> {
-
+export default ({ children, data })=> {
   return(
     <Context.Provider value={data}>
       <ThemeProvider theme={data}>

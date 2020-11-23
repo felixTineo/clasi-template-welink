@@ -148,7 +148,7 @@ export default ()=> {
                 <LogoCont>
                   {
                     state.main.logo.isImage
-                      ?<Logo src="/logo.svg" alt="logo" />
+                      ?<Logo src={state.main.logo.value} alt="logo" />
                       :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
                   }
                 </LogoCont>                        
@@ -188,7 +188,7 @@ export default ()=> {
                   {office.address}
                 </OfficeInfo>
                 <OfficeInfo>
-                  {`(${office.phone.countryCode}-${office.phone.areaCode}) ${office.phone.phoneNumber} / (${office.mobile.countryCode}-${office.mobile.areaCode}) ${office.mobile.phoneNumber}`}
+                  {office.phone}
                 </OfficeInfo>
                 <OfficeInfo>
                   {office.email}

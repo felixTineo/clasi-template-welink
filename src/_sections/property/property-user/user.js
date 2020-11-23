@@ -82,9 +82,9 @@ const IconButton = styled.button`
   }
 `
 
-export default ()=> {
-  const description = useContext(Context).singleProperty;
-  const user = description.relatedUser;
+export default ({ description })=> {
+  //const description = useContext(Context).singleProperty;
+  const user = { ...description._comercialUser[0], ...description._comercialUser_person[0] };
 
   return(
     <MainCont>
@@ -97,10 +97,10 @@ export default ()=> {
             </FullName>
           </UserInfoItem>
           <UserInfoItem>
-            {user.jobTitle}
+            {user.position}
           </UserInfoItem>
           <UserInfoItem>
-          {user.phone}/{user.email}
+          {user.phone.countryCode + " " + user.phone.areaCode + " " + user.phone.phoneNumber}
           </UserInfoItem>
         </UserInfoCont>
       </UserCont>

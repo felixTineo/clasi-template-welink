@@ -1,5 +1,6 @@
-import { v1 as uuid } from 'uuid';
-export default {
+const uuid = require('uuid').v1;
+
+module.exports = {
   edit:{
     visible: false,
     type: "",

@@ -1,8 +1,12 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import styled from 'styled-components';
 import { Col, Row, } from 'react-grid-system';
 import { Select, Input } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
+import { useNavigateForm } from '../../_hooks';
+import PROPERTY_TYPE from '../../_constants/PROPERTY_TYPE.json';
+import COMMUNES from '../../_constants/CITIES.json';
+import { getSearchParams } from 'gatsby-query-params';
 
 const Form = styled.form`
 
@@ -39,18 +43,55 @@ const SvgCont = styled.svg`
 
 export default ({ filter })=> {
   const [byCode, setByCode] = useState(false);
+  const { values, onChange, onFinish, setInitial } = useNavigateForm({
+    propertyType: '',
+    operation: '',
+    commune: '',
+    stringSearch: '',
+    priceMin: '',
+    priceMax: '',
+    bedrooms: '',
+    bathrooms: '',
+    currency: '',
+  });
+  const params = getSearchParams();
+
+  useEffect(()=>{
+    if(params){
+      setInitial({...params, stringSearch: ''});
+    }
+    if(byCode){
+      setInitial({
+        propertyType: '',
+        operation: '',
+        commune: '',
+        stringSearch: '',
+        priceMin: '',
+        priceMax: '',
+        bedrooms: '',
+        bathrooms: '',
+        currency: '',
+      })
+    }
+  },[params, byCode]);
+
+  const onSubmit = (e)=> {
+    e.preventDefault();
+    onFinish();
+  }
+
   return(
-    <Form onSubmit={(e)=> e.preventDefault()}>
+    <Form onSubmit={onSubmit}>
       <Row>
         <Col xs={12}>
           <OptionsCont>
             <Option>
-              <OptionButton active={!byCode} onClick={()=> setByCode(false)}>
+              <OptionButton type="button" active={!byCode} onClick={()=> setByCode(false)}>
                 Buscar propiedad
               </OptionButton>
             </Option>
             <Option last>
-              <OptionButton active={byCode} onClick={()=> setByCode(true)}>
+              <OptionButton type="button" active={byCode} onClick={()=> setByCode(true)}>
                 Buscar por código
               </OptionButton>
             </Option>        
@@ -61,36 +102,55 @@ export default ({ filter })=> {
             <Fragment>
               <Col xs={12} md={2}>
                 <Input
+                  id="priceMin"
+                  value={values.priceMin}
+                  onChange={onChange}
+                  type="number"
+                  min={0}
                   placeholder="Desde"
                   gray
                 />
               </Col>              
               <Col xs={12} md={2}>
                 <Input
+                  id="priceMax"
+                  value={values.priceMax}
+                  onChange={onChange}
+                  type="number"
+                  min={0}                
                   placeholder="Hasta"
                   gray
                 />                
               </Col>              
               <Col xs={12} md={2}>
-                <Select
-                  default="Habitaciones"
-                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                <Input
+                  id="bedrooms"
+                  value={values.bedrooms}
+                  onChange={onChange}
+                  type="number"
+                  min={0}                
+                  placeholder="Habitaciones"
                   gray
-                  //vertical={horizontal ? false : true}
                 />                  
               </Col>              
               <Col xs={12} md={2}>
-                <Select
-                  default="Baños"
-                  options={["opcion 1", "opcion 2", "opcion 3"]}
+              <Input
+                  id="bathrooms"
+                  value={values.bathrooms}
+                  onChange={onChange}
+                  type="number"
+                  min={0}                
+                  placeholder="Baños"
                   gray
-                  //vertical={horizontal ? false : true}
-                />                  
+                />     
               </Col>                                                        
               <Col xs={12} md={4}>
                 <Select
+                  id="currency"
+                  value={values.currency}
+                  onChange={onChange}
                   default="Divisa"
-                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  options={["CLP", "UF"]}
                   gray
                   //vertical={horizontal ? false : true}
                 />                  
@@ -103,6 +163,9 @@ export default ({ filter })=> {
           ?(
             <Col xs={12} md={9} style={{ paddingBottom: 16 }}>
               <Input
+                id="stringSearch"
+                value={values.stringSearch}
+                onChange={onChange}
                 placeholder="Ingrese el código de la propiedad"
                 gray
                 //vertical={horizontal ? false : true}
@@ -113,25 +176,34 @@ export default ({ filter })=> {
             <Fragment>
               <Col xs={12} md={3}>
                 <Select
+                  id="propertyType"
+                  onChange={onChange}
+                  value={values.propertyType}
                   default="Propiedad"
-                  options={["opcion 1", "opcion 2", "opcion 3"]}
+                  options={PROPERTY_TYPE}
                   gray
-                  vertical
-                />          
-              </Col>
-              <Col xs={12} md={3}>
-                <Select
-                  default="Operación"
-                  options={["opcion 1", "opcion 2", "opcion 3"]}
-                  gray
-                  //vertical={horizontal ? false : true}
+                  capitalize
                 />
               </Col>
               <Col xs={12} md={3}>
-                <Input
-                  placeholder="Comuna"
+                <Select
+                  id="operation"
+                  onChange={onChange}        
+                  value={values.operation}          
+                  default="Operación"
+                  options={["VENTA", "ARRIENDO"]}
                   gray
-                  //vertical={horizontal ? false : true}
+                  capitalize
+                />
+              </Col>
+              <Col xs={12} md={3}>
+                <Select
+                  id="commune"
+                  onChange={onChange}
+                  value={values.commune}
+                  default="Comuna"
+                  options={COMMUNES.map(val => val.name)}
+                  gray
                 />
               </Col>
             </Fragment>

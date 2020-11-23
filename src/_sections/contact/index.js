@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import context from '../../_context/';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { Input, Textarea } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
+import Map from '../../_components/map';
 
 const MainCont = styled.div`
   min-height: 80vh;
@@ -63,13 +65,9 @@ const ButtonContainer = styled.div`
     justify-content: flex-end;
   }   
 `
-const Map = styled.img`
-  width: 100%;
-  height: 794px;
-`
 
 export default ()=> {
-
+  const { lat, lng } = useContext(context).office;
   return(
     <Container>
       <MainCont>
@@ -128,7 +126,16 @@ export default ()=> {
             </SubTitleFooter>                                        
           </Col>
           <Col xs={12} md={6}>
-            <Map src="/square-map.png" />
+          {
+            lat && (
+              <Map
+              lat={parseFloat(lng)}
+              lng={parseFloat(lat)}
+              height={"calc(100% - (5rem + 19px))"}
+              zoom={8}
+            />         
+            )
+          } 
           </Col>
         </Row>
       </MainCont>
