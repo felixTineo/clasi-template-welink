@@ -112,7 +112,7 @@ export default ()=> {
                   />                  
                 </Col>
                 <Col xs={12}>
-                  <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
+                  {/*<ImgCaptcha src="/captcha.png" alt="no soy un robot" />*/}
                 </Col>
                 <Col xs={12}>
                   <ButtonContainer>

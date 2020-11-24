@@ -13,7 +13,11 @@ const Nav = styled.span`
   }
 `
 const LogoImg = styled.img`
-
+  width: 100px;
+  @media(min-width: 576px){
+    width: auto;
+    max-width: 200px;
+  }
 `
 const LogoText = styled.span`
   font-size: 1.5rem;
@@ -28,7 +32,7 @@ export default ({ dark })=> {
         {
           state.main.logo.isImage
           ?(
-            <LogoImg src={ dark ? "/logo.svg" : state.main.logo.value} />
+            <LogoImg src={ dark ? state.main.logoDark.value : state.main.logo.value} />
           )
           :(
             <LogoText>

@@ -82,7 +82,7 @@ export default ({ data })=> {
         <Container>
           <Row>
             <Col xs={12}>
-              <Contact />
+              <Contact description={dataQuery}/>
             </Col>
           </Row>
         </Container>
