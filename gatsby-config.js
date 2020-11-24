@@ -22,14 +22,25 @@ module.exports = {
   },  
   plugins: [
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        // Available options and their defaults:
+        base64Width: 20,
+        forceBase64Format: ``, // valid formats: png,jpg,webp
+        useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
+        stripMetadata: true,
+        defaultQuality: 50,
+        failOnError: true,
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: "Elephant | inmobiliaria",
         short_name: "elephant",
         start_url: "/",
-        icon: "static/logo.svg",
+        icon: "static/favicon.ico",
       },
     },    
     {
