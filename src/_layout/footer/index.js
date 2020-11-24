@@ -236,7 +236,7 @@ export default ()=> {
         <Container>
           <FooterRights>
             <li>2020 © Todos los derechos reservados</li>
-            <li>Desarrollado por <DevelopBy href="https://clasihome.com/" target="_blank">Clasihome</DevelopBy></li>
+            <li>Desarrollado por <DevelopBy href="https://clasihome.com/" target="_blank" rel="noopener">Clasihome</DevelopBy></li>
           </FooterRights>
         </Container>
       </FooterRightsCont>
