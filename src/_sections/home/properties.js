@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import { PropertyCarousel } from '../../_components/carousels';
 import { Rectangular } from '../../_components/banners';
 import { navigate } from 'gatsby';
+import { Fade } from 'react-reveal';
 
 const MainCont = styled.section`
   min-height: 100vh;
@@ -28,6 +29,7 @@ export default ({ noMargin })=> {
   const state = useContext(Context).home.properties;
   return(
     <MainCont id="properties" noMargin={noMargin}>
+      <Fade bottom distance="30px" delay={200}>
       <Container>
         <Row>
           <Col xs={12}>
@@ -39,6 +41,7 @@ export default ({ noMargin })=> {
             <PropertyCarousel />
           </Col>
           <Col xs={12}>
+          <Fade bottom distance="30px">
             <Rectangular
               image={state.bannerImage}
               buttonText={state.buttonText}
@@ -46,9 +49,11 @@ export default ({ noMargin })=> {
               icon="/icons/marker.svg"
               onClick={()=> navigate("/properties")}
             />
+          </Fade>
           </Col>
         </Row>
       </Container>
+      </Fade>
     </MainCont>
   )
 }

@@ -5,6 +5,7 @@ import { Row, Col, Container, Hidden } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import { ServiceCarousel, ReviewCarousel } from '../../_components/carousels';
 import { navigate } from 'gatsby';
+import { Fade } from 'react-reveal';
 
 const MainCont = styled.section`  
   position: relative;
@@ -78,6 +79,7 @@ const CarouselCont = styled.div`
 export default ()=> {
   const state = useContext(Context).home;
   return(
+    <Fade bottom distance="30px" delay={200}>
     <Container>
     <MainCont>
       <HeroInfoCont>
@@ -104,20 +106,27 @@ export default ()=> {
       </HeroInfoCont>
         <Row gutterWidth={128}>
           <Col xs={12} md={6}>
-            <TitleService>Ofrecemos un servicio ajustado a las necesidades de cada cliente</TitleService>
+            <Fade bottom distance="30px" delay={600}>
+              <TitleService>Ofrecemos un servicio ajustado a las necesidades de cada cliente</TitleService>
+            </Fade>
           </Col>
           <Col xs={12} md={6}>
-            <CarouselCont>
-              <ServiceCarousel />
-            </CarouselCont>
+            <Fade right distance="50px" delay={600}>
+              <CarouselCont>
+                <ServiceCarousel />
+              </CarouselCont>
+            </Fade>
           </Col>
           <Col xs={12} md={12}>
-            <QuoteCarouselCont>
-              <ReviewCarousel />
-            </QuoteCarouselCont>
+            <Fade bottom distance="30px" delay={1000}>
+              <QuoteCarouselCont>
+                <ReviewCarousel />
+              </QuoteCarouselCont>
+            </Fade>
           </Col>          
         </Row>
     </MainCont>
     </Container>
+    </Fade>
   )
 }

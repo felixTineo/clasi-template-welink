@@ -5,6 +5,7 @@ import { FormProperty } from '../../_components/forms'
 import { Container, Row, Col, Hidden } from 'react-grid-system';
 import { SearchForm } from '../../_components/forms';
 import { DownCircleFilled } from '@ant-design/icons';
+import { Fade } from 'react-reveal';
 
 
 const MainCont = styled.div`
@@ -102,18 +103,28 @@ export default ()=> {
     <MainCont>
       <Container style={{ width: "100%" }}>
         <FormContainer>
-          <Title>
-            {state.home.hero.title}
-          </Title>
-          <SearchForm />
+          <Fade bottom cascade distance="30px">
+            <ul>
+              <li>
+                <Title>
+                  {state.home.hero.title}
+                </Title>
+              </li>
+              <li>
+                <SearchForm />
+              </li>
+            </ul>
+          </Fade>
         </FormContainer>
       </Container>
       <ButtonContainer>
         <Container>
-          <DownButton href="#properties">
-            <DownCircleFilled style={{ marginRight: ".5rem" }} />
-            Mira lo que tenemos para ofrecerte
-          </DownButton>              
+          <Fade bottom delay={500}>
+            <DownButton href="#properties">
+              <DownCircleFilled style={{ marginRight: ".5rem" }} />
+              Mira lo que tenemos para ofrecerte
+            </DownButton>              
+          </Fade>
         </Container>
       </ButtonContainer>
     </MainCont>

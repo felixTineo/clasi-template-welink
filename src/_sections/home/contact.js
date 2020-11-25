@@ -4,6 +4,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import Context from '../../_context';
 import { Button } from '../../_components/buttons';
 import { navigate } from 'gatsby';
+import { Fade } from 'react-reveal';
 
 const SectionCont = styled.div`
   margin-top: ${props => props.noMargin ? 0 : "4rem"};
@@ -31,7 +32,7 @@ const ButtonCont = styled.div`
 export default ({ noMargin })=> {
   const sectionText = useContext(Context).home.contact.title;
   return(
-    <Fragment>
+    <Fade bottom distance="30px" delay={200}>
         <SectionCont noMargin={noMargin}>
           <Container>
             <Row align="center" justify="center">
@@ -52,6 +53,6 @@ export default ({ noMargin })=> {
             </Row>
           </Container>
         </SectionCont>
-    </Fragment>
+  </Fade>
   )
 }
