@@ -16,7 +16,7 @@ const MainCont = styled.div`
   align-items: center;
   color: #fff;
   @media(min-width: 576px){
-    min-height: calc(100vh - 87px);
+    min-height: calc(100vh - 200px);
     margin-top: 0;
   }
   ::before{
@@ -32,7 +32,7 @@ const MainCont = styled.div`
     background-position: center;
     opacity: 0;
     @media(min-width: 576px){
-      min-height: calc(100vh - 87px);
+      min-height: calc(100vh - 200px);
       opacity: 1;
     }
   }
