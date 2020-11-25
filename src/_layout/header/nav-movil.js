@@ -7,7 +7,6 @@ import { gsap } from 'gsap';
 import { Button, Responsive as ButtonResponsive } from '../../_components/buttons';
 import RateBar from './rate-bar';
 import { Container } from 'react-grid-system';
-import { Link } from 'gatsby';
 
 const MainCont = styled.nav`
   padding: 1.5rem 0;
