@@ -10,16 +10,16 @@ require('dotenv').config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Elephant | inmobiliaria",
+    title: "Halabi - Propiedades",
     author: "Clasihome",
     //imageUrl: "https://clasihome.com/properties/back.png",
     description:
-      "Conectamos clientes con propiedades. Optimiza, gestiona y vende más. La nueva plataforma inmobiliaria que te ayuda a optimizar tu tiempo de trabajo y obtener mejores resultados. Pruébalo gratis por 15 días.",
-    //keywords: `crm, inmobilario, chile, republica, propiedades, republicar, portales, portal, inmobiliaria, software, web, santiago, corredor, casas, departamentos, venta, arriendo, mejores, precios, app`,
-    facebook: "https://www.facebook.com/Clasihome-109624727580277/",
-    instagram: `https://www.instagram.com/_clasihome/?igshid=1u34cmwk5fudl`,
+      "Tenemos excelentes propiedades pensadas para ti.",
+    keywords: `inmobilario, chile, republica, propiedades, republicar, portales, portal, inmobiliaria, web, santiago, corredor, casas, departamentos, venta, arriendo, mejores, precios`,
+    facebook: "https://www.facebook.com/carmenluzpropiedades",
+    instagram: `https://www.instagram.com/cluzpropiedades/`,
     siteUrl: `https://tender-wozniak-faad50.netlify.app/`,
-  },  
+  },
   plugins: [
     'gatsby-plugin-react-helmet',
     {
@@ -27,7 +27,7 @@ module.exports = {
       options: {
         // Available options and their defaults:
         base64Width: 20,
-        forceBase64Format: ``, // valid formats: png,jpg,webp
+        //forceBase64Format: 'jpg', // valid formats: png,jpg,webp
         useMozJpeg: process.env.GATSBY_JPEG_ENCODER === `MOZJPEG`,
         stripMetadata: true,
         defaultQuality: 50,
@@ -37,10 +37,11 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: "Elephant | inmobiliaria",
+        name: `Elephant - inmobiliaria`,
         short_name: "elephant",
+        lang: `es`,
         start_url: "/",
-        icon: "static/favicon.ico",
+        icon: `static/favicon.ico`,
       },
     },    
     {

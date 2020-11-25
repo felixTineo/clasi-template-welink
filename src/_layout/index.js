@@ -4,6 +4,7 @@ import noData from '../_context/state';
 import styled, { ThemeProvider } from 'styled-components';
 import Header from './header';
 import Footer from './footer';
+import { Helmet } from "react-helmet"
 
 const Layout = styled.div`
   overflow: hidden;
@@ -23,6 +24,11 @@ export default ({ children, data })=> {
     <Context.Provider value={data}>
       <ThemeProvider theme={data}>
         <Layout>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>Halabi | Propiedades</title>
+            <link rel="canonical" href="http://mysite.com/example" />
+          </Helmet>          
           <Header />
           <Body>
             {children}

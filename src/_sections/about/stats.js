@@ -7,6 +7,7 @@ const MainCont = styled.section`
   background-color: #fff;
   //padding: 6rem 0 0;
   background-color: ${props => props.theme.main.primaryColor};
+  user-select: none;
 `
 
 const InfoGram = styled.div`

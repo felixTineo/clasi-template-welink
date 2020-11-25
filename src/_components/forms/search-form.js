@@ -37,7 +37,7 @@ const SvgCont = styled.svg`
   fill: #fff;
   margin-left: 1rem;
   ${Button}:hover & {
-    fill: ${props => props.theme.main.primaryColor};
+    fill: #007a3d;
   }
 `
 

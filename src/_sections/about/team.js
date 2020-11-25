@@ -32,7 +32,7 @@ const Avatar = styled.img`
   width: 160px;
   height: 160px;
   object-fit: cover;
-  object-position: cover;
+  object-position: top;
 `
 const Name = styled.p`
   color: ${props => props.theme.main.primaryColor};

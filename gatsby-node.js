@@ -16,8 +16,8 @@ class FormatData{
       facebook: props.facebook || '',
       twitter: props.twitter || '',
       instagram: props.instagram || '',
-      lat: props.lat ?  props.lat : '0',
-      lng: props.lng ? props.lng : '0',
+      lat: props.lat ?  props.lat : '70',
+      lng: props.lng ? props.lng : '30',
     };
 
     this.main = {
@@ -73,31 +73,35 @@ class FormatData{
     }
     this.about = {
       ...props.about,
+      history:{
+        ...props.about.history,
+        background: props.about.history.background ? props.about.history.background : "/history-image.jpg",
+      },
       hero:{
         ...props.about.hero,
         background: props.about.hero.background || '/about-hero.jpg',
       },
       description:{
         ...props.about.description,
-        //background: "/about-description.jpg",
+        background: props.about.description.background ? props.about.description.background :  "/about-description.jpg",
       },
       stats:{
         items:{
           years:{
             value: props.about.stats.years || 50,
-            meta: "Años en el mercado",
+            meta: "Años de trayectoria",
           },
           transactions:{
             value: props.about.stats.transactions || 500,
-            meta: "Ventas y arriendos anuales",
+            meta: "Operaciones exitosas anualmente",
           },
           properties:{
             value: props.about.stats.properties || 1000,
-            meta: "Propiedades en administración",
+            meta: "Propiedades a cargo",
           },
           proffesionals:{
             value: props.about.stats.proffesionals || 70,
-            meta: "Profesionales",
+            meta: "Clientes satisfechos",
           },          
         }
       }
@@ -302,7 +306,11 @@ exports.sourceNodes = async ({
   console.log("BUILDER ID",builderId)
   const data = await fetch(`https://api.clasihome.com/rest/builders?builderId=${builderId}`);
   const result = await data.json();
-  const propertiesData = await fetch(`https://api.clasihome.com/rest/properties?id=${result.user ? result.user : result.office }&typeId=${result.user ? "user" : "office"}&status=PUBLICADA&limit=6`);
+  let propertiesUrl = `https://api.clasihome.com/rest/properties?id=${result.user ? result.user : result.office }&typeId=${result.user ? "user" : "office"}&status=PUBLICADA&limit=6`;
+  if(!result.home.properties.items){
+    propertiesUrl = 'https://api.clasihome.com/rest/properties?id=5e8e36b31c9d440000d35090&typeId=office&status=PUBLICADA&limit=6';
+  }
+  const propertiesData = await fetch(propertiesUrl);
   const propertiesResult = await propertiesData.json();
   result.home.properties.items = propertiesResult.properties;
   const formatedData = new FormatData(result);
