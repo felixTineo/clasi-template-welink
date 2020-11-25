@@ -40,7 +40,8 @@ const Name = styled.p`
   font-weight: bold;
 `
 const Description = styled.p`
-  height: 100px;
+  //height: 100px;
+  //padding-bottom: 1rem;
   overflow: hidden;
   text-align: left;
 `
@@ -78,7 +79,8 @@ export default ()=> {
                   <ContactCont>
                     <ContactInfo>
                       {m.email}
-                      {" "}
+                    </ContactInfo>
+                    <ContactInfo>
                       {m.phone}                      
                     </ContactInfo>
                   </ContactCont>
