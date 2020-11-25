@@ -84,7 +84,7 @@ export default ()=> {
           <Row>
             <Col xs={12} md={6}>
               <HeroImageContainer>
-                <HeroImage src={state.about.banner.image} />
+                <HeroImage src={state.about.banner.image} alt="Nuestra historia" />
               </HeroImageContainer>
             </Col>            
             <Col xs={12} md={6}>

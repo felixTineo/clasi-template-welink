@@ -26,8 +26,9 @@ export default ({ children, data })=> {
         <Layout>
           <Helmet>
             <meta charSet="utf-8" />
+            <meta name="description" content="Tenemos excelentes propiedades pensadas para ti." />
             <title>Halabi | Propiedades</title>
-            <link rel="canonical" href="http://mysite.com/example" />
+            <link rel="canonical" href="https://tender-wozniak-faad50.netlify.app/" />
           </Helmet>          
           <Header />
           <Body>
