@@ -16,6 +16,7 @@ const chunkArray = (myArray, chunk) =>{
 
 const ServiceCont = styled.div`
   padding: 2rem;
+  width: 100%;
 `
 const ServiceTitle = styled.p`
   color: ${props => props.theme.main.primaryColor};
@@ -53,7 +54,7 @@ const StyledDot = styled(Dot)`
 `
 
 const Service = ({ id, title, description }) => {
-  return(
+  if(title)  return(
     <ServiceCont>
       <ServiceTitle>
         {title}
@@ -63,6 +64,7 @@ const Service = ({ id, title, description }) => {
       </ServiceDescription>
     </ServiceCont>    
   )
+  return null;
 }
 
 
@@ -77,12 +79,13 @@ export default ()=> {
       <Hidden xs>
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={50}
-          //isIntrinsicHeight={true}
-          totalSlides={itemsDesk.length}
-          visibleSlides={1}
+          //naturalSlideHeight={50}
+          isIntrinsicHeight={true}
+          totalSlides={1}
+          visibleSlides={0}
           orientation="horizontal"
         >
+          {console.log("ITEMS DESK", itemsDesk)}
           <Slider>
             {
               itemsDesk.map((mainItem, index) => (
@@ -98,19 +101,19 @@ export default ()=> {
               ))
             }
           </Slider>
-          <ButtonBack className="carousel-back-button carousel-text-back-button">
+{/*          <ButtonBack className="carousel-back-button carousel-text-back-button">
             <LeftCircleOutlined style={{ color, fontSize: 26 }} />
           </ButtonBack>
           <ButtonNext className="carousel-next-button carousel-text-next-button">
             <RightCircleOutlined style={{ color, fontSize: 26 }} />
-          </ButtonNext>
+          </ButtonNext>*/}
         </CarouselProvider>
       </Hidden>
       <Visible xs>
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={50}
-          //isIntrinsicHeight={true}
+          //naturalSlideHeight={50}
+          isIntrinsicHeight={true}
           totalSlides={itemsMovil.length}
           visibleSlides={1}
           orientation="horizontal"
