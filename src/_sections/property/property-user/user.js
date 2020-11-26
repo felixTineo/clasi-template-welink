@@ -100,7 +100,7 @@ export default ({ description })=> {
             {user.position}
           </UserInfoItem>
           <UserInfoItem>
-          {user.phone.countryCode + " " + user.phone.areaCode + " " + user.phone.phoneNumber}
+          {user.phone && user.phone.countryCode + " " + user.phone.areaCode + " " + user.phone.phoneNumber}
           </UserInfoItem>
         </UserInfoCont>
       </UserCont>
