@@ -29,7 +29,7 @@ export default {
   home:{
     hero:{
       visible: true,
-      title: "Tenemos propiedades exclusivaspensadas para ti.",
+      title: "Tenemos propiedades exclusivas pensadas para ti.",
       background: "/hero.jpg",
     },
     properties:{
