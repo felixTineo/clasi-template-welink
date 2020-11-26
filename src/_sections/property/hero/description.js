@@ -28,7 +28,6 @@ const Price = styled(Title)`
 const UbicationCont = styled.div`
   display: flex;
   padding: 2rem;
-  padding-bottom: 0;
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 2rem;
