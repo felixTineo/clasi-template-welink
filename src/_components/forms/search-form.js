@@ -37,7 +37,7 @@ const SvgCont = styled.svg`
   fill: #fff;
   margin-left: 1rem;
   ${Button}:hover & {
-    fill: #007a3d;
+    fill: ${props => props.theme.main.primaryColor};
   }
 `
 
@@ -58,7 +58,7 @@ export default ({ filter })=> {
 
   useEffect(()=>{
     if(params){
-      setInitial({...params, stringSearch: ''});
+      setInitial({...params, stringSearch: '', page:''});
     }
     if(byCode){
       setInitial({

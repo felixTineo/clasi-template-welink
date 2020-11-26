@@ -12,7 +12,6 @@ export default (inputs)=> {
   }
   const onFinish = useCallback(()=> {
     const url = urlBuilder(`/properties`, { builderId,...params});
-    console.log("USE FORM URL", url);
     navigate(url);
   },[params, builderId]);
 

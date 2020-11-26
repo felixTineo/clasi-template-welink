@@ -46,11 +46,9 @@ export default ()=> {
   return(
     <Fragment>
       <Container>
-        <MainSection>
-          <QuoteCarouselCont>
-            <ReviewCarousel />
-          </QuoteCarouselCont>
-        </MainSection>
+        <QuoteCarouselCont>
+          <ReviewCarousel />
+        </QuoteCarouselCont>
       </Container>
     <Contact />
     </Fragment>
