@@ -21,7 +21,11 @@ export default ()=> {
         const data = await fetch(baseUrl);
         const result = await data.json();
         console.log("INITIAL DATA", result);
-        const propertiesData = await fetch(`https://api.clasihome.com/rest/properties?id=${result.user ? result.user : result.office }&typeId=${result.user ? "user" : "office"}&status=PUBLICADA&limit=6`);
+        let propertiesUrl = `https://api.clasihome.com/rest/properties?id=${result.user ? result.user : result.office }&typeId=${result.user ? "user" : "office"}&status=PUBLICADA&limit=6`;
+        if(!result.home.properties.items){
+          propertiesUrl = 'https://api.clasihome.com/rest/properties?id=5e8e36b31c9d440000d35090&typeId=office&status=PUBLICADA&limit=6';
+        }        
+        const propertiesData = await fetch(propertiesUrl);
         const propertiesResult = await propertiesData.json();
         result.home.properties.items = propertiesResult.properties;
         console.log("FINAL DATA", result);
