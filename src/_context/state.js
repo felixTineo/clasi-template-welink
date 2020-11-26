@@ -23,7 +23,7 @@ export default {
     favicon: "",
     logo:{
       isImage: true,
-      value: "/logo.svg",
+      value: "/logo.png",
     },
   },
   home:{
