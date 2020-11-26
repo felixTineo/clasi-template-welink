@@ -11,16 +11,8 @@ export default {
     name: "ClasiHome",
     email: "clasi@clasihome.cl",
     address: "Aquí el texto de tu empres",
-    phone: {
-      countryCode: "+56",
-      areaCode: "2",
-      phoneNumber: "1234 1234"
-    },
-    mobile: {
-      countryCode: "+56",
-      areaCode: "9",
-      phoneNumber: "1234 1234"
-    },      
+    phone: "56 2 1234 1234",
+    mobile: "56 2 1234 1234",      
   },
   main:{
     primaryColor: "#FF0101",
