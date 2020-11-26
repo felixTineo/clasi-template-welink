@@ -70,6 +70,10 @@ export default class{
     }
     this.about = {
       ...props.about,
+      history:{
+        ...props.about.history,
+        background: props.about.history.background ? props.about.history.background : '/about-hero.jpg',
+      },
       hero:{
         ...props.about.hero,
         background: props.about.hero.background || '/about-hero.jpg',

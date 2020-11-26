@@ -405,6 +405,7 @@ export default {
     history:{
       visible: true,
       title: "Nuestra Historia",
+      background: '/about-hero.jpg',
       description: "<p>Somos Floop, una empresa con varios años de trayectoria en el dinámico mercado inmobiliario, reconocidos por un servicio altamente personalizado y eficiente.</p><p>Nuestra gran fortaleza es el profundo conocimiento comercial inmobiliario que nos permite agregar valor a todos los proyectos que emprendemos y servicios que entregamos.<p/>"
     },
     description:{
