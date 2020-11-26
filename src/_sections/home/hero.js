@@ -102,12 +102,16 @@ export default ()=> {
   return(
     <MainCont>
       <Container style={{ width: "100%" }}>
-      <Fade bottom distance="30px" duration={1500}>
+      <Fade bottom distance="30px" duration={1000}>
         <FormContainer>
+          <Fade right distance="15px" duration={2000}>
             <Title>
               {state.home.hero.title}
             </Title>
-          <SearchForm />
+          </Fade>
+          <Fade bottom distance="10px" duration={3000}>
+            <SearchForm />
+          </Fade>
         </FormContainer>
         </Fade>
       </Container>

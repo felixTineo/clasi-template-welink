@@ -5,6 +5,7 @@ import { Container, Row, Col } from 'react-grid-system';
 import { Input, Textarea } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
 import Map from '../../_components/map';
+import { Fade } from 'react-reveal';
 
 const MainCont = styled.div`
   min-height: 80vh;
@@ -69,6 +70,7 @@ const ButtonContainer = styled.div`
 export default ()=> {
   const { lat, lng } = useContext(context).office;
   return(
+    <Fade bottom distance="30px" duration={1000}>
     <Container>
       <MainCont>
         <Row nogutter>
@@ -140,5 +142,6 @@ export default ()=> {
         </Row>
       </MainCont>
     </Container>
+    </Fade>
   )
 }

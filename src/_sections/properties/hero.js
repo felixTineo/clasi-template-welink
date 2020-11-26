@@ -4,6 +4,7 @@ import { Container, Row, Col, Visible, Hidden } from 'react-grid-system';
 import { SearchForm as FormProperty } from '../../_components/forms';
 import { useWindowSize } from '../../_hooks';
 import { PlusCircleOutlined, MinusCircleOutlined } from '@ant-design/icons';
+import { Fade } from 'react-reveal';
 
 const SectionCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
@@ -46,9 +47,12 @@ export default ()=> {
   const [filter, setFilter] = useState(false);
   return(
     <Container>
+      <Fade bottom distance="20px" duration={1500}>
       <SectionCont>
         <Header>
+        <Fade right distance="10px" duration={2000}>
           <Title>Propiedades</Title>
+        </Fade>
           <Hidden xs>
             {
               filter
@@ -69,7 +73,9 @@ export default ()=> {
         </Header>
         <Row align="center">
           <Col xs={12}>
+          <Fade bottom distance="10px" duration={2500}>
             <FormProperty filter={filter} />
+          </Fade>
           </Col>
           <Visible xs>
             <Col xs={12}>
@@ -94,6 +100,7 @@ export default ()=> {
           </Visible>
         </Row>
       </SectionCont>
+      </Fade>
     </Container>
   )
 }

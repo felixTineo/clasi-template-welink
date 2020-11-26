@@ -73,9 +73,11 @@ export default ()=> {
     <MainCont>
       <Container>
         <TitleCont>
-          <Fade bottom distance="50px" duration={1500}>
+          <Fade bottom distance="30px" duration={1500}>
             <Title>
+              <Fade right distance="15px" duration={2000}>
               <span style={{ zIndex: 5, position: "relative", width: "50%", display:"inline-block" }}>{state.hero.title}</span>
+              </Fade>
             </Title>
           </Fade>
         </TitleCont>        
