@@ -6,17 +6,15 @@ import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Pulse from 'react-reveal/Pulse';
-import { ArrowUpOutlined } from '@ant-design/icons';
 
 const Footer = styled.footer`
-  background-color: #007a3d;
+  
 `
 const MainFooter = styled.div`
   padding: 4rem 0;
 `
 const FooterRightsCont = styled.div`
-  //background-color: ${props => props.theme.main.primaryColor};
-  background-color: #007a3d;
+  background-color: ${props => props.theme.main.primaryColor};
   color: ${props => props.theme.main.secondaryColor};
   padding: 2rem 0;
   @media(min-width: 768px){
@@ -30,7 +28,7 @@ const OfficeInfoCont = styled.ul`
   list-style: none;
 `
 const OfficeInfo = styled.li`
-  color: #fff;
+  color: #8E8787;
   margin-bottom: .5rem;
 `
 const FooterRights = styled.ul`
@@ -53,7 +51,7 @@ const NavCont = styled.div`
   }      
 `
 const NavLink = styled(Link)`
-  color: #fff;
+  color: #212121;
   transition: 250ms ease;
   text-decoration: none;
   font-weight: bold;
@@ -65,11 +63,11 @@ const NavLink = styled(Link)`
     color: ${props => props.theme.main.primaryColor} !important;
   }
   &:visited{
-    color: #fff;
+    color: #212121;
   }
 `
 const SvgIcon = styled.svg`
-  fill: ${props => props.social ? "#fff" : props.theme.main.primaryColor};
+  fill: ${props => props.social ? props.theme.main.primaryColor : "#fff"};
   margin-right: .5rem;
 `
 const SocialNav = styled.ul`
@@ -77,7 +75,6 @@ const SocialNav = styled.ul`
   margin: 0;
   list-style: none;
   //color: ${props => props.theme.main.primaryColor};
-  color: #fff;
   display: flex;
   align-content: center;
   justify-content: flex-end;
@@ -115,7 +112,6 @@ const BackTopCont = styled.div`
 `
 const BackTop = styled.button`
   display: flex;
-  color: #007a3d;
   justify-content: center;
   border: none;
   cursor: pointer;
@@ -123,7 +119,7 @@ const BackTop = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: #fff;
+  background: ${props => props.theme.main.primaryColor};
   margin-bottom: 1rem;
   transition: 250ms ease;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
@@ -210,7 +206,7 @@ export default ()=> {
                       <Pulse forever duration={2000}>
                         <BackTopCont>
                           <BackTop onClick={handleTop} href="#top">
-                            <ArrowUpOutlined />
+                            <img src="/icons/chevron-up.svg" alt="backtop" />
                           </BackTop>
                         </BackTopCont>
                       </Pulse>
