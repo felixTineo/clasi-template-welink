@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import context from '../../_context/';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { Input, Textarea } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
+import Map from '../../_components/map';
+import { Fade } from 'react-reveal';
 
 const MainCont = styled.div`
   min-height: 80vh;
@@ -63,14 +66,11 @@ const ButtonContainer = styled.div`
     justify-content: flex-end;
   }   
 `
-const Map = styled.img`
-  width: 100%;
-  height: 794px;
-`
 
 export default ()=> {
-
+  const { lat, lng } = useContext(context).office;
   return(
+    <Fade bottom distance="30px" duration={1000}>
     <Container>
       <MainCont>
         <Row nogutter>
@@ -114,7 +114,7 @@ export default ()=> {
                   />                  
                 </Col>
                 <Col xs={12}>
-                  <ImgCaptcha src="/captcha.png" alt="no soy un robot" />
+                  {/*<ImgCaptcha src="/captcha.png" alt="no soy un robot" />*/}
                 </Col>
                 <Col xs={12}>
                   <ButtonContainer>
@@ -128,10 +128,20 @@ export default ()=> {
             </SubTitleFooter>                                        
           </Col>
           <Col xs={12} md={6}>
-            <Map src="/square-map.png" />
+          {
+            lat && (
+              <Map
+              lat={parseFloat(lat)}
+              lng={parseFloat(lng)}
+              height={"calc(100% - (5rem + 19px))"}
+              zoom={3}
+            />         
+            )
+          } 
           </Col>
         </Row>
       </MainCont>
     </Container>
+    </Fade>
   )
 }

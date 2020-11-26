@@ -42,7 +42,7 @@ export default ()=> {
             </HistoryCont>
           </Col>
           <Col xs={12} md={6}>
-            <Image src="/history-image.jpg" alt="historia" />
+            <Image src={state.history.background} alt="historia" />
           </Col>                    
         </Row>
       </Container>

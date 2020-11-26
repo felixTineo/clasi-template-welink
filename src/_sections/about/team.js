@@ -32,7 +32,7 @@ const Avatar = styled.img`
   width: 160px;
   height: 160px;
   object-fit: cover;
-  object-position: cover;
+  object-position: top;
 `
 const Name = styled.p`
   color: ${props => props.theme.main.primaryColor};
@@ -40,7 +40,8 @@ const Name = styled.p`
   font-weight: bold;
 `
 const Description = styled.p`
-  height: 100px;
+  //height: 100px;
+  //padding-bottom: 1rem;
   overflow: hidden;
   text-align: left;
 `
@@ -67,18 +68,19 @@ export default ()=> {
             </Title>
           </Col>
           {
-            state.members.map(m => (
+            state.items.map(m => (
               <Col xs={12} md={6} key={m.id}>
                 <Card>
                   <Avatar src={m.avatar} alt={m.lastName} />
-                  <Name>{m.firstName + " " + m.lastName}</Name>
+                  <Name>{m.fullName}</Name>
                   <Description>
-                    {m.description}
+                    {m.cv}
                   </Description>
                   <ContactCont>
                     <ContactInfo>
                       {m.email}
-                      {" "}
+                    </ContactInfo>
+                    <ContactInfo>
                       {m.phone}                      
                     </ContactInfo>
                   </ContactCont>
