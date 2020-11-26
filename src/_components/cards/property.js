@@ -105,7 +105,7 @@ export default ({
       <CardInfo>
         <CardTitleCont>
           <CardTitle>{truncate(title, 30)}</CardTitle>
-          <CardPrice>UF ${value}</CardPrice>
+          <CardPrice>{value}</CardPrice>
         </CardTitleCont>
         <CardCharacteristics>
           <CharItem>{truncate(ubication.address, 30)}</CharItem>
