@@ -28,6 +28,7 @@ const Price = styled(Title)`
 const UbicationCont = styled.div`
   display: flex;
   padding: 2rem;
+  padding-bottom: 0;
   align-items: center;
   justify-content: flex-start;
   margin-bottom: 2rem;
@@ -35,6 +36,7 @@ const UbicationCont = styled.div`
   color: #5A5A5A;
   @media(min-width: 768px){
     margin: 0;
+    padding-bottom: 0;
   }
 `
 const SvgCont = styled.span`
