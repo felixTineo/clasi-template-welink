@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import Context from '../../_context';
+import { Fade } from 'react-reveal';
 
 const MainCont = styled.section`
     //background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${props => props.theme.about.hero.background});
@@ -72,9 +73,11 @@ export default ()=> {
     <MainCont>
       <Container>
         <TitleCont>
-          <Title>
-            <span style={{ zIndex: 5, position: "relative", width: "50%", display:"inline-block" }}>{state.hero.title}</span>
-          </Title>
+          <Fade bottom distance="50px" duration={1500}>
+            <Title>
+              <span style={{ zIndex: 5, position: "relative", width: "50%", display:"inline-block" }}>{state.hero.title}</span>
+            </Title>
+          </Fade>
         </TitleCont>        
               {/*<Image src={state.hero.background} alt={state.hero.title} />*/}
       </Container>

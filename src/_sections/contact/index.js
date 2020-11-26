@@ -129,10 +129,10 @@ export default ()=> {
           {
             lat && (
               <Map
-              lat={parseFloat(lng)}
-              lng={parseFloat(lat)}
+              lat={parseFloat(lat)}
+              lng={parseFloat(lng)}
               height={"calc(100% - (5rem + 19px))"}
-              zoom={8}
+              zoom={3}
             />         
             )
           } 

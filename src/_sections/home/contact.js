@@ -32,7 +32,7 @@ const ButtonCont = styled.div`
 export default ({ noMargin })=> {
   const sectionText = useContext(Context).home.contact.title;
   return(
-    <Fade bottom distance="30px" delay={200}>
+    <Fragment>
         <SectionCont noMargin={noMargin}>
           <Container>
             <Row align="center" justify="center">
@@ -53,6 +53,6 @@ export default ({ noMargin })=> {
             </Row>
           </Container>
         </SectionCont>
-  </Fade>
+  </Fragment>
   )
 }

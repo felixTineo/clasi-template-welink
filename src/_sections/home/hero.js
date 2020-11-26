@@ -102,24 +102,18 @@ export default ()=> {
   return(
     <MainCont>
       <Container style={{ width: "100%" }}>
+      <Fade bottom distance="30px" duration={1500}>
         <FormContainer>
-          <Fade bottom cascade distance="30px">
-            <ul>
-              <li>
-                <Title>
-                  {state.home.hero.title}
-                </Title>
-              </li>
-              <li>
-                <SearchForm />
-              </li>
-            </ul>
-          </Fade>
+            <Title>
+              {state.home.hero.title}
+            </Title>
+          <SearchForm />
         </FormContainer>
+        </Fade>
       </Container>
       <ButtonContainer>
         <Container>
-          <Fade bottom delay={500}>
+          <Fade bottom delay={1200}>
             <DownButton href="#properties">
               <DownCircleFilled style={{ marginRight: ".5rem" }} />
               Mira lo que tenemos para ofrecerte

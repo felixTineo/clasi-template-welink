@@ -16,8 +16,8 @@ class FormatData{
       facebook: props.facebook || '',
       twitter: props.twitter || '',
       instagram: props.instagram || '',
-      lat: props.lat ?  props.lat : '70',
-      lng: props.lng ? props.lng : '30',
+      lat: props.lat ?  props.lat : '-30',
+      lng: props.lng ? props.lng : '-70',
     };
 
     this.main = {
