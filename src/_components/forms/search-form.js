@@ -1,7 +1,7 @@
 import React, { useState, Fragment, useEffect } from 'react';
 import styled from 'styled-components';
 import { Col, Row, } from 'react-grid-system';
-import { Select, Input } from '../../_components/inputs';
+import { Select, Input, Autocomplete } from '../../_components/inputs';
 import { Button } from '../../_components/buttons';
 import { useNavigateForm } from '../../_hooks';
 import PROPERTY_TYPE from '../../_constants/PROPERTY_TYPE.json';
@@ -9,7 +9,8 @@ import COMMUNES from '../../_constants/CITIES.json';
 import { getSearchParams } from 'gatsby-query-params';
 
 const Form = styled.form`
-
+position: relative;
+z-index: 10000;
 `
 
 const OptionsCont = styled.ul`
@@ -162,13 +163,11 @@ export default ({ filter })=> {
           byCode
           ?(
             <Col xs={12} md={9} style={{ paddingBottom: 16 }}>
-              <Input
+              <Autocomplete
                 id="stringSearch"
-                value={values.stringSearch}
-                onChange={onChange}
+                onSelect={onChange}
+                selected={values.stringSearch}
                 placeholder="Ingrese el código de la propiedad"
-                gray
-                //vertical={horizontal ? false : true}
               />
             </Col>
           )
@@ -197,14 +196,21 @@ export default ({ filter })=> {
                 />
               </Col>
               <Col xs={12} md={3}>
-                <Select
+                <Autocomplete
+                  id="commune"
+                  onSelect={onChange}
+                  selected={values.commune}
+                  options={COMMUNES.map(val => val.name)}
+                  placeholder="Comuna"
+                />
+{/*                <Select
                   id="commune"
                   onChange={onChange}
                   value={values.commune}
                   default="Comuna"
                   options={COMMUNES.map(val => val.name)}
                   gray
-                />
+/>*/}
               </Col>
             </Fragment>
           )

@@ -92,6 +92,7 @@ export default ({
   code,
   ubication,
   characteristics,
+  currency,
 })=> {
   return(
     <Link to={`/property?propertyId=${_id}`} title="Ver propiedad">
@@ -105,7 +106,7 @@ export default ({
       <CardInfo>
         <CardTitleCont>
           <CardTitle>{truncate(title, 30)}</CardTitle>
-          <CardPrice>UF ${value}</CardPrice>
+            <CardPrice>{currency}{" "}{value}</CardPrice>
         </CardTitleCont>
         <CardCharacteristics>
           <CharItem>{truncate(ubication.address, 30)}</CharItem>

@@ -16,6 +16,7 @@ const MainCont = styled.div`
   display: flex;
   align-items: center;
   color: #fff;
+  z-index: 100;
   @media(min-width: 576px){
     min-height: calc(100vh - 200px);
     margin-top: 0;
@@ -46,6 +47,7 @@ const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 100;
   ::before{
     background-color: ${props => props.theme.main.primaryColor};
     content: " ";
@@ -77,15 +79,13 @@ const ButtonContainer = styled.div`
   bottom: -6rem;
   left: 0;
   width: 100%;
-  z-index: 1000;
   @media(min-width: 576px){
-    bottom: 1rem;
+    bottom: 0;
   }
 `
 const DownButton = styled.a`
   text-decoration: none;
   //position: absolute;
-  bottom: 0;
   color: ${props => props.theme.main.primaryColor};
   font-weight: bold;
   display: flex;
@@ -101,18 +101,18 @@ export default ()=> {
 
   return(
     <MainCont>
-      <Container style={{ width: "100%" }}>
-      <Fade bottom distance="30px" duration={1000}>
-        <FormContainer>
-          <Fade right distance="15px" duration={2000}>
-            <Title>
-              {state.home.hero.title}
-            </Title>
-          </Fade>
-          <Fade bottom distance="10px" duration={3000}>
-            <SearchForm />
-          </Fade>
-        </FormContainer>
+      <Container style={{ width: "100%" }} style={{ zIndex: 100 }}>
+        <Fade bottom distance="30px" duration={1000} style={{ zIndex: 100 }}>
+          <FormContainer style={{ zIndex: 100 }}>
+            <Fade right distance="15px" duration={2000} style={{ zIndex: 100 }}>
+              <Title>
+                {state.home.hero.title}
+              </Title>
+            </Fade>
+            <Fade bottom distance="10px" duration={3000} style={{ zIndex: 100 }}>
+              <SearchForm style={{ zIndex: 100 }} />
+            </Fade>
+          </FormContainer>
         </Fade>
       </Container>
       <ButtonContainer>

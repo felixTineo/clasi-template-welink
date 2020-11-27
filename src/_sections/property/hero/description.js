@@ -35,6 +35,7 @@ const UbicationCont = styled.div`
   color: #5A5A5A;
   @media(min-width: 768px){
     margin: 0;
+    padding-bottom: 0;
   }
 `
 const SvgCont = styled.span`
