@@ -111,11 +111,11 @@ export default ({ selected, onSelect, id, placeholder, options }) => {
       setState({ loading: true });
       try{
         setValue(value);
-        const propertiesUrl = `https://api.clasihome.com/rest/properties?id=${contextData.office.id}&typeId=${contextData.office.typeId}&status=PUBLICADA`;
+        const propertiesUrl = `https://api.clasihome.com/rest/properties?id=${contextData.office.id}&typeId=${contextData.office.typeId}&status=PUBLICADA&stringSearch=${value}`;
         const data = await fetch(propertiesUrl);
         const result = await data.json();
         console.log(result);
-        setState({ data: result.properties, loading: false });
+        setState({ data: value.length ? result.properties : [], loading: false });
       }
       catch(e){
         console.log(e);
