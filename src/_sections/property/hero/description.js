@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Row, Col, Visible } from 'react-grid-system';
 import InteractionButtons from '../interaction-buttons';
 import { EnvironmentOutlined } from '@ant-design/icons';
+import { truncate } from '../../../_util';
 
 const MainCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
@@ -35,6 +36,7 @@ const UbicationCont = styled.div`
   color: #5A5A5A;
   @media(min-width: 768px){
     margin: 0;
+    padding-bottom: 0;
   }
 `
 const SvgCont = styled.span`
@@ -55,7 +57,7 @@ export default ({ description })=> {
               {`${description.operation}-COD.: ${description.code}`}
             </OperationCode>
             <Title>
-              {description.title}
+              {truncate(description.title, 70)}
             </Title>
             <Price>
               {`${description.currency} ${description.value}`}

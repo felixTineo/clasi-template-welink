@@ -72,7 +72,7 @@ export default ()=> {
   return(
     <Layout>
       <Hero state={data} />
-      <Interaction />
+      <Interaction description={data} />
       <PropertyUser state={data} />
       <Ubication coordinates={data.ubication.location.coordinates}/>
       <Properties noMargin />

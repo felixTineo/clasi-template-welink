@@ -6,6 +6,7 @@ import Icons from '../../../_icons';
 
 const MainCont = styled.div`
   padding: 2rem;
+  padding-top: 0;
   //border: 1px solid #EBEBEB;
   height: 100%;
   border-right: none;
@@ -33,24 +34,25 @@ const CharItemLi = styled.li`
   color: #002438;
 `
 
-const CharItem = ({ icon, name }) => {
+const CharItem = ({ icon, name, value }) => {
   const Icon = Icons[icon];
   return(
     <CharItemLi>
       <Icon className="clasi-icon" />
       <span style={{ marginLeft: 16 }}>{name}</span>
+      <span style={{ marginLeft: 16, fontSize: 12 }}>{value}</span>
     </CharItemLi>
   )
 }
 
 
 export default ({ description })=> {
-
-  //const charsGeneral = description.characteristics.filter(c => c.type === "GENERAL");
+  //const charsChunk = description.characteristics.length / 2;
   //const charsOthers = description.characteristics.filter(c => c.type !== "GENERAL");
   return(
     <MainCont>
       <Row>
+        {console.log("CARACTERISTICAS", description)}
         <Col xs={12}>
           <CharTitle>Características</CharTitle>
           <Row>
@@ -58,7 +60,7 @@ export default ({ description })=> {
               <CharsCont>
                 {
                   //charsGeneral.slice(0, 7).map((c) => <CharItem key={c.id} {...c} />)
-                  description.characteristics.map((c) => <CharItem key={c.id} {...c} />)
+                  description.characteristics.slice(0, description.characteristics.length / 2).map((c) => <CharItem key={c.id} {...c} />)
                 }
               </CharsCont>
             </Col>
@@ -66,14 +68,14 @@ export default ({ description })=> {
               <CharsCont>
                 {
                   //charsGeneral.slice(7, charsGeneral.length).map((c) => <CharItem key={c.id} {...c} />)
-                  [].map((c) => <CharItem key={c.id} {...c} />)
+                  description.characteristics.slice(description.characteristics.length / 2, -1).map((c) => <CharItem key={c.id} {...c} />)
                 }        
               </CharsCont>      
             </Col>            
           </Row>
         </Col>
         <Col xs={12}>
-          <CharTitle>Otros servicios</CharTitle>
+          {/*<CharTitle>Otros servicios</CharTitle>*/}
           <Row>
             <Col xs={12} md={6}>
               <CharsCont>

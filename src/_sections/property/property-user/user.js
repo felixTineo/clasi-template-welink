@@ -46,6 +46,29 @@ const Avatar = styled.img`
     flex-shrink: 1;
   }
 `
+const NoAvatar = styled.div`
+  min-height: 60px;
+  min-width: 60px;
+  flex-grow: 1;
+  flex-shrink: 0;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+  background-color: transparent;
+  color: #fff;
+  border: 4px solid #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: bold;
+  @media(min-width: 768px){
+    font-size: 3rem;
+    min-height: 76px;
+    min-width: 76px;
+    height: 120px;
+    width: 120px;
+  }
+`
 const UserInfoCont = styled.ul`
   list-style: none;
   padding: 0;
@@ -89,7 +112,19 @@ export default ({ description })=> {
   return(
     <MainCont>
       <UserCont>
-        <Avatar src={user.avatar} alt={user.lastName} />
+        
+        {
+          user.Avatar !== '' 
+          ?(
+            <Avatar src={user.avatar} alt={user.lastName} />
+          )
+          :(
+            <NoAvatar>
+              <span>{user.firstName.charAt(0).toUpperCase()}</span>
+              <span>{user.lastName.charAt(0).toUpperCase()}</span>
+            </NoAvatar>
+          )
+        }
         <UserInfoCont>
           <UserInfoItem>
             <FullName>
@@ -100,7 +135,7 @@ export default ({ description })=> {
             {user.position}
           </UserInfoItem>
           <UserInfoItem>
-          {user.phone.countryCode + " " + user.phone.areaCode + " " + user.phone.phoneNumber}
+          {user.phone && user.phone.countryCode + " " + user.phone.areaCode + " " + user.phone.phoneNumber}
           </UserInfoItem>
         </UserInfoCont>
       </UserCont>

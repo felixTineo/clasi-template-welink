@@ -17,8 +17,8 @@ const PublicObs = styled.p`
   padding-right: 4rem;
 `
 
-export default ()=> {
-  const description = useContext(Context).singleProperty;
+export default ({ description })=> {
+  //const description = useContext(Context).singleProperty;
   return(
     <Container>
       <Row align="center" nogutter>
@@ -50,7 +50,7 @@ export default ()=> {
         </Col>      
         <Col xs={12} md={6} pull={{ md: 6 }}>
           <PublicObs>
-            {description.publicObservation}              
+            {description.publicObservations}              
           </PublicObs>
         </Col>        
       </Row>

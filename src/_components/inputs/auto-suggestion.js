@@ -91,17 +91,18 @@ export default ({ selected, onSelect, id, placeholder, options }) => {
     data: [],
   });
 
-  /*useEffect(()=>{
-    if(options){
+  useEffect(()=>{
+    if(selected){
       console.log("OPTIONS",)
-      setState({ data: options });
+      setValue(selected);
     }
-  },[options])*/
+  },[selected])
 
   const onSearch = async(e) => {
     const value = e.target.value;
     if(options){
       setValue(value);
+      onSelect(e);
       const valueLen = value.length;
       const compare = removeAccent(value).toUpperCase();
       const newData = valueLen === 0 ? [] : options.filter(item => removeAccent(item).toUpperCase().indexOf(compare) !== -1);

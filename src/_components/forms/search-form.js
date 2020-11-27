@@ -166,7 +166,7 @@ export default ({ filter })=> {
               <Autocomplete
                 id="stringSearch"
                 onSelect={onChange}
-                selected={values.stringSearch}
+                selected={values.commune}
                 placeholder="Ingrese el código de la propiedad"
               />
             </Col>
