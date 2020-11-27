@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Visible, Hidden } from 'react-grid-system';
 import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
+import { v1 as uuid } from 'uuid';
 
 const RevieweCont = styled.div`
   position: relative;
@@ -106,7 +107,7 @@ export default ()=> {
           <Slider>
             {
               items.map((item, index) => (
-                <Slide key={item.id} index={index}>
+                <Slide key={uuid()} index={index}>
                   <Review {...item} />
                 </Slide>
               ))
@@ -114,7 +115,7 @@ export default ()=> {
           </Slider>
           <DotsCont>
             {
-              Array(items.length).fill(0).map((_,i) => <StyledDot /*style={{ backgroundColor: color }} className="carousel-text-dot"*/ key={i} slide={i} />)
+              Array(items.length).fill(0).map((_,i) => <StyledDot /*style={{ backgroundColor: color }} className="carousel-text-dot"*/ key={uuid()} slide={i} />)
             }         
           </DotsCont> 
         </CarouselProvider>
@@ -131,14 +132,14 @@ export default ()=> {
           <Slider>
             {
               items.map((item, index) => (
-                <Slide key={item.id} index={index}>
+                <Slide key={uuid()} index={index}>
                   <Review {...item} />
                 </Slide>
               ))
             }
           </Slider>
           {
-              Array(items.length).fill(0).map((_,i) => <StyledDot /*style={{ backgroundColor: color }} className="carousel-text-dot"*/ key={i} slide={i} />)
+              Array(items.length).fill(0).map((_,i) => <StyledDot /*style={{ backgroundColor: color }} className="carousel-text-dot"*/ key={uuid()} slide={i} />)
           }         
         </CarouselProvider>
       </Visible>
