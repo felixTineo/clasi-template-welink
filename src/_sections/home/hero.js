@@ -16,6 +16,7 @@ const MainCont = styled.div`
   display: flex;
   align-items: center;
   color: #fff;
+  z-index: 100;
   @media(min-width: 576px){
     min-height: calc(100vh - 200px);
     margin-top: 0;
