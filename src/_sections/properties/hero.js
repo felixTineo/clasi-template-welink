@@ -7,9 +7,11 @@ import { PlusCircleOutlined, MinusCircleOutlined } from '@ant-design/icons';
 import { Fade } from 'react-reveal';
 
 const SectionCont = styled.div`
+  position: relative;
   background-color: ${props => props.theme.main.primaryColor};
   padding: 2rem;
   margin-top: 4rem;
+  z-index: 100;
   @media(min-width: 576px){
     margin-top: 0;
   }
@@ -46,7 +48,7 @@ export default ()=> {
   const size = useWindowSize();
   const [filter, setFilter] = useState(false);
   return(
-    <Container>
+    <Container style={{ zIndex: 100 }}>
       <Fade bottom distance="20px" duration={1500}>
       <SectionCont>
         <Header>
@@ -71,8 +73,8 @@ export default ()=> {
             }
           </Hidden>
         </Header>
-        <Row align="center">
-          <Col xs={12}>
+        <Row align="center" style={{ zIndex: 100 }}>
+          <Col xs={12} style={{ zIndex: 100 }}>
           <Fade bottom distance="10px" duration={2500}>
             <FormProperty filter={filter} />
           </Fade>

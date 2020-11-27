@@ -132,7 +132,7 @@ export default ({ selected, onSelect, id, placeholder, options }) => {
     }
     else{
       console.log("PROPETY ID", e.currentTarget.id);
-      navigate(`/property?propertyId=${e.currentTarget.id}`);
+      navigate(`/property?builderId=${contextData.builderId}&propertyId=${e.currentTarget.id}`);
     }
   }
 
