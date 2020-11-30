@@ -80,7 +80,7 @@ export default ()=> {
         <Container>
           <Row>
             <Col xs={12}>
-              <Contact />
+              <Contact description={data} />
             </Col>
           </Row>
         </Container>

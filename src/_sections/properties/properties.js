@@ -2,7 +2,6 @@ import React, { useCallback } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import { PropertyCard as Card } from '../../_components/cards';
-import OfficeContext from '../../_context';
 import { useProperties } from '../../_hooks';
 import { LoadingOutlined, FrownOutlined, LeftOutlined, RightOutlined } from '@ant-design/icons'
 import ReactPaginate from 'react-paginate';
