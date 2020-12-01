@@ -50,7 +50,7 @@ export default ()=> {
     if(window !== "undefined"){
       getAllData();
     }
-  },[window]);
+  },[]);
 
   return query;
 }
