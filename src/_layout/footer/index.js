@@ -54,6 +54,7 @@ const NavCont = styled.div`
 `
 const NavLink = styled(Link)`
   //color: #fff;
+  color: inherit;
   transition: 250ms ease;
   text-decoration: none;
   font-weight: bold;
