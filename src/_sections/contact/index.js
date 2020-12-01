@@ -17,14 +17,15 @@ const MainCont = styled.div`
 `
 
 const Title = styled.h1`
-  background-color: ${props => props.theme.main.primaryColor};
-  color: #fff;
+  //background-color: ${props => props.theme.main.primaryColor};
+  background-color: #fff;
+  //color: #fff;
   margin: 0;
   font-size: 30px;
   padding: 2rem;
   margin: 0;
   @media(min-width: 768px){
-    padding: 4rem;
+    padding: 2rem 4rem;
   }  
 `
 const SubTitle = styled.p`
@@ -35,14 +36,14 @@ const Form = styled.form`
   //border-radius: 8px;
   width: 100%;
   margin: 0;
-  background-color: ${props => props.theme.main.primaryColor};
+  //background-color: ${props => props.theme.main.primaryColor};
+  background-color: #fff;
   /*box-shadow: 0px 1px 1px rgba(0, 0, 0, .12),
               0px 2px 2px rgba(0, 0, 0, .12),
               0px 4px 4px rgba(0, 0, 0, .12),
               0px 8px 8px rgba(0, 0, 0, .12);*/
   @media(min-width: 768px){
-    padding: 4rem;
-    padding-top: 0;
+    padding: 0 4rem;
     margin: 0;
   }
 `
@@ -55,7 +56,7 @@ const MailSpan = styled.span`
   text-decoration: underline;
 `
 const SubTitleFooter = styled(SubTitle)`
-  margin-top: 4rem;
+  margin: 2rem 4rem;
 `
 const ButtonContainer = styled.div`
    //margin-top: 32px;
@@ -68,7 +69,7 @@ const ButtonContainer = styled.div`
 `
 
 export default ()=> {
-  const { lat, lng } = useContext(context).office;
+  const { lat, lng, email } = useContext(context).office;
   return(
     <Fade bottom distance="30px" duration={1000}>
     <Container>
@@ -84,7 +85,7 @@ export default ()=> {
                   <Input
                     placeholder="Nombre"
                     id="name"
-                    gray
+                    primary
                     vertical  
                   />
                 </Col>
@@ -92,7 +93,7 @@ export default ()=> {
                   <Input
                     placeholder="Email"
                     id="email"
-                    gray
+                    primary
                     vertical  
                   />                                            
                 </Col>
@@ -100,7 +101,7 @@ export default ()=> {
                   <Input
                     placeholder="Teléfono"
                     id="phone"
-                    gray
+                    primary
                     vertical  
                   />                                    
                 </Col>
@@ -108,7 +109,7 @@ export default ()=> {
                   <Textarea
                     placeholder="Mensaje"
                     id="message"
-                    gray
+                    primary
                     rows={7}
                     vertical  
                   />                  
@@ -118,13 +119,13 @@ export default ()=> {
                 </Col>
                 <Col xs={12}>
                   <ButtonContainer>
-                    <Button block rounded>Enviar</Button>
+                    <Button primary block rounded>Enviar</Button>
                   </ButtonContainer>                  
                 </Col>                                                                          
               </Row>
             </Form >        
             <SubTitleFooter>
-              También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+              También puede escribirnos a <MailSpan>{email}</MailSpan>
             </SubTitleFooter>                                        
           </Col>
           <Col xs={12} md={6}>
@@ -133,7 +134,7 @@ export default ()=> {
               <Map
               lat={parseFloat(lat)}
               lng={parseFloat(lng)}
-              height={"calc(100% - (5rem + 19px))"}
+              height={"calc(100% - (4rem + 19px))"}
               zoom={3}
             />         
             )

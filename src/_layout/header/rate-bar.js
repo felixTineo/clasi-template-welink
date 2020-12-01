@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useCallback, useEffect } from 'react';
 import styled from 'styled-components';
 import { Container } from 'react-grid-system';
+import { useGetIndicators } from '../../_hooks';
+import { LoadingOutlined } from '@ant-design/icons';
 
 const MainCont = styled.div`
   //background-color: ${props => props.theme.main.primaryColor};
@@ -45,19 +47,40 @@ const RateItemNoAfter = styled(RateItem)`
 `
 
 export default ()=> {
+  const { loading, error, data } = useGetIndicators();
+  
+  if(loading) return(
+    <MainCont>
+      <Container>
+        <RatesCont>
+          <RateItem>
+            UF <span><LoadingOutlined /></span>
+          </RateItem>
+          <RateItem>
+            UTM <span><LoadingOutlined /></span>
+          </RateItem>
+          <RateItemNoAfter>
+            Dólar <span><LoadingOutlined /></span>
+          </RateItemNoAfter>                    
+        </RatesCont>
+      </Container>
+    </MainCont>
+  );
+
+  if(error) return <span>error de conextión</span>
 
   return(
     <MainCont>
       <Container>
         <RatesCont>
           <RateItem>
-            UF $75875987
+            UF {data.uf}
           </RateItem>
           <RateItem>
-            UTM $75875987
+            UTM {data.utm}
           </RateItem>
           <RateItemNoAfter>
-            Dólar $75875987
+            Dólar {data.dollar}
           </RateItemNoAfter>                    
         </RatesCont>
       </Container>
