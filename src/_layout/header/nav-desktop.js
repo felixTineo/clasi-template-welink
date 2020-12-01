@@ -48,7 +48,7 @@ export default ()=> {
         <NavItem noMargin>
           <Link to="/about">
             <NavLink>
-              Nosotros
+              Sobre mí
             </NavLink>
           </Link>
         </NavItem>

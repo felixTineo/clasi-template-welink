@@ -76,7 +76,7 @@ export default ()=> {
         <Row nogutter>
           <Col xs={12} md={6}>
             <Title>
-              ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
+              ¿Dudas? ¿Consultas? Con gusto te atenderé.
             </Title>
             <Form onSubmit={e=> e.preventDefault()}>
               <Row align="center">

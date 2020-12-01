@@ -32,6 +32,7 @@ const CharItemLi = styled.li`
   justify-content: flex-start;
   margin-bottom: 1rem;
   color: #002438;
+  font-size: 14px;
 `
 
 const CharItem = ({ icon, name, value }) => {
@@ -39,8 +40,7 @@ const CharItem = ({ icon, name, value }) => {
   return(
     <CharItemLi>
       <Icon className="clasi-icon" />
-      <span style={{ marginLeft: 16 }}>{name}</span>
-      <span style={{ marginLeft: 16, fontSize: 12 }}>{value}</span>
+      <span style={{ marginLeft: 16 }}>{name} {value} {name === "Superficie total" && "mt2" || name === "Superficie útil" && "mt2"}</span>
     </CharItemLi>
   )
 }

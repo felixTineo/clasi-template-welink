@@ -11,13 +11,14 @@ import { Fade } from 'react-reveal';
 const MainCont = styled.div`
   height: calc(100vh - 8rem);
   margin-top: 1.5rem;
-  margin-bottom: 8rem;
+  margin-bottom: 10rem;
   position: relative;
   display: flex;
   align-items: center;
   color: #fff;
   z-index: 100;
   @media(min-width: 576px){
+    margin-bottom: 4rem;
     min-height: calc(100vh - 200px);
     margin-top: 0;
   }
@@ -26,7 +27,7 @@ const MainCont = styled.div`
     position: absolute;
     top: 0;
     right: 0;
-    width: 70%;
+    width: 65%;
     max-width: 975px;
     height: 100%;
     background-image: url(${props => props.theme.home.hero.background});
@@ -68,8 +69,9 @@ const FormContainer = styled.div`
 `
 const Title = styled.h1`
   position: relative;
+  //padding-top: 4rem;
   z-index: 5;
-  margin-top: 8rem;
+  margin-top: 4rem;
   @media(min-width: 576px){
     width: 70%;
   }
@@ -120,7 +122,7 @@ export default ()=> {
           <Fade bottom delay={1200}>
             <DownButton href="#properties">
               <DownCircleFilled style={{ marginRight: ".5rem" }} />
-              Mira lo que tenemos para ofrecerte
+              Revisa aquí lo que tenemos para ofrecerte
             </DownButton>              
           </Fade>
         </Container>

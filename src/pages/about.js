@@ -3,6 +3,7 @@ import Layout from '../_layout';
 import Hero from '../_sections/about/hero';
 import History from '../_sections/about/history';
 import Description from '../_sections/about/description';
+import Contact from '../_sections/home/contact'
 import Stats from '../_sections/about/stats';
 import Team from '../_sections/about/team';
 import Ubication from '../_sections/about/ubication';
@@ -14,8 +15,9 @@ export default ({ data })=> (
     <History />
     <Description />
     <Team />
-    <Stats />    
-    <Ubication />
+    <Contact noMargin/>
+    {/*<Stats />    
+    <Ubication />*/}
   </Layout>
 )
 

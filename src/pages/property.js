@@ -77,7 +77,7 @@ export default ({ data })=> {
       <Interaction />
       <PropertyUser state={dataQuery} />
       <Ubication coordinates={dataQuery.ubication.location.coordinates} />
-      <Properties noMargin />
+      <Properties noMargin customTitle="PROPIEDADES QUE TE PODRÍAN INTERESAR" />
       <Visible xs>
         <Container>
           <Row>

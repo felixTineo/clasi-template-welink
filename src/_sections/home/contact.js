@@ -39,14 +39,15 @@ export default ({ noMargin })=> {
               <Col xs={12} md={9}>
                 <ButtonCont>
                   <SectionText>
-                    {sectionText}
+                    {/*sectionText*/}
+                    Perseverancia y profesionalismo en cada proyecto
                   </SectionText>          
                 </ButtonCont>
               </Col>
               <Col xs={12} md={3}>
                 <ButtonCont>
                   <Button primary block onClick={()=> navigate("/contact")}>
-                    Contáctanos
+                    Contáctame
                   </Button>
                 </ButtonCont>
               </Col>

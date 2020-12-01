@@ -9,14 +9,14 @@ import Pulse from 'react-reveal/Pulse';
 import { ArrowUpOutlined } from '@ant-design/icons';
 
 const Footer = styled.footer`
-  background-color: #007a3d;
+  background-color: #ddd;
 `
 const MainFooter = styled.div`
   padding: 4rem 0;
 `
 const FooterRightsCont = styled.div`
   //background-color: ${props => props.theme.main.primaryColor};
-  background-color: #007a3d;
+  background-color: #000;
   color: ${props => props.theme.main.secondaryColor};
   padding: 2rem 0;
   @media(min-width: 768px){
@@ -30,7 +30,7 @@ const OfficeInfoCont = styled.ul`
   list-style: none;
 `
 const OfficeInfo = styled.li`
-  color: #fff;
+  //color: #fff;
   margin-bottom: .5rem;
 `
 const FooterRights = styled.ul`
@@ -53,7 +53,7 @@ const NavCont = styled.div`
   }      
 `
 const NavLink = styled(Link)`
-  color: #fff;
+  //color: #fff;
   transition: 250ms ease;
   text-decoration: none;
   font-weight: bold;
@@ -65,11 +65,11 @@ const NavLink = styled(Link)`
     color: ${props => props.theme.main.primaryColor} !important;
   }
   &:visited{
-    color: #fff;
+    color: inherit;
   }
 `
 const SvgIcon = styled.svg`
-  fill: ${props => props.social ? "#fff" : props.theme.main.primaryColor};
+  fill: ${props => props.social ? "#000" : props.theme.main.primaryColor};
   margin-right: .5rem;
 `
 const SocialNav = styled.ul`
@@ -77,7 +77,7 @@ const SocialNav = styled.ul`
   margin: 0;
   list-style: none;
   //color: ${props => props.theme.main.primaryColor};
-  color: #fff;
+  //color: #fff;
   display: flex;
   align-content: center;
   justify-content: flex-end;
@@ -115,7 +115,7 @@ const BackTopCont = styled.div`
 `
 const BackTop = styled.button`
   display: flex;
-  color: #007a3d;
+  color: #000;
   justify-content: center;
   border: none;
   cursor: pointer;
@@ -165,7 +165,7 @@ export default ()=> {
                 <Row>
                   <Col xs={6} md={12}>
                     <NavLink to="/about">
-                      Nosotros
+                      Sobre mí
                     </NavLink>
                   </Col>
                   <Col xs={6} md={12}>

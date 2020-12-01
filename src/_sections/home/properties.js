@@ -11,7 +11,7 @@ const MainCont = styled.section`
   min-height: 100vh;
   //margin-top: ${props => props.noMargin ? "4rem" : "13rem"};
   @media(min-width:768px){
-    padding: 4rem 0;
+    //padding: 4rem 0;
   }
 `
 const Title = styled.h2`
@@ -25,7 +25,7 @@ const Title = styled.h2`
   }
 `
 
-export default ({ noMargin })=> {
+export default ({ noMargin, customTitle })=> {
   const state = useContext(Context).home.properties;
   return(
     <MainCont id="properties" noMargin={noMargin}>
@@ -33,7 +33,7 @@ export default ({ noMargin })=> {
         <Row>
           <Col xs={12}>
             <Title>
-              {state.title}
+              {customTitle ? customTitle : state.title}
             </Title>                 
           </Col>
           <Col xs={12}>

@@ -40,7 +40,7 @@ export default ()=> {
       <Hidden xs>
         <CarouselProvider
           naturalSlideWidth={100}
-          naturalSlideHeight={50}
+          naturalSlideHeight={45}
           //isIntrinsicHeight={true}
           totalSlides={itemsDesk.length}
           visibleSlides={1}

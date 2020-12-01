@@ -4,8 +4,8 @@ import { Row, Col, Visible, Hidden } from 'react-grid-system';
 import { Button } from '../buttons';
 
 const BannerCont = styled.div`
-  margin-top: 2rem;
-  padding: 2rem 0;
+  //margin-top: 2rem;
+  padding: 1.5rem 0;
   background-color: transparent;
   background-image: ${props => props.image ? `linear-gradient(rgba(0, 0, 0, .8), rgba(0, 0, 0, .8)), url(${props.image})` : ""};
   background-position: center;

@@ -7,6 +7,12 @@ const BarsCont = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 const Bar = styled.li`
@@ -15,6 +21,8 @@ const Bar = styled.li`
   width: 19px;
   margin-bottom: .25rem;
   border-radius: 19px;
+  flex-shrink: 0;
+  flex-grow: 1;
 `
 
 const Button = styled.button`

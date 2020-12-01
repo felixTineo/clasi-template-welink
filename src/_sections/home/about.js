@@ -48,7 +48,7 @@ const HeroImage = styled.img`
 `
 const TitleService = styled(Title)`
   color: ${props => props.theme.main.primaryColor};
-  padding-top: 4rem;
+  //padding-top: 4rem;
   @media(min-width: 768px){
     font-size: 36px;
   }  
@@ -105,7 +105,7 @@ export default ()=> {
       </HeroInfoCont>
         <Row gutterWidth={128}>
           <Col xs={12} md={6}>
-            <TitleService>Ofrecemos un servicio ajustado a las necesidades de cada cliente</TitleService>
+            <TitleService>Todo proyecto es diferente, con mi experiencia logro ajustarme a cada uno de ellos.</TitleService>
           </Col>
           <Col xs={12} md={6}>
             <CarouselCont>

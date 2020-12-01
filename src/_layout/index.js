@@ -29,6 +29,7 @@ export default ({ children, data })=> {
             <meta name="description" content="Tenemos excelentes propiedades pensadas para ti." />
             <title>Halabi | Propiedades</title>
             <link rel="canonical" href="https://tender-wozniak-faad50.netlify.app/" />
+            <script type="text/javascript" async src="https://s.cliengo.com/weboptimizer/5fc654eafd9efe002a1607d6/5fc654ebfd9efe002a1607d9.js"></script>
           </Helmet>          
           <Header />
           <Body>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '../link';
 import styled from 'styled-components';
-import { truncate } from '../../_util';
+import { truncate, FormatCurrency } from '../../_util';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -106,14 +106,14 @@ export default ({
       <CardInfo>
         <CardTitleCont>
           <CardTitle>{truncate(title, 30)}</CardTitle>
-            <CardPrice>{currency}{" "}{value}</CardPrice>
+            <CardPrice>{currency}{" "}{FormatCurrency(currency, value)}</CardPrice>
         </CardTitleCont>
         <CardCharacteristics>
           <CharItem>{truncate(ubication.address, 30)}</CharItem>
           {
             characteristics.slice(0, 2).map((char, index) => (
               <CharItem key={index}>
-                <span>{char.name} {char.value} {char.name === "Sup. Total" && "mt2"}</span>
+                <span>{char.name} {char.value} {char.name === "Superficie total" && "mt2" || char.name === "Superficie útil" && "mt2"}</span>
               </CharItem>
             ))
           }
