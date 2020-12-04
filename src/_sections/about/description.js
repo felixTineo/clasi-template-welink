@@ -4,6 +4,11 @@ import { Container, Row, Col } from 'react-grid-system';
 import styled from 'styled-components';
 import { DescCarousel } from '../../_components/carousels';
 
+const MainCont = styled.div`
+  border-bottom: 1px solid #cecece;
+  padding-bottom: 6rem;
+`
+
 const ImageContainer = styled.div`
   /*background-color: ${props => props.theme.main.primaryColor};
   @media(min-width: 768px){
@@ -35,6 +40,7 @@ export default ()=> {
   const state = useContext(Context).about;
   return(
     <Container>
+      <MainCont>
       <Row nogutter>
         <Col xs={12} md={4}>
           <ImageContainer>
@@ -49,6 +55,7 @@ export default ()=> {
           </Carousel>
         </Col>        
       </Row>
+      </MainCont>
     </Container>
   )
 }

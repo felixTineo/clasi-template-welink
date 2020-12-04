@@ -9,7 +9,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 450px;
+  height: 480px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem; 

@@ -13,9 +13,6 @@ const MainCont = styled.section`
 const TitleCont = styled.div`
   position: relative;
   height: calc(100vh - 87px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   ::before{
     content: " ";
     background-image: url(${props => props.theme.about.hero.background});
@@ -28,7 +25,7 @@ const TitleCont = styled.div`
     right: 0;
     @media(min-width: 576px){
       height: 100%;
-      width: 50vw;
+      width: 65%;
       top: 0;
       right: 0;
     }
@@ -41,6 +38,7 @@ const Title = styled.h1`
   text-align: left;
   margin: 0;
   width: 100%;
+  top: 2rem;
   ::before{
     content: " ";
     background-color: ${props => props.theme.main.primaryColor};
@@ -71,18 +69,18 @@ export default ()=> {
   const state = useContext(Context).about;
   return(
     <MainCont>
-      <Container>
         <TitleCont>
           <Fade bottom distance="30px" duration={1500}>
+          <Container>
             <Title>
               <Fade right distance="15px" duration={2000}>
               <span style={{ zIndex: 5, position: "relative", width: "50%", display:"inline-block" }}>{state.hero.title}</span>
               </Fade>
             </Title>
+            </Container>
           </Fade>
         </TitleCont>        
               {/*<Image src={state.hero.background} alt={state.hero.title} />*/}
-      </Container>
     </MainCont>
   )
 }

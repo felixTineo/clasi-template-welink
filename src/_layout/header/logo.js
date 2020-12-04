@@ -16,7 +16,7 @@ const LogoImg = styled.img`
   width: 100px;
   @media(min-width: 576px){
     width: auto;
-    max-width: 100px;
+    max-width: 150px;
   }
 `
 const LogoText = styled.span`

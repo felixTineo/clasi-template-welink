@@ -1,4 +1,5 @@
 import { useEffect, useCallback, useReducer } from 'react';
+import { FormatCurrency } from '../_util';
 
 export default ()=> {
   const [query, setQuery] = useReducer((current, next) => ({ ...current, ...next }), {
@@ -26,8 +27,8 @@ export default ()=> {
         const data = await Promise.all(urls.map(url => getData(url)));
         const indicators = {
           date: Date.now(),
-          uf: data[0].serie[0].valor,
-          utm: data[1].serie[0].valor,
+          uf: FormatCurrency('UF', data[0].serie[0].valor),
+          utm: FormatCurrency('CLP', data[1].serie[0].valor),
           dollar: data[2].serie[0].valor,
         };
   

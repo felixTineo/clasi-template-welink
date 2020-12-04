@@ -12,9 +12,9 @@ import { graphql } from 'gatsby';
 export default ({ data })=> (
   <Layout data={JSON.parse(data.initial.data)}>
     <Hero />
+    <Team />
     <History />
     <Description />
-    <Team />
     <Contact noMargin/>
     {/*<Stats />    
     <Ubication />*/}

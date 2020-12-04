@@ -26,8 +26,6 @@ const Card = styled.div`
   justify-content: center;
   align-items: center;
   //margin-bottom: 4rem;
-  border-bottom: 1px solid #cecece;
-  padding-bottom: 2rem;
   @media(min-width: 768px){
     //margin: 0;
     //width: 50%;
@@ -75,7 +73,7 @@ export default ()=> {
         <Row>
           <Col xs={12}>
             <Title>
-              Mi persona
+              Mi Persona
             </Title>
           </Col>
           {

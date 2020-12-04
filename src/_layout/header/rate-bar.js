@@ -8,7 +8,7 @@ const MainCont = styled.div`
   //background-color: ${props => props.theme.main.primaryColor};
   color: ${props => props.theme.main.primaryColor};
   padding: 2rem 0;
-  font-size: 12px;
+  font-size: 14px;
   user-select: none;
 `
 const RatesCont = styled.ul`

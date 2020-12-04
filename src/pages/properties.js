@@ -2,7 +2,6 @@ import React from 'react';
 import Layout from '../_layout/index';
 import Hero from '../_sections/properties/hero';
 import Properties from '../_sections/properties/properties';
-import Reviews from '../_sections/properties/reviews';
 import { graphql } from 'gatsby';
 
 export default ({ data, location })=> (
@@ -10,7 +9,9 @@ export default ({ data, location })=> (
     <Hero />
     {console.log("LOCATION LOCATION", location)}
     <Properties location={location} />
-    <Reviews />
+    <br />
+    <br />
+    <br />
   </Layout>
 )
 
