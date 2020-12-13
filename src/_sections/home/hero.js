@@ -96,6 +96,10 @@ const DownButton = styled.a`
   &:hover{
     color: ${props => props.theme.main.primaryColor};
   }
+  @media(min-width: 576px){
+    font-size: .9rem;
+    max-width: 30%;
+  }
 `
 
 export default ()=> {
