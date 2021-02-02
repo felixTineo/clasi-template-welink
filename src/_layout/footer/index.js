@@ -61,11 +61,11 @@ const NavLink = styled(Link)`
   @media(min-width: 768px){
     display: block;
   }
+  &:visited{
+    color: #000;
+  }  
   &:hover{
     color: ${props => props.theme.main.primaryColor} !important;
-  }
-  &:visited{
-    color: initial;
   }
 `
 const SvgIcon = styled.svg`

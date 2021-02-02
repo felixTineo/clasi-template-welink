@@ -84,7 +84,6 @@ export default ()=> {
                   <Input
                     placeholder="Nombre"
                     id="name"
-                    gray
                     vertical  
                   />
                 </Col>
@@ -92,7 +91,6 @@ export default ()=> {
                   <Input
                     placeholder="Email"
                     id="email"
-                    gray
                     vertical  
                   />                                            
                 </Col>
@@ -100,7 +98,6 @@ export default ()=> {
                   <Input
                     placeholder="Teléfono"
                     id="phone"
-                    gray
                     vertical  
                   />                                    
                 </Col>
@@ -108,7 +105,6 @@ export default ()=> {
                   <Textarea
                     placeholder="Mensaje"
                     id="message"
-                    gray
                     rows={7}
                     vertical  
                   />                  
