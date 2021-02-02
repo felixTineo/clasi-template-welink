@@ -29,7 +29,7 @@ export default ({coordinates})=> {
               lat={coordinates[1]}
               lng={coordinates[0]}
               height={500}
-              zoom={10}
+              zoom={16}
             />
           </Col>
         </Row>

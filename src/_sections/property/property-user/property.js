@@ -13,8 +13,8 @@ const MainCont = styled.div`
   //background-color: ${props => props.theme.main.primaryColor};
 `
 const PublicObs = styled.p`
-  font-weight: bold;
   margin: 2rem 0;
+  white-space: pre-line;
 `
 
 const CharsCont = styled.ul`
@@ -29,17 +29,20 @@ const CharTitle = styled.h2`
 const CharItemLi = styled.li`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   margin-bottom: 1rem;
   color: #002438;
+  width: 13rem;
 `
 
 const CharItem = ({ icon, name, value }) => {
   const Icon = Icons[icon];
   return(
     <CharItemLi>
+      <div>
       <Icon className="clasi-icon" />
       <span style={{ marginLeft: 16 }}>{name}</span>
+      </div>
       <span style={{ marginLeft: 16, fontSize: 12 }}>{value}</span>
     </CharItemLi>
   )
@@ -53,7 +56,9 @@ export default ({ description })=> {
     <MainCont>
       <Row>
         {console.log("CARACTERISTICAS", description)}
-        <p>{description.publicObservations}</p>
+        <PublicObs>
+          {description.publicObservations}
+        </PublicObs>
         <Col xs={12}>
           <CharTitle>Características</CharTitle>
           <Row>

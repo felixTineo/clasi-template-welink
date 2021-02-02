@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Row, Col, Visible } from 'react-grid-system';
 import InteractionButtons from '../interaction-buttons';
 import { EnvironmentOutlined } from '@ant-design/icons';
+import { priceFormat } from '../../../_util';
 
 const MainCont = styled.div`
   background-color: ${props => props.theme.main.primaryColor};
@@ -59,7 +60,7 @@ export default ({ description })=> {
               {description.title}
             </Title>
             <Price>
-              {`${description.currency} ${description.value}`}
+              {`${description.currency} ${priceFormat(description.value)}`}
             </Price>
           </Col>
         </Row>
