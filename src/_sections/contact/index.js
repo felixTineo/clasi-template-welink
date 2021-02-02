@@ -120,7 +120,7 @@ export default ()=> {
               </Row>
             </Form >        
             <SubTitleFooter>
-              También puede escribirnos a <MailSpan>ventas@leasy.cl</MailSpan>
+              También puede escribirnos a <MailSpan>propiedades@flussmosel.cl</MailSpan>
             </SubTitleFooter>                                        
           </Col>
           <Col xs={12} md={6}>
