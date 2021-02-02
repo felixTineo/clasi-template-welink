@@ -33,7 +33,7 @@ button{
   font-size: 1rem;
 }
 
-button, input{
+button, input, textarea{
   outline: none;
   font-family: 'Lato', sans-serif;
 }

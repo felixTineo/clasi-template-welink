@@ -11,7 +11,7 @@ const CardCont = styled.div`
   border: 1px solid #EBEBEB;
   height: 530px;
   transition: 250ms ease;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem; 
   &:hover{
     //box-shadow: 0px 2px 22px rgba(0, 0, 0, 0.108337);

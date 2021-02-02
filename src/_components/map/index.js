@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, Marker } from 'react-leaflet';
 
 export default ({ lat, lng, height, zoom })=> {
   
+  const mapBoxUrl =  "https://api.mapbox.com/styles/v1/felixtineo/ckkigaae20ubv17pelsiz47wg/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoiZmVsaXh0aW5lbyIsImEiOiJja2IwdTYzaHQwMDYyMnZvOHltYXJrdmIwIn0.P0lczMOjIif3MGlqroU__A";
 
   if (typeof window !== 'undefined') {
     return(
@@ -12,10 +13,10 @@ export default ({ lat, lng, height, zoom })=> {
         scrollWheelZoom={false}
         style={{ height }}
       >
-      <TileLayer
-        attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
+        <TileLayer
+          url={mapBoxUrl}
+          attribution="Map data &copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors, <a href=&quot;https://creativecommons.org/licenses/by-sa/2.0/&quot;>CC-BY-SA</a>, Imagery &copy; <a href=&quot;https://www.mapbox.com/&quot;>Mapbox</a>"
+        />
       <Marker position={[lat, lng]}/>
     </MapContainer>
     );

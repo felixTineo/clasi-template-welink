@@ -13,7 +13,10 @@ export default ({ data })=> (
     <Hero />
     <History />
     <Description />
-    <Team />
+    {/*<Team />*/}
+    <br />
+    <br />
+    <br />
     <Stats />    
     <Ubication />
   </Layout>

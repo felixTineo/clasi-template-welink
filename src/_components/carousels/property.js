@@ -34,6 +34,7 @@ export default ({ items })=> {
   const color = useContext(Context).main.primaryColor;
   //const items = useContext(Context).home.properties.items;
   const itemsDesk = chunkArray(items.map(item => item), 3);
+  console.log(itemsDesk.length);
   return(
     <Fragment>
       <Hidden xs>
@@ -49,7 +50,7 @@ export default ({ items })=> {
             {
               itemsDesk.map((mainItem, index) => (
                 <Slide key={uuid()} index={index}>
-                  <Row style={{ margin: "0 1rem" }}>
+                  <Row style={{ marginRight: 16 }}>
                     {
                       mainItem.map(item => (
                         <Col xs={1} xs={4}>
