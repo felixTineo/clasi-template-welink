@@ -306,13 +306,13 @@ exports.sourceNodes = async ({
   console.log("BUILDER ID",builderId)
   const data = await fetch(`https://api.clasihome.com/rest/builders?builderId=${builderId}`);
   const result = await data.json();
-  let propertiesUrl = `https://api.clasihome.com/rest/properties?id=${result.user ? result.user : result.office }&typeId=${result.user ? "user" : "office"}&status=PUBLICADA&limit=6`;
-  /*if(!result.home.properties.items){
+  /*let propertiesUrl = `https://api.clasihome.com/rest/properties?id=${result.user ? result.user : result.office }&typeId=${result.user ? "user" : "office"}&status=PUBLICADA&limit=6`;
+  if(!result.home.properties.items){
     propertiesUrl = 'https://api.clasihome.com/rest/properties?id=5e8e36b31c9d440000d35090&typeId=office&status=PUBLICADA&limit=6';
-  }*/
+  }
   const propertiesData = await fetch(propertiesUrl);
   const propertiesResult = await propertiesData.json();
-  result.home.properties.items = propertiesResult.properties;
+  result.home.properties.items = propertiesResult.properties;*/
   const formatedData = new FormatData(result);
   const finalData = JSON.stringify(formatedData);
   // create node for build time data example in the docs

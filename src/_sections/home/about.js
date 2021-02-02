@@ -48,7 +48,7 @@ const HeroImage = styled.img`
 `
 const TitleService = styled(Title)`
   color: ${props => props.theme.main.primaryColor};
-  padding-top: 4rem;
+  padding-top: 1rem;
   @media(min-width: 768px){
     font-size: 36px;
   }  
@@ -103,7 +103,7 @@ export default ()=> {
             </Col>
           </Row>
       </HeroInfoCont>
-        <Row gutterWidth={128}>
+        <Row gutterWidth={128} style={{ marginTop: 48 }}>
           <Col xs={12} md={6}>
             <TitleService>Ofrecemos un servicio ajustado a las necesidades de cada cliente</TitleService>
           </Col>
@@ -112,11 +112,11 @@ export default ()=> {
               <ServiceCarousel />
             </CarouselCont>
           </Col>
-          <Col xs={12} md={12}>
+{/*          <Col xs={12} md={12}>
             <QuoteCarouselCont>
               <ReviewCarousel />
             </QuoteCarouselCont>
-          </Col>          
+  </Col>          */}
         </Row>
     </MainCont>
     </Container>

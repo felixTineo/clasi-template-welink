@@ -9,9 +9,9 @@ import { Fade } from 'react-reveal';
 
 
 const MainCont = styled.div`
-  height: calc(100vh - 8rem);
+  height: calc(100vh - 115.53px);
   margin-top: 1.5rem;
-  margin-bottom: 8rem;
+  margin-bottom: 2rem;
   position: relative;
   display: flex;
   align-items: center;

@@ -40,6 +40,7 @@ const FooterRights = styled.ul`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+  font-size: 14px;
   @media(min-width: 768px){
     flex-direction: row;
     align-items: center;
@@ -242,7 +243,7 @@ export default ()=> {
       <FooterRightsCont>
         <Container>
           <FooterRights>
-            <li>2020 © Todos los derechos reservados</li>
+            <li>2021 © Todos los derechos reservados</li>
             <li>Desarrollado por <DevelopBy href="https://clasihome.com/" target="_blank" rel="noopener">Clasihome</DevelopBy></li>
           </FooterRights>
         </Container>

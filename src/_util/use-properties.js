@@ -16,7 +16,6 @@ export default ({ location })=> {
       //const url = location.search ? 'https://api.clasihome.com/rest/properties' + location.search + "&typeId=" + typeId + "&id=" +id : 'https://api.clasihome.com/rest/properties' + "?typeId=" + typeId + "&id=" +id
       const data = await fetch(url);
       const result = await data.json();
-      console.log("RESULTADOS", result)
       setQuery({ loading: false, data: result });
     }
     catch(e){

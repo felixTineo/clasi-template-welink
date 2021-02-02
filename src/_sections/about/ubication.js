@@ -40,7 +40,7 @@ export default ({ noContact })=> {
               lat={parseFloat(lat)}
               lng={parseFloat(lng)}
               height={300}
-              zoom={3}
+              zoom={16}
             />         
             )
           }    

@@ -10,7 +10,7 @@ export default ({ data, location })=> (
     <Hero />
     {console.log("LOCATION LOCATION", location)}
     <Properties location={location} />
-    <Reviews />
+    {/*<Reviews />*/}
   </Layout>
 )
 

@@ -5,3 +5,5 @@ export { default as truncate } from './truncate-string';
 export { default as removeAccent } from './remove-accent';
 export { default as urlBuilder } from './url-builder';
 export { default as capitalize } from './capitalize';
+export { default as FormatCurrency } from './format-currency';
+export { default as priceFormat } from './price-format';

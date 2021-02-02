@@ -81,8 +81,8 @@ export default ()=> {
           naturalSlideWidth={100}
           //naturalSlideHeight={50}
           isIntrinsicHeight={true}
-          totalSlides={1}
-          visibleSlides={0}
+          totalSlides={3}
+          visibleSlides={1}
           orientation="horizontal"
         >
           {console.log("ITEMS DESK", itemsDesk)}
@@ -101,12 +101,12 @@ export default ()=> {
               ))
             }
           </Slider>
-{/*          <ButtonBack className="carousel-back-button carousel-text-back-button">
+          <ButtonBack className="carousel-back-button carousel-text-back-button">
             <LeftCircleOutlined style={{ color, fontSize: 26 }} />
           </ButtonBack>
           <ButtonNext className="carousel-next-button carousel-text-next-button">
             <RightCircleOutlined style={{ color, fontSize: 26 }} />
-          </ButtonNext>*/}
+          </ButtonNext>
         </CarouselProvider>
       </Hidden>
       <Visible xs>

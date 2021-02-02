@@ -15,6 +15,7 @@ const InputLabel = styled.label`
   border: ${props => props.gray ? "1px solid #EBEBEB" : "1px solid #5A5A5A" };  
   padding-right: 16px;
   color: #fff;
+  border-radius: 3px;
   @media(min-width: 768px){
     margin-bottom: ${props => props.vertical ? "2rem" : "0"};
     box-shadow: ${props => props.shadow ? "0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12)" : "none"};
@@ -111,7 +112,8 @@ export default ({ selected, onSelect, id, placeholder, options }) => {
       setState({ loading: true });
       try{
         setValue(value);
-        const propertiesUrl = `https://api.clasihome.com/rest/properties?id=${contextData.office.id}&typeId=${contextData.office.typeId}&status=PUBLICADA&stringSearch=${value}`;
+        //const propertiesUrl = `https://api.clasihome.com/rest/properties?id=${contextData.office.id}&typeId=${contextData.office.typeId}&status=PUBLICADA&stringSearch=${value}`;
+        const propertiesUrl = `https://api.clasihome.com/rest/properties?id=5e8e36b31c9d440000d35090&typeId=office&status=PUBLICADA&stringSearch=${value}`;        
         const data = await fetch(propertiesUrl);
         const result = await data.json();
         console.log(result);

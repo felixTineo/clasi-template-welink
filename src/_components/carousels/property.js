@@ -30,11 +30,10 @@ const StyledDot = styled(Dot)`
   }
 `
 
-export default ()=> {
+export default ({ items })=> {
   const color = useContext(Context).main.primaryColor;
-  const items = useContext(Context).home.properties.items;
+  //const items = useContext(Context).home.properties.items;
   const itemsDesk = chunkArray(items.map(item => item), 3);
-  console.log(itemsDesk.length);
   return(
     <Fragment>
       <Hidden xs>

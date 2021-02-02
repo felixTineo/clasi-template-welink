@@ -7,7 +7,7 @@ import { navigate } from 'gatsby';
 import { Fade } from 'react-reveal';
 
 const SectionCont = styled.div`
-  margin-top: ${props => props.noMargin ? 0 : "4rem"};
+  margin-top: ${props => props.noMargin ? 0 : "2rem"};
   padding: 2rem 0;
   //background-color: ${props => props.theme.main.primaryColor};
   color: ${props => props.theme.main.primaryColor};

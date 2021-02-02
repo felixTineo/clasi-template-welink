@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from '../link';
 import styled from 'styled-components';
-import { truncate } from '../../_util';
+import { truncate, priceFormat } from '../../_util';
 
 const CardCont = styled.div`
   background-color: #fff;
@@ -9,7 +9,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 450px;
+  height: 530px;
   transition: 250ms ease;
   box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem; 
@@ -19,8 +19,7 @@ const CardCont = styled.div`
                 0px 2px 2px rgba(0, 0, 0, .12),
                 0px 4px 4px rgba(0, 0, 0, .12),
                 0px 8px 8px rgba(0, 0, 0, .12),
-                0px 16px 16px rgba(0, 0, 0, .12),
-                0px 32px 32px rgba(0, 0, 0, .12);
+                0px 16px 16px rgba(0, 0, 0, .12);
   }
   @media(min-width: 768px){
     margin:0;
@@ -105,15 +104,30 @@ export default ({
       </CardImage>
       <CardInfo>
         <CardTitleCont>
-          <CardTitle>{truncate(title, 30)}</CardTitle>
-            <CardPrice>{currency}{" "}{value}</CardPrice>
+          <CardTitle>{truncate(title, 50)}</CardTitle>
+            <CardPrice>{currency}{" "}{priceFormat(value)}</CardPrice>
         </CardTitleCont>
         <CardCharacteristics>
-          <CharItem>{truncate(ubication.address, 30)}</CharItem>
+        <CharItem>
+              {truncate(ubication.commune, 50)}
+            </CharItem>
           {
-            characteristics.slice(0, 2).map((char, index) => (
+            characteristics.filter(char => (
+              char.name === "Superficie total" ||
+              char.name === "Superficie útil" ||
+              char.name === "Habitaciones" ||
+              char.name === "Baños" ||
+              char.name === "Estacionamientos"
+
+            ) ).map((char, index) => (
               <CharItem key={index}>
-                <span>{char.name} {char.value} {char.name === "Sup. Total" && "mt2"}</span>
+                {/*
+                  char.name === "Superficie total" && <img src="/icons/surface.svg" /> ||
+                  char.name === "Superficie útil" && <img src="/icons/surface.svg" />  ||
+                  char.name === "Habitaciones" && <img src="/icons/rooms.svg" /> ||
+                  char.name === "Baños" && <img src="/icons/bath.svg" />
+                */}
+                <span>{char.name} {char.value} {char.name === "Superficie total" && "mt2" || char.name === "Superficie útil" && "mt2"}</span>
               </CharItem>
             ))
           }
