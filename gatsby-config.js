@@ -10,15 +10,15 @@ require('dotenv').config({
 module.exports = {
   /* Your site config here */
   siteMetadata: {
-    title: "Halabi - Propiedades",
+    title: "Fluss Mosel - Propiedades",
     author: "Clasihome",
     //imageUrl: "https://clasihome.com/properties/back.png",
     description:
       "Tenemos excelentes propiedades pensadas para ti.",
     keywords: `inmobilario, chile, republica, propiedades, republicar, portales, portal, inmobiliaria, web, santiago, corredor, casas, departamentos, venta, arriendo, mejores, precios`,
-    facebook: "https://www.facebook.com/carmenluzpropiedades",
-    instagram: `https://www.instagram.com/cluzpropiedades/`,
-    siteUrl: `https://tender-wozniak-faad50.netlify.app/`,
+    facebook: "https://www.facebook.com",
+    instagram: `https://www.instagram.com`,
+    siteUrl: `https://wizardly-villani-67a864.netlify.app/`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
