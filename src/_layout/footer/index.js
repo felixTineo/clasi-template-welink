@@ -180,7 +180,7 @@ export default ()=> {
                   </Col>                                    
                   <Col xs={6} md={12}>
                     <NavLink to="/about">
-                      Nosotros
+                      Empresa
                     </NavLink>
                   </Col>                  
                   {/* <Visible md xs xxl lg xl>

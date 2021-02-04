@@ -15,6 +15,10 @@ const Title = styled.h2`
   color: ${props => props.theme.main.primaryColor};
   opacity: 0;
   transform: translateY(25px);
+  font-size: 26px;
+  @media(min-width: 768px){
+    font-size: 2rem;
+  }
 `
 const Description = styled.p`
   text-align: justify;
@@ -109,8 +113,8 @@ export default ()=> {
       <Container>
         <Row>
           <Col xs={12} md={6}>
-            <Title className="investments-title" ref={e => { titleRef = e }}>
-              En Fluss Mosel. <br />Nos preocupamos de todo.
+            <Title className="investments-title" ref={e => { titleRef = e }}>               
+              Deja que te asesoren<br />un grupo de expertos.
             </Title>
             <Description className="investments-desc">
               El sector inmobiliario es un negocio más seguro y con mejor rentabilidad en comparación al financiero, que ofrece bajas tasas de rentabilidad. Con más de 25 años de experiencia, nuestro equipo trabaja con cada cliente para que obtenga el mejor de los beneficios posibles.

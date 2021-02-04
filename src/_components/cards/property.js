@@ -9,7 +9,7 @@ const CardCont = styled.div`
   flex-direction: column;
   align-items: center;
   border: 1px solid #EBEBEB;
-  height: 530px;
+  height: 535px;
   transition: 250ms ease;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.108337);
   margin:0 .3rem; 
@@ -70,6 +70,11 @@ const CardCharacteristics = styled.ul`
 
 const CharItem = styled.li`
   margin-bottom: .5rem;
+  display: flex;
+  align-items: center;
+  span{
+    margin-left: .5rem;
+  }
 `
 const Divider = styled.span`
   height: 1px;
@@ -108,7 +113,8 @@ export default ({
             <CardPrice>{currency}{" "}{priceFormat(value)}</CardPrice>
         </CardTitleCont>
         <CardCharacteristics>
-        <CharItem>
+            <CharItem>
+              <img src="/icons/site.svg" />
               {truncate(ubication.commune, 50)}
             </CharItem>
           {
@@ -121,12 +127,13 @@ export default ({
 
             ) ).map((char, index) => (
               <CharItem key={index}>
-                {/*
+                {
                   char.name === "Superficie total" && <img src="/icons/surface.svg" /> ||
                   char.name === "Superficie útil" && <img src="/icons/surface.svg" />  ||
                   char.name === "Habitaciones" && <img src="/icons/rooms.svg" /> ||
-                  char.name === "Baños" && <img src="/icons/bath.svg" />
-                */}
+                  char.name === "Baños" && <img src="/icons/bath.svg" />  ||
+                  char.name === "Estacionamientos" && <img src="/icons/parking.svg" />
+                }
                 <span>{char.name} {char.value} {char.name === "Superficie total" && "mt2" || char.name === "Superficie útil" && "mt2"}</span>
               </CharItem>
             ))

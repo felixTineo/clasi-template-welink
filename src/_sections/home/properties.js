@@ -10,6 +10,7 @@ import { Fade } from 'react-reveal';
 const MainCont = styled.section`
   min-height: 100vh;
   //margin-top: ${props => props.noMargin ? "4rem" : "13rem"};
+  padding-top: 8rem;
   @media(min-width:768px){
     padding: 4rem 0;
   }
@@ -20,6 +21,7 @@ const Title = styled.h2`
   margin-bottom: 4rem;
   font-weight: 300;
   width: 70%;
+  font-size: 26px;
   @media(min-width:768px){
     width: 60%;
   }

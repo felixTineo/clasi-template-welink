@@ -12,10 +12,11 @@ const MainCont = styled.section`
 `
 const TitleCont = styled.div`
   position: relative;
-  height: calc(100vh - 87px);
+  height: calc(70vh - 87px);
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 8rem;
   ::before{
     content: " ";
     background-image: url(${props => props.theme.about.hero.background});
@@ -32,6 +33,10 @@ const TitleCont = styled.div`
       top: 0;
       right: 0;
     }
+  }
+  @media(min-width: 768px){
+    height: calc(100vh - 87px);
+    margin-bottom: 0;
   }
 `
 const Title = styled.h1`

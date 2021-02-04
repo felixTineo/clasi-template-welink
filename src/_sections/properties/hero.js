@@ -10,7 +10,7 @@ const SectionCont = styled.div`
   position: relative;
   background-color: ${props => props.theme.main.primaryColor};
   padding: 2rem;
-  margin-top: 4rem;
+  margin-top: 92.67px;
   z-index: 100;
   @media(min-width: 576px){
     margin-top: 0;

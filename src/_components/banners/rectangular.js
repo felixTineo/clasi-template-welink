@@ -15,7 +15,7 @@ const BannerCont = styled.div`
 `
 const Title = styled.p`
   text-align: center;
-  font-size: 28px;
+  font-size: 26px;
   margin: 0;
   margin-bottom: 2rem;
   @media(min-width: 768px){

@@ -41,6 +41,7 @@ const Title = styled.h1`
   text-align: left;
   margin: 0;
   width: 90vw;
+  font-size: 26px;
   ::before{
     content: " ";
     background-color: ${props => props.theme.main.primaryColor};
@@ -58,6 +59,7 @@ const Title = styled.h1`
     text-align: left;
     width: 70vw;
     padding: 4rem 2rem;
+    font-size: 2rem;
   }
 `
 const Image = styled.img`

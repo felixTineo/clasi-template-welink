@@ -36,7 +36,7 @@ export default ()=> {
           <Col xs={12} md={6}>
             <HistoryCont>
               <Title>
-                {state.history.title}
+                SOBRE NOSOTROS
               </Title>
               <Description dangerouslySetInnerHTML={{__html: state.history.description}} />
             </HistoryCont>

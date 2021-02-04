@@ -9,6 +9,9 @@ html{
   html{
     font-size: 12px;
   }
+  h2{
+    font-size: 2rem;
+  }
 }
 
 *{
@@ -47,12 +50,14 @@ h1, h2, h3, h4, h5, h6{
   font-family: 'Nunito', sans-serif;
 }
 
+
+
 h1{
   font-size: 2rem;
 }
 
 h2{
-  font-size: 1.5rem;
+  font-size: 26px;
 }
 
 .carousel-back-button, .carousel-next-button{
@@ -181,4 +186,8 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.image-gallery{
+  //background-color: red;
 }

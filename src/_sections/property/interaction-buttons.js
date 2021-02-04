@@ -3,6 +3,7 @@ import Context from '../../_context';
 import { Row, Col, Container } from 'react-grid-system';
 import { Button } from '../../_components/buttons';
 import styled from 'styled-components';
+import { EnvironmentOutlined } from '@ant-design/icons';
 
 const SvgCont = styled.svg`
   fill: #fff;
@@ -15,6 +16,25 @@ const PublicObs = styled.p`
   font-weight: bold;
   margin: 2rem 0;
   padding-right: 4rem;
+`
+
+const UbicationCont = styled.div`
+  display: flex;
+  padding: 0 .5rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  //background-color: #F7F7F7;
+  color: #5A5A5A;
+  @media(min-width: 768px){
+    margin: 0;
+    padding-bottom: 0;
+  }
+`
+const SvgContUbication = styled.span`
+  font-size: 2rem;
+  margin-right: 1rem;
+  color: ${props => props.theme.main.primaryColor};
 `
 
 export default ()=> {
@@ -49,9 +69,14 @@ export default ()=> {
           </Row>
         </Col>      
         <Col xs={12} md={6} pull={{ md: 6 }}>
-          <PublicObs>
-            {description.publicObservation}              
-          </PublicObs>
+          <UbicationCont>
+            <SvgContUbication>
+              <EnvironmentOutlined />
+            </SvgContUbication>
+            <span>
+              {description.ubication.commune}
+            </span>
+          </UbicationCont>  
         </Col>        
       </Row>
     </Container>  

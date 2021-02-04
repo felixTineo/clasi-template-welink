@@ -128,7 +128,7 @@ export default ()=> {
           <NavItem>
             <Link to="/about">
               <NavLink>
-                Nosotros
+                Empresa
               </NavLink>
             </Link>
           </NavItem>

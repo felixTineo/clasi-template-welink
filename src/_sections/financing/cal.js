@@ -18,6 +18,10 @@ const Title = styled.h2`
   color: ${props => props.theme.main.primaryColor};
   opacity: 0;
   transform: translateY(25px);
+  font-size: 26px;
+  @media(min-width: 768px){
+    font-size: 2rem;
+  }  
 `
 const Description = styled.p`
   text-align: justify;
@@ -50,6 +54,7 @@ const Logo = styled.img`
 `
 const FormContainer = styled.div`
   min-height: 100%;
+  min-height: 500px;
   //display: flex;
   //justify-content: center;
   //align-items: center;
@@ -289,8 +294,9 @@ export default ()=> {
         <Row>
           <Col xs={12} md={6}>
             <Title className="investments-title" ref={e => { titleRef = e }}>
-              Estamos comprometidos con ser,<br />
-              tu mejor opción.
+              Cuenta con todo
+              <br />
+              el apoyo de Fluss Mosel.
             </Title>
             <Description className="investments-desc">
               Realizamos una alianza estratégica con MetLife para lograr una gestión eficiente de los créditos hipotecarios, evitando el registro en la Banca con deuda financiera.
@@ -306,118 +312,118 @@ export default ()=> {
           <Col xs={12} md={6}>
             <FormContainer>
               <FlipCont>
-              <FlipContInner className="result">
-              <FlipCardFront>
-              <Form className="inves-contact" onSubmit={onSubmit}>
-                <Row gutterWidth={16}>
-                  <Col xs={12}>
-                    <FormTitle>
-                      Calcule su crédito
-                    </FormTitle>
-                  </Col>
-                  <Col xs={12}>
-                    <Label>Valor de propiedad en UF</Label>
-                    <Input
-                      placeholder="Ej: 1000000"
-                      id="value"
-                      type="number"
-                      vertical
-                      primary
-                      value={data.value}
-                      onChange={e => setData({ [e.target.id]: e.target.value })}
-                      onFocus={handleFocus}
-                      gray
-                    />
-                    { alert.value && <Alert>Ingrese el valor de la propiedad</Alert> }
-                  </Col>
-                  <Col xs={12} >
-                    <Label>Monto a financiar en UF</Label>
-                    <Input
-                      placeholder="Ej: 101000"
-                      id="financing"
-                      type="number"
-                      vertical
-                      primary
-                      value={data.financing}
-                      onChange={e => setData({ [e.target.id]: e.target.value })}
-                      onFocus={handleFocus}
-                      gray
-                    />
-                    { alert.financing && <Alert>Ingrese el valor a financiar</Alert> }
-                    { alert.financingValue && <Alert>El monto debe estar entre el 10% y el 100% del valor de la propiedad</Alert> }
-                  </Col>
-                  <Col xs={12} md={8}>
-                    <Label>Tasa de Interés</Label>
-                    <Input
-                      placeholder=""
-                      id="interest"
-                      type="number"
-                      //min="2.5"
-                      vertical
-                      primary
-                      value={data.interest}
-                      onChange={e => setData({ [e.target.id]: parseFloat(e.target.value) >= 2.5 ? e.target.value : 2.5 })}
-                      onFocus={handleFocus}
-                      gray
-                    />
-                    { alert.interest && <Alert>error interes vacio</Alert> }
-                  </Col>
-                  <Col xs={12} md={4}>
-                    <Label>Plazo</Label>
-                    <Select
-                      id="place"
-                      onChange={e => setData({ [e.target.id]: e.target.value })}
-                      value={data.place}
-                      options={["5", "8", "12", "15", "20", "25", "30", "35", "40"]}
-                      capitalize
-                      noAll
-                      primary
-                    />                    
-                    { alert.place && <Alert>error plazo vacio</Alert> }
-                  </Col>   
-                  <Col xs={12} md={6}>
+                <FlipContInner className="result">
+                  <FlipCardFront>
+                  <Form className="inves-contact" onSubmit={onSubmit}>
+                    <Row gutterWidth={16}>
+                      <Col xs={12}>
+                        <FormTitle>
+                          Calcule su crédito
+                        </FormTitle>
+                      </Col>
+                      <Col xs={12}>
+                        <Label>Valor de propiedad en UF</Label>
+                        <Input
+                          placeholder="Ej: 1000000"
+                          id="value"
+                          type="number"
+                          vertical
+                          primary
+                          value={data.value}
+                          onChange={e => setData({ [e.target.id]: e.target.value })}
+                          onFocus={handleFocus}
+                          gray
+                        />
+                        { alert.value && <Alert>Ingrese el valor de la propiedad</Alert> }
+                      </Col>
+                      <Col xs={12} >
+                        <Label>Monto a financiar en UF</Label>
+                        <Input
+                          placeholder="Ej: 101000"
+                          id="financing"
+                          type="number"
+                          vertical
+                          primary
+                          value={data.financing}
+                          onChange={e => setData({ [e.target.id]: e.target.value })}
+                          onFocus={handleFocus}
+                          gray
+                        />
+                        { alert.financing && <Alert>Ingrese el valor a financiar</Alert> }
+                        { alert.financingValue && <Alert>El monto debe estar entre el 10% y el 100% del valor de la propiedad</Alert> }
+                      </Col>
+                      <Col xs={12} md={8}>
+                        <Label>Tasa de Interés</Label>
+                        <Input
+                          placeholder=""
+                          id="interest"
+                          type="number"
+                          //min="2.5"
+                          vertical
+                          primary
+                          value={data.interest}
+                          onChange={e => setData({ [e.target.id]: parseFloat(e.target.value) >= 2.5 ? e.target.value : 2.5 })}
+                          onFocus={handleFocus}
+                          gray
+                        />
+                        { alert.interest && <Alert>error interes vacio</Alert> }
+                      </Col>
+                      <Col xs={12} md={4}>
+                        <Label>Plazo</Label>
+                        <Select
+                          id="place"
+                          onChange={e => setData({ [e.target.id]: e.target.value })}
+                          value={data.place}
+                          options={["5", "8", "12", "15", "20", "25", "30", "35", "40"]}
+                          capitalize
+                          noAll
+                          primary
+                        />                    
+                        { alert.place && <Alert>error plazo vacio</Alert> }
+                      </Col>   
+                      <Col xs={12} md={6}>
 
-                  </Col>          
-                  <Col xs={12} md={6}>
-                    <br />
-                    <Button type="submit" block primary>Calcular</Button>
-                  </Col>          
-                </Row>
-              </Form>
-              </FlipCardFront>           
-              <FlipCardBack>
-                {
-                  result && (
-                    <Result>
-                      <BackButton onClick={()=> {
-                              gsap.to(".result", {
-                                duration: .25,
-                                rotationY:-360,
-                                ease: "none"
-                              })
-                      }}>
-                        <ArrowLeftOutlined />
-                      </BackButton>
-                      <ResultBody>
-                        <ResultInfo>
-                          <p>Pie aproximado</p>
-                          <h4>UF {FormatCurrency("UF", result.pie)}</h4>
-                        </ResultInfo>
-                        <ResultInfo>
-                          <p>Dividendo aproximado</p>
-                          <h3>UF {result.dividendo}</h3>
-                        </ResultInfo>
-                      </ResultBody>
-                      <ResultFooter>
-                        <Link to="/contact" style={{ textDecoration: "none" }}>
-                          <Button primary>Contáctanos</Button>
-                        </Link>
-                      </ResultFooter>
-                    </Result>
-                  )
-                }
-              </FlipCardBack>
-              </FlipContInner>
+                      </Col>          
+                      <Col xs={12} md={6}>
+                        <br />
+                        <Button type="submit" block primary>Calcular</Button>
+                      </Col>          
+                    </Row>
+                  </Form>
+                  </FlipCardFront>           
+                  <FlipCardBack>
+                    {
+                      result && (
+                        <Result>
+                          <BackButton onClick={()=> {
+                                  gsap.to(".result", {
+                                    duration: .25,
+                                    rotationY:-360,
+                                    ease: "none"
+                                  })
+                          }}>
+                            <ArrowLeftOutlined />
+                          </BackButton>
+                          <ResultBody>
+                            <ResultInfo>
+                              <p>Pie aproximado</p>
+                              <h4>UF {FormatCurrency("UF", result.pie)}</h4>
+                            </ResultInfo>
+                            <ResultInfo>
+                              <p>Dividendo aproximado</p>
+                              <h3>UF {result.dividendo}</h3>
+                            </ResultInfo>
+                          </ResultBody>
+                          <ResultFooter>
+                            <Link to="/contact" style={{ textDecoration: "none" }}>
+                              <Button primary>Contáctanos</Button>
+                            </Link>
+                          </ResultFooter>
+                        </Result>
+                      )
+                    }
+                  </FlipCardBack>
+                </FlipContInner>
               </FlipCont>
             </FormContainer>
           </Col>          

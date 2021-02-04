@@ -13,19 +13,23 @@ const MainCont = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 4rem;
+  margin-top: 96.67px;
+  @media(min-width: 768px){
+    margin-top: 0;
+  }    
 `
-
-const Title = styled.h1`
+const TitleCont = styled.div`
+  padding: 2rem;
   background-color: ${props => props.theme.main.primaryColor};
   color: #fff;
-  margin: 0;
-  font-size: 30px;
-  padding: 2rem;
-  margin: 0;
   @media(min-width: 768px){
     padding: 4rem;
-  }  
+  }    
+`
+const Title = styled.h1`
+  margin: 0;
+  font-size: 30px;
+  margin: 0;
 `
 const SubTitle = styled.p`
 
@@ -75,9 +79,12 @@ export default ()=> {
       <MainCont>
         <Row nogutter>
           <Col xs={12} md={6}>
-            <Title>
-              ¿Dudas? ¿Consultas? Estamos aquí para ayudarlo
-            </Title>
+            <TitleCont>
+              <Title>
+                Contáctanos
+              </Title>
+              <span>No dudes en escribirnos para obtener más información.</span>
+            </TitleCont>
             <Form onSubmit={e=> e.preventDefault()}>
               <Row align="center">
                 <Col xs={12}>
