@@ -33,13 +33,14 @@ button{
   font-size: 1rem;
 }
 
-button, input, textarea{
+button, input, textarea, select{
   outline: none;
   font-family: 'Lato', sans-serif;
 }
 
-input, select{
+input, textarea, select{
   font-family: 'Lato', sans-serif;
+  padding-left: 1rem !important;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -174,4 +175,10 @@ h2{
 .clasi-icon path{
   fill: #002438;
   stroke: #002438;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

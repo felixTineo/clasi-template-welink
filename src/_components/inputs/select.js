@@ -33,10 +33,10 @@ const Select = styled.select`
   background-repeat: no-repeat;
   background-position: right center;
   margin-bottom: 1rem;
-  color: #fff;
+  color: ${props => props.gray ? "#ffffff" : "#5a5a5a"};
   cursor: pointer;
   //box-shadow: 0px 0px 1px rgba(0, 0, 0, .12), 0px 0px 2px rgba(0, 0, 0, .12), 0px 4px 4px rgba(0, 0, 0, .12), 0px 8px 8px rgba(0, 0, 0, .12);
-  border: ${props => props.gray ? "1px solid #EBEBEB" : "none" };
+  border: ${props => props.gray ? "1px solid #EBEBEB" : "1px solid #5a5a5a" };
   &::-ms-expand{
     background: transparent;
   }  
@@ -53,7 +53,9 @@ export default (props)=> {
         {...props}
       >
         <DefaultOption value="" disabled selected hidden>{props.default}</DefaultOption>
-        <AllOption value="">Todo</AllOption>
+        {
+          !props.noAll && <AllOption value="">Todo</AllOption>
+        }
         {
           props.options.map((o, index) => <Option value={o} key={uuid()}>{props.capitalize ? capitalize(o): o}</Option>)
         }  

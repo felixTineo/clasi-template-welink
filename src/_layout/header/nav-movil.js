@@ -105,16 +105,30 @@ export default ()=> {
         <NavBar>
           <Container>
           <NavItem>
-            <Link to="/about">
+            <Link to="/properties">
               <NavLink>
-                Nosotros
+                Propiedades
               </NavLink>
             </Link>
           </NavItem>
           <NavItem>
-            <Link to="/properties">
+            <Link to="/investments">
               <NavLink>
-                Propiedades
+                Inversiones
+              </NavLink>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link to="/financing">
+              <NavLink>
+                Finaciamiento
+              </NavLink>
+            </Link>
+          </NavItem>                                
+          <NavItem>
+            <Link to="/about">
+              <NavLink>
+                Nosotros
               </NavLink>
             </Link>
           </NavItem>

@@ -164,15 +164,25 @@ export default ()=> {
               <NavCont>
                 <Row>
                   <Col xs={6} md={12}>
-                    <NavLink to="/about">
-                      Nosotros
-                    </NavLink>
-                  </Col>
-                  <Col xs={6} md={12}>
                     <NavLink to="/properties">
                       Propiedades
                     </NavLink>                  
                   </Col>
+                  <Col xs={6} md={12}>
+                    <NavLink to="/investments">
+                      Inversiones
+                    </NavLink>                  
+                  </Col>
+                  <Col xs={6} md={12}>
+                    <NavLink to="/financing">
+                      Finaciamiento
+                    </NavLink>                  
+                  </Col>                                    
+                  <Col xs={6} md={12}>
+                    <NavLink to="/about">
+                      Nosotros
+                    </NavLink>
+                  </Col>                  
                   {/* <Visible md xs xxl lg xl>
                     <Col xs={6} md={12}>
                       <NavLink to="/news">

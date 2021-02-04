@@ -109,7 +109,7 @@ export default ({ filter })=> {
                   type="number"
                   min={0}
                   placeholder="Desde"
-                  gray
+                  
                 />
               </Col>              
               <Col xs={12} md={2}>
@@ -120,7 +120,7 @@ export default ({ filter })=> {
                   type="number"
                   min={0}                
                   placeholder="Hasta"
-                  gray
+                  
                 />                
               </Col>              
               <Col xs={12} md={2}>
@@ -131,7 +131,7 @@ export default ({ filter })=> {
                   type="number"
                   min={0}                
                   placeholder="Habitaciones"
-                  gray
+                  
                 />                  
               </Col>              
               <Col xs={12} md={2}>
@@ -142,7 +142,7 @@ export default ({ filter })=> {
                   type="number"
                   min={0}                
                   placeholder="Baños"
-                  gray
+                  
                 />     
               </Col>                                                        
               <Col xs={12} md={4}>
