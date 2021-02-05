@@ -112,7 +112,7 @@ export default ({ block, shadow, horizontal })=> {
           <Col xs={12} md={horizontal  ? 3 : 12}>
             <Button primary block>
               Buscar
-              <img src="/icons/search.svg" alt="buscar" style={{ marginLeft: "1rem" }} />
+              <img src="/search.svg" alt="buscar" style={{ marginLeft: "1rem" }} />
             </Button>
           </Col>
           {

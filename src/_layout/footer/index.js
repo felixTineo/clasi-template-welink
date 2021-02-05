@@ -165,7 +165,7 @@ export default ()=> {
             <p style={{ margin: 0 }}>Somos especialistas en la compra, venta y arriendo de bienes raíces.</p>
             <p>Nuestro equipo de trabajo cuenta con gran experiencia en el mercado. Brindamos asesoría legal a cada uno de nuestros clientes y trabajamos para que su inversión sea de alta rentabilidad.</p>
             </Col>
-            <Col xs={12} md={3}>
+            <Col xs={12} md={2}>
               <NavCont>
                 <Row>
                   <Col xs={6} md={12}>
@@ -203,10 +203,10 @@ export default ()=> {
                 </Row>
               </NavCont>
             </Col>         
-            <Col xs={12} md={2}>
+            <Col xs={12} md={3}>
               <OfficeInfoCont>
                 <OfficeInfo>
-                  {office.address}
+                  Agustinas #681 OF 606, Santiago
                 </OfficeInfo>
                 <OfficeInfo>
                   +562 3281 4949

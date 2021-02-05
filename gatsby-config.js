@@ -18,11 +18,12 @@ module.exports = {
     keywords: `inmobilario, chile, republica, propiedades, republicar, portales, portal, inmobiliaria, web, santiago, corredor, casas, departamentos, venta, arriendo, mejores, precios`,
     facebook: "https://www.facebook.com",
     instagram: `https://www.instagram.com`,
-    siteUrl: `https://wizardly-villani-67a864.netlify.app/`,
+    siteUrl: `http://www.flussmosel.cl`,
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-htaccess',
+    `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-sharp`,
       options: {
@@ -38,13 +39,14 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Elephant - inmobiliaria`,
-        short_name: "elephant",
+        name: `Fluss Mosel - Propiedades`,
+        short_name: "Fluss Mosel",
         lang: `es`,
         start_url: "/",
         icon: `static/favicon.ico`,
       },
-    },    
+    },  
+    `gatsby-plugin-offline`,  
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {

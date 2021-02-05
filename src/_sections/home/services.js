@@ -9,31 +9,31 @@ import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
 const data = [
   {
     id: uuid(),
-    icon: "/icons/calculator.svg",
+    icon: "/calculator.svg",
     title: "Pago de cuentas",
     description: "Nos encargamos de que los servicios y gastos comunes estén al día."
   },
   {
     id: uuid(),
-    icon: "/icons/money-bill-alt.svg",
+    icon: "/money-bill-alt.svg",
     title: "Cobranza",
     description: "Realizamos la recaudación de sus arriendos, transfiriéndola inmediatamente a su cuenta."
   },
   {
     id: uuid(),
-    icon: "/icons/wrench.svg",
+    icon: "/wrench.svg",
     title: "Reparaciones",
     description: "Gestionamos el arreglo ante imprevistos."
   },
   {
     id: uuid(),
-    icon: "/icons/check-square.svg",
+    icon: "/check-square.svg",
     title: "Entrega",
     description: "Nos hacemos cargo de la limpieza y pintura de su inmueble cuando el inquilino deja la propiedad, asegurándoles un perfecto estado del inmueble."
   },
   {
     id: uuid(),
-    icon: "/icons/users.svg",
+    icon: "/users.svg",
     title: "Arrendatarios",
     description: "Gestionamos garantizando tu tranquilidad. Cuidamos tus ganancias, en caso de que un arrendatario entregue el inmueble antes de la fecha consensuada, nosotros nos encargamos de encontrar los próximos candidatos para que no pierdas el arriendo."
   },        

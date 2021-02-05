@@ -55,10 +55,10 @@ export default ()=> {
             }
           </Slider>
           <ButtonBack className="carousel-back-button carousel-desc-back-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-left.svg" alt="chevron" />
+            <img src="/chevron-left.svg" alt="chevron" />
           </ButtonBack>
           <ButtonNext className="carousel-next-button carousel-desc-next-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-right.svg" alt="chevron"/>
+            <img src="/chevron-right.svg" alt="chevron"/>
           </ButtonNext>
           {/*
             Array(items.length).fill(0).map((_,i) => <Dot style={{ backgroundColor: color }} className="carousel-text-dot" key={i} slide={i} />)
@@ -83,10 +83,10 @@ export default ()=> {
             }
           </Slider>
           <ButtonBack className="carousel-back-button carousel-desc-back-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-left.svg" alt="chevron" />
+            <img src="/chevron-left.svg" alt="chevron" />
           </ButtonBack>
           <ButtonNext className="carousel-next-button carousel-desc-next-button" style={{ backgroundColor: color }}>
-            <img src="/icons/chevron-right.svg" alt="chevron"/>
+            <img src="/chevron-right.svg" alt="chevron"/>
           </ButtonNext>          
         </CarouselProvider>
         </Visible>

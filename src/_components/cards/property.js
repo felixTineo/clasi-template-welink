@@ -114,7 +114,7 @@ export default ({
         </CardTitleCont>
         <CardCharacteristics>
             <CharItem>
-              <img src="/icons/site.svg" />
+              <img src="/site.svg" />
               {truncate(ubication.commune, 50)}
             </CharItem>
           {
@@ -128,11 +128,11 @@ export default ({
             ) ).map((char, index) => (
               <CharItem key={index}>
                 {
-                  char.name === "Superficie total" && <img src="/icons/surface.svg" /> ||
-                  char.name === "Superficie útil" && <img src="/icons/surface.svg" />  ||
-                  char.name === "Habitaciones" && <img src="/icons/rooms.svg" /> ||
-                  char.name === "Baños" && <img src="/icons/bath.svg" />  ||
-                  char.name === "Estacionamientos" && <img src="/icons/parking.svg" />
+                  char.name === "Superficie total" && <img src="/surface.svg" /> ||
+                  char.name === "Superficie útil" && <img src="/surface.svg" />  ||
+                  char.name === "Habitaciones" && <img src="/rooms.svg" /> ||
+                  char.name === "Baños" && <img src="/bath.svg" />  ||
+                  char.name === "Estacionamientos" && <img src="/parking.svg" />
                 }
                 <span>{char.name} {char.value} {char.name === "Superficie total" && "mt2" || char.name === "Superficie útil" && "mt2"}</span>
               </CharItem>
