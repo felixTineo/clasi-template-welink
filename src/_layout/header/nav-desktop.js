@@ -123,7 +123,7 @@ export default ()=> {
       <Link to="/contact">
       <LoginButton
       >
-        Confianos tu ptopiedad
+        Confianos tu propiedad
       </LoginButton>
     </Link>
   </MainCont>
