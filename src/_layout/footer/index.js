@@ -50,6 +50,7 @@ const NavCont = styled.div`
   margin: 2rem 0;
   @media(min-width: 768px){
     margin: 0;
+    padding-left: 2rem;
   }      
 `
 const NavLink = styled(Link)`
@@ -80,7 +81,7 @@ const SocialNav = styled.ul`
   color: ${props => props.theme.main.primaryColor};
   display: flex;
   align-content: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   margin-top: 2rem;
 `
 
@@ -149,16 +150,20 @@ export default ()=> {
       <MainFooter>
         <Container>
           <Row>
-            <Col xs={12} md={3}>
+            <Col xs={12} md={2}>
               <GatsbyLink to="/" style={{ textDecoration: 'none' }}>
                 <LogoCont>
                   {
                     state.main.logo.isImage
-                      ?<Logo src={state.main.logo.value} alt="logo" />
+                      ?<Logo src="/logo.png" alt="logo" />
                       :<HeaderTitle>{state.main.logo.value}</HeaderTitle>
                   }
                 </LogoCont>                        
-              </GatsbyLink>         
+              </GatsbyLink>                       
+            </Col>
+            <Col xs={12} md={4}>
+            <p style={{ margin: 0 }}>Somos especialistas en la compra, venta y arriendo de bienes raíces.</p>
+            <p>Nuestro equipo de trabajo cuenta con gran experiencia en el mercado. Brindamos asesoría legal a cada uno de nuestros clientes y trabajamos para que su inversión sea de alta rentabilidad.</p>
             </Col>
             <Col xs={12} md={3}>
               <NavCont>
@@ -198,34 +203,19 @@ export default ()=> {
                 </Row>
               </NavCont>
             </Col>         
-            <Col xs={12} md={3}>
+            <Col xs={12} md={2}>
               <OfficeInfoCont>
                 <OfficeInfo>
                   {office.address}
                 </OfficeInfo>
                 <OfficeInfo>
-                  {office.phone}
+                  +562 3281 4949
                 </OfficeInfo>
                 <OfficeInfo>
                   {office.email}
                 </OfficeInfo>
-              </OfficeInfoCont>              
-            </Col>
-            <Col xs={12} md={3}>
-              <Row>
-                <Col xs={12}>
-                </Col>                            
-                <Col xs={12}>
-                    <Hidden xs>
-                      <Pulse forever duration={2000}>
-                        <BackTopCont>
-                          <BackTop onClick={handleTop} href="#top">
-                            <ArrowUpOutlined />
-                          </BackTop>
-                        </BackTopCont>
-                      </Pulse>
-                    </Hidden>                   
-                  <SocialNav>
+              </OfficeInfoCont>     
+              <SocialNav>
                     <li>Siguenos en</li>
                     <SocialItem style={{ marginLeft: "1rem" }} rel="noopener">
                     <a href={office.facebook}>
@@ -243,7 +233,22 @@ export default ()=> {
                         </SvgIcon>
                       </a>
                     </SocialItem>     
-                  </SocialNav>
+                  </SocialNav>                       
+            </Col>
+            <Col xs={12} md={1}>
+              <Row>
+                <Col xs={12}>
+                </Col>                            
+                <Col xs={12}>
+                    <Hidden xs>
+                      <Pulse forever duration={2000}>
+                        <BackTopCont>
+                          <BackTop onClick={handleTop} href="#top">
+                            <ArrowUpOutlined />
+                          </BackTop>
+                        </BackTopCont>
+                      </Pulse>
+                    </Hidden>                   
                 </Col>  
               </Row>
             </Col>                          

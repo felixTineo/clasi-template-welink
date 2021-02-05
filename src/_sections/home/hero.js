@@ -18,7 +18,7 @@ const MainCont = styled.div`
   color: #fff;
   z-index: 100;
   @media(min-width: 576px){
-    height: calc(100vh - 156.61px);
+    height: calc(100vh - 175.2px);
     margin-top: 0;
   }
   ::before{
@@ -34,7 +34,7 @@ const MainCont = styled.div`
     background-position: center;
     opacity: 0;
     @media(min-width: 576px){
-      height: calc(100vh - 156.61px);
+      height: calc(100vh - 175.2px);
       opacity: 1;
     }
   }
@@ -69,7 +69,7 @@ const FormContainer = styled.div`
 const Title = styled.h1`
   position: relative;
   z-index: 5;
-  margin-top: 8rem;
+  margin-top: 4rem;
   @media(min-width: 576px){
     width: 70%;
   }

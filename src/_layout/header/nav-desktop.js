@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, Fragment } from 'react';
 import Context from '../../_context';
 import styled from 'styled-components';
 import Logo from './logo';
@@ -7,7 +7,7 @@ import { LinkButton as Button } from '../../_components/buttons';
 import RateBar from './rate-bar';
 
 const MainCont = styled.nav`
-  padding: 1.5rem 0;
+  padding: 0 0 1.5rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,12 +17,13 @@ const NavBar = styled.ul`
   display: flex;
 `
 const NavItem = styled.li`
-  margin-left: ${props => props.noMargin ? 0 : "1.5rem"};
+  margin-left: ${props => props.noMargin ? 0 : "2rem"};
 `
 const NavLink = styled.span`
   color: #212121;;
   transition: 250ms ease;
   text-decoration: none !important;
+  font-weight: bold;
   &:hover{
     color: ${props => props.theme.main.primaryColor};;
   }
@@ -64,6 +65,8 @@ const LoginButton = styled.a`
 export default ()=> {
   const state = useContext(Context);
   return(
+    <Fragment>
+      <RateBar />    
     <MainCont>
       <Logo />
       <NavBar>
@@ -117,12 +120,13 @@ export default ()=> {
           </Link>
         </NavItem>                                  
       </NavBar>
-      <RateBar />
-{/*      <LoginButton
-        href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}
+      <Link to="/contact">
+      <LoginButton
       >
-        Login
-</LoginButton>*/}
+        Confianos tu ptopiedad
+      </LoginButton>
+    </Link>
   </MainCont>
+  </Fragment>
   )
 }

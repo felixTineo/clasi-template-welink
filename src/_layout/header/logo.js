@@ -31,7 +31,7 @@ export default ({ dark })=> {
         {
           state.main.logo.isImage
           ?(
-            <LogoImg src={ dark ? state.main.logoDark.value : state.main.logo.value} alt={"Halabi propiedades"} />
+            <LogoImg src="/logo.png" alt={"Halabi propiedades"} />
           )
           :(
             <LogoText>
