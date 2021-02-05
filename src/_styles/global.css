@@ -126,6 +126,19 @@ h2{
   right: 0;
 }
 
+.carousel-service-back-button{
+  top: auto;
+  bottom: -3rem !important;
+  left: auto;
+  right: 5rem;
+}
+
+.carousel-service-next-button{
+  top: auto;
+  bottom: -3rem !important;
+  right: 2rem;
+}
+
 .carousel-text-dot{
   height: 12px;
   width: 12px;

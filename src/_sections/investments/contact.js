@@ -114,7 +114,7 @@ export default ()=> {
         <Row>
           <Col xs={12} md={6}>
             <Title className="investments-title" ref={e => { titleRef = e }}>               
-              Deja que te asesoren<br />un grupo de expertos.
+              En Fluss Mosel.<br />Nos preocupamos de todo.
             </Title>
             <Description className="investments-desc">
               El sector inmobiliario es un negocio más seguro y con mejor rentabilidad en comparación al financiero, que ofrece bajas tasas de rentabilidad. Con más de 25 años de experiencia, nuestro equipo trabaja con cada cliente para que obtenga el mejor de los beneficios posibles.

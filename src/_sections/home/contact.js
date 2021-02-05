@@ -17,6 +17,7 @@ const TextCont = styled.div`
 `
 const SectionText = styled.p`
   text-align: left;
+  font-size: 1.5rem;
   @media(min-width: 768px){
     font-size: 2rem;
   }

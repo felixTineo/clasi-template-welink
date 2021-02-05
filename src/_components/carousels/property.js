@@ -4,8 +4,8 @@ import { chunkArray } from '../../_util';
 import Context from '../../_context';
 import { PropertyCard } from '../cards'
 import { Visible, Hidden } from 'react-grid-system';
-import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
 import { Row, Col } from 'react-grid-system';
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Dot } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import { LeftCircleOutlined, RightCircleOutlined } from '@ant-design/icons';
 import { v1 as uuid } from 'uuid';

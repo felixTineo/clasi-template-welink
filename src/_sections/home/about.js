@@ -7,7 +7,12 @@ import { ServiceCarousel, ReviewCarousel } from '../../_components/carousels';
 import { navigate } from 'gatsby';
 import { Fade } from 'react-reveal';
 
-const MainCont = styled.section`  
+const VeryMainCont = styled.section`
+  background-color: rgba(0, 0, 0, .040);
+  padding-bottom: 3rem;
+`
+
+const MainCont = styled.div`  
   position: relative;
   //padding-bottom: 6rem;
 `
@@ -79,6 +84,7 @@ const CarouselCont = styled.div`
 export default ()=> {
   const state = useContext(Context).home;
   return(
+    <VeryMainCont>
     <Container>
     <MainCont>
       <HeroInfoCont>
@@ -120,5 +126,6 @@ export default ()=> {
         </Row>
     </MainCont>
     </Container>
+    </VeryMainCont>
   )
 }

@@ -78,7 +78,8 @@ export default ()=> {
           <Fade bottom distance="30px" duration={1500}>
             <Title>
               <Fade right distance="15px" duration={2000}>
-              <span style={{ zIndex: 5, position: "relative", width: "50%", minHeight: "50vh", display:"inline-block" }}>Inversiones</span>
+                <span style={{ zIndex: 5, position: "relative", width: "50%", display:"inline-block" }}>Inversiones</span>
+                <p style={{ minHeight: "50vh", width: "30%", fontSize: 20, fontWeight: "400" }}>Deja que te asesore un grupo de expertos.</p>
               </Fade>
             </Title>
           </Fade>
