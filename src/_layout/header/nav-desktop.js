@@ -45,7 +45,7 @@ const LoginButton = styled.a`
   border: 1px solid #b79c4e;
   border-color: ${props => props.theme.main.primaryColor};
   transition: 250ms ease;
-  padding: 1px 6px;
+  padding: 1px 24px;
   display: flex;
   justify-content: center;
   align-items: center;
