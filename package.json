@@ -17,6 +17,7 @@
     "@ant-design/icons": "^4.2.2",
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.24.47",
+    "gatsby-plugin-htaccess": "^1.4.0",
     "gatsby-plugin-manifest": "^2.7.0",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.3",
     "gatsby-plugin-react-helmet": "^3.5.0",

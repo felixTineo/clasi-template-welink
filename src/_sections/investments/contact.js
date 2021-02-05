@@ -100,7 +100,7 @@ export default ()=> {
         const tl = gsap.timeline({ defaults: { duration: 1, ease: "back.out" } });
         tl.to(titleRef, { opacity: 1, y: 0 })
           .to(".investments-desc", { opacity: 1, y: 0 }, "-=.5")
-          .to(".slide-box", { y: -slideBox.offsetHeight, opacity: 1, ease: "power1.out" })
+          .to(".slide-box", { y: -slideBox.offsetHeight, opacity: 1, ease: "power1.out" }, "-=1")
           .to(".logo", { opacity: 0 }, "-=1")
           //.to(".inves-contact", { opacity: 1 }, "-=.5")
           .to(".inves-contact", { opacity: 1, x: 0, ease: "back.out(1)" }, "-=.5")

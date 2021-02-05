@@ -115,7 +115,7 @@ export default ()=> {
 
   return(
     <Container>
-      <Title>Nuestros servicios</Title>
+      <Title>Aministración de Propiedades</Title>
       <Hidden xs>
         <MainSection>
           {

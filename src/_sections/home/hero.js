@@ -18,7 +18,7 @@ const MainCont = styled.div`
   color: #fff;
   z-index: 100;
   @media(min-width: 576px){
-    min-height: calc(100vh - 200px);
+    height: calc(100vh - 156.61px);
     margin-top: 0;
   }
   ::before{
@@ -34,7 +34,7 @@ const MainCont = styled.div`
     background-position: center;
     opacity: 0;
     @media(min-width: 576px){
-      min-height: calc(100vh - 200px);
+      height: calc(100vh - 156.61px);
       opacity: 1;
     }
   }

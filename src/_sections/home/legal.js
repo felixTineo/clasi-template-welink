@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 
 const MainCont = styled.section`
-  //padding-top: 5rem;
-  min-height: 100vh;
+  padding: 5rem;
+  padding-bottom: 4rem;
+  //min-height: 100vh;
   display: flex;
   align-items: center;
 `
@@ -41,7 +42,7 @@ export default ()=> {
           <Col xs={12} md={6}>
             <HistoryCont>
               <Title>
-                Asesórate por expertos
+                Asesoría legal
               </Title>
               <Description>
                 Para nosotros, los asuntos legales no son un problema.<br />

@@ -22,6 +22,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-react-helmet',
+    'gatsby-plugin-htaccess',
     {
       resolve: `gatsby-plugin-sharp`,
       options: {

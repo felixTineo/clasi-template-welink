@@ -108,14 +108,21 @@ export default ()=> {
               Contacto
             </NavLink>
           </Link>
-        </NavItem>                          
+        </NavItem>             
+        <NavItem>
+          <Link href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}>
+            <NavLink>
+              Login
+            </NavLink>
+          </Link>
+        </NavItem>                                  
       </NavBar>
       <RateBar />
-      <LoginButton
+{/*      <LoginButton
         href={`http://app.clasihome.com/login?logo=${state.main.logo.value}&primaryColor=${state.main.primaryColor.substring(1)}`}
       >
         Login
-      </LoginButton>
+</LoginButton>*/}
   </MainCont>
   )
 }

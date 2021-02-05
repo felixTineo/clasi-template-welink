@@ -10,6 +10,9 @@ const MainCont = styled.div`
   min-height: 100%;
   color: #fff;
   padding: 2rem 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   @media(min-width: 768px){
     padding: 2rem 4rem 0;
   }

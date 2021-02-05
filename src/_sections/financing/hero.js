@@ -1,10 +1,79 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import styled from 'styled-components';
 import { Container, Row, Col } from 'react-grid-system';
 import Context from '../../_context';
 import { Fade } from 'react-reveal';
+import { gsap } from 'gsap';
 
-const MainCont = styled.section`
+const MainCont = styled.div`
+  //margin-top: 96.67px;
+  background-image: url("/finance-hero.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  backdrop-filter: blur(5px);
+  position: relative;
+`
+const Overlay = styled.div`
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)); 
+  //background: linear-gradient(to right, rgba(26, 31, 99, .7), rgba(0, 0, 0, 0)); 
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: calc(100vh - 156.61px - 4rem);
+  width: 100%;
+`
+
+const TitleCont = styled.div`
+  min-height: calc(100vh - 156.61px - 4rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+`
+const Title = styled.h1`
+  margin: 0;
+  font-size: 4rem;
+`
+const SubTitle = styled.p`
+  margin: 0;
+`
+
+export default ()=> {
+  const overlayRef = useRef(null);
+  const titleRef = useRef(null);
+  const subTitleRef = useRef(null);
+  useEffect(()=>{
+    const tl = gsap.timeline();
+    tl.to(overlayRef.current, {
+      duration: 2,
+      background: "linear-gradient(to right, rgba(26, 31, 99, 1), rgba(0, 0, 0, 0))",
+      backdropFilter: "blur(2px)",
+    })
+      .from(".title", {
+        y: 8,
+        opacity: 0,
+        stagger: .2,
+        duration: 1,
+        ease: "back.out(4)"
+      }, "-=2")
+  },[]);
+
+  return(
+    <MainCont>
+      <Overlay ref={overlayRef} />
+      <Container>
+        <TitleCont>
+        <Title className="title">Financiamiento</Title>      
+        <SubTitle className="title">Deja que te asesore un grupo de expertos.</SubTitle>
+        </TitleCont>
+      </Container>
+    </MainCont>
+  )
+}
+
+/*const MainCont = styled.section`
     //background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .4)), url(${props => props.theme.about.hero.background});
     //background-size: cover;
     //background-repeat: no-repeat;
@@ -18,7 +87,7 @@ const TitleCont = styled.div`
   align-items: center;
   ::before{
     content: " ";
-    background-image: url("/finance-hero.jpg");
+    background-image: url("/about-description.jpg");
     background-size: cover;
     background-position: center;
     width: 60vw;
@@ -78,14 +147,14 @@ export default ()=> {
           <Fade bottom distance="30px" duration={1500}>
             <Title>
               <Fade right distance="15px" duration={2000}>
-                <span style={{ zIndex: 5, position: "relative", width: "50%", display:"inline-block" }}>Financiamiento</span>
+                <span style={{ zIndex: 5, position: "relative", width: "50%", display:"inline-block" }}>Inversiones</span>
                 <p style={{ minHeight: "50vh", width: "30%", fontSize: 20, fontWeight: "400" }}>Deja que te asesore un grupo de expertos.</p>
               </Fade>
             </Title>
           </Fade>
         </TitleCont>        
-              {/*<Image src={state.hero.background} alt={state.hero.title} />*/}
+          <Image src={state.hero.background} alt={state.hero.title} />
       </Container>
     </MainCont>
   )
-}
+}*/

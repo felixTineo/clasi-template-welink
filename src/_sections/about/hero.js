@@ -35,7 +35,7 @@ const TitleCont = styled.div`
     }
   }
   @media(min-width: 768px){
-    height: calc(100vh - 87px);
+    min-height: calc(100vh - 156.61px - 4rem);
     margin-bottom: 0;
   }
 `

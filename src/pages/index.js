@@ -15,11 +15,10 @@ export default function Home({ data }) {
     <Layout data={JSON.parse(data.initial.data)}>
       <Hero />
       <Properties />
+      <About />      
       <Services />
-      <Construction />
       <Legal />
       <Contact noMargin />      
-      <About />
     </Layout>
   )
 }
